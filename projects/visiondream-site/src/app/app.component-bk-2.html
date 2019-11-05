@@ -1,0 +1,117 @@
+<!--<app-layout>
+  <mat-sidenav-container autosize>
+    <mat-sidenav #sidenav mode="over" role="navigation">
+      !--SideNav navigation--
+      <app-side-nav (sidenavClose)="sidenav.close()">
+      </app-side-nav>
+      !--/.SideNav navigation--
+    </mat-sidenav>
+    <mat-sidenav-content>
+      !--TopNav navigation--
+      <app-top-nav (sidenavToggle)="sidenav.toggle()">
+      </app-top-nav>
+      !--/.TopNav navigation--
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+      <app-footer></app-footer>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</app-layout>-->
+
+<app-layout>
+  <div class="vd-nav-container-responsive" [class.vd-mobile]="mobileQuery.matches">
+    <mat-toolbar color="primary" class="vd-topbar vd-topnav">
+      <span>
+        <button mat-icon-button
+                aria-label="Toggle sidenav"
+                (click)="sidenav.toggle()">
+          <mat-icon class="vd-mat-icon-20" aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+      </span>
+      <span class="vd-site-app-name">{{VD_SiteAppName}}</span>
+        <!--<a mat-button
+          matTooltip="Home"
+          matTooltipClass="vd-tooltip-black"
+          role="button"
+          routerLink="/home">
+          <img src="projects/visiondream-site/src/assets/vd/brand/logo/vd-logo-colour.png" height="32"
+                alt="VisionDream logo">
+        </a>-->
+    </mat-toolbar>
+
+    <mat-sidenav-container class="vd-sidenav-container"
+                           [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+      <mat-sidenav #sidenav class="vd-sidenav"
+                   [attr.role]="mobileQuery.matches ? 'dialog' : 'navigation'"
+                   [mode]="mobileQuery.matches ? 'over' : 'side'"
+                   [fixedInViewport]="mobileQuery.matches"
+                   fixedTopGap="56">
+        <mat-nav-list>
+          <!--<a mat-list-item routerLink="." *ngFor="let navMenu of navMenuFiller">{{navMenu.title}}</a>-->
+          <a mat-list-item routerLink="/home">Home</a>
+          <a mat-list-item routerLink="/services">Services</a>
+          <a mat-list-item routerLink="/portfolio">Portfolio</a>
+          <a mat-list-item routerLink="/contact">Contact</a>
+          <a mat-list-item routerLink="/about">About</a>
+          <a mat-list-item routerLink="/support">Support</a>
+          <a mat-list-item routerLink="/register">Register</a>
+          <a mat-list-item routerLink="/login">Login</a>
+        </mat-nav-list>
+      </mat-sidenav>
+
+      <mat-sidenav-content>
+        <main>
+          <!--<p *ngFor="let homeContent of homeContentFiller">{{homeContent}}</p>-->
+          <router-outlet></router-outlet>
+        </main>
+        <app-footer></app-footer>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+</app-layout>
+
+<!--<div class="vd-navigation-responsive" [class.vd-mobile]="isWeb$.matches">
+  <mat-sidenav-container class="vd-sidenav-container">
+    <mat-sidenav #drawer class="vd-sidenav" fixedInViewport
+                  [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+                  [mode]="(isHandset$ | async) ? 'over' : 'side'"
+                  [opened]="(isHandset$ | async) === false">
+      <mat-toolbar>
+        <button type="button"
+                aria-label="Toggle sidenav"
+                mat-icon-button
+                (click)="drawer.toggle()">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <span class="vd-site-app-name">Menu</span>
+      
+      </mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/services">Services</a>
+        <a mat-list-item routerLink="/portfolio">Portfolio</a>
+        <a mat-list-item routerLink="/contact">Contact</a>
+        <a mat-list-item routerLink="/about">About</a>
+        <a mat-list-item routerLink="/support">Support</a>
+        <a mat-list-item routerLink="/register">Register</a>
+        <a mat-list-item routerLink="/login">Login</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary" class="vd-topbar mat-elevation-z7">
+        <mat-toolbar-row class="vd-topnav">
+          <button type="button"
+                  aria-label="Toggle sidenav"
+                  mat-icon-button
+                  (click)="drawer.toggle()"
+                  *ngIf="isHandset$ | async">
+            <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+          </button>
+          <span class="vd-site-app-name">{{VD_SiteAppName}}</span>
+        </mat-toolbar-row>
+      </mat-toolbar>
+      !-- Add Content Here --
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>-->

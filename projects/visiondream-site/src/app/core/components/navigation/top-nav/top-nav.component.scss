@@ -1,0 +1,85 @@
+/*----- Topnav link styles -----*/
+/*a {
+  color: var(--dark-gray) !important;
+  font-size: 1em;
+  font-weight: 500;
+  display: inline-block;
+}
+  a:hover, a:focus {
+    color: var(--deep-sky-blue-capri) !important;
+    display: inline-block;
+  }*/
+
+$vd-topbar-height: 56px !default;
+$vd-topbar-icon-padding: 12px !default;
+$vd-topbar-title-padding: 16px !default;
+$vd-topbar-item-padding: 8px !default;
+
+.vd-topnav-height {
+  height: $vd-topbar-height;
+}
+
+.vd-topnav-toolbar {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.vd-topnav-icon-old {
+  padding: 0 14px;
+}
+
+.vd-topnav-spacer {
+  flex: 1 1 auto;
+}
+
+.vd-topnav-icon {
+  margin: 0 $vd-topbar-icon-padding 0 $vd-topbar-icon-padding;
+  background: transparent;
+  color: var(--white);
+}
+
+.vd-topnav-title {
+  margin: 0 $vd-topbar-title-padding 0 $vd-topbar-title-padding;
+  background: transparent;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.vd-topnav-items {
+  list-style: none;
+  margin: 0 $vd-topbar-item-padding 0 $vd-topbar-item-padding;
+  background: transparent;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.vd-topnav-items-active {
+  background: transparent;
+  color: var(--pure-yellow) !important;
+  font-weight: bold;
+}
+
+.vd-topnav-toolbar .vd-topnav-mobilebar {
+  /*Make sure the topbar toolbar stay on top of the content as it scrolls past.*/
+  position: fixed;
+  z-index: 2;
+}
+
+.vd-md-toolbar {
+  z-index: 10;
+}
+
+.vd-md-toolbar-row {
+  justify-content: space-between;
+}
+
+.vd-md-toolbar-row-fill-space {
+  background: transparent;
+  flex: 1 1 auto;
+}

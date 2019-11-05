@@ -2,5 +2,168 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "visiondream-site": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/visiondream-site",
+      "sourceRoot": "projects/visiondream-site/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/visiondream-site",
+            "index": "projects/visiondream-site/src/index.html",
+            "main": "projects/visiondream-site/src/main.ts",
+            "polyfills": "projects/visiondream-site/src/polyfills.ts",
+            "tsConfig": "projects/visiondream-site/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/visiondream-site/src/favicon.ico",
+              "projects/visiondream-site/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/visiondream-site/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/visiondream-site/src/environments/environment.ts",
+                  "with": "projects/visiondream-site/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "visiondream-site:build",
+            "port": 44340
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "visiondream-site:build:production",
+              "port": 44341
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "visiondream-site:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/visiondream-site/src/test.ts",
+            "polyfills": "projects/visiondream-site/src/polyfills.ts",
+            "tsConfig": "projects/visiondream-site/tsconfig.spec.json",
+            "karmaConfig": "projects/visiondream-site/karma.conf.js",
+            "assets": [
+              "projects/visiondream-site/src/favicon.ico",
+              "projects/visiondream-site/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/visiondream-site/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/visiondream-site/tsconfig.app.json",
+              "projects/visiondream-site/tsconfig.spec.json",
+              "projects/visiondream-site/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/visiondream-site/e2e/protractor.conf.js",
+            "devServerTarget": "visiondream-site:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "visiondream-site:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "visiondream-library": {
+      "projectType": "library",
+      "root": "projects/visiondream-library",
+      "sourceRoot": "projects/visiondream-library/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/visiondream-library/tsconfig.lib.json",
+            "project": "projects/visiondream-library/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/visiondream-library/src/test.ts",
+            "tsConfig": "projects/visiondream-library/tsconfig.spec.json",
+            "karmaConfig": "projects/visiondream-library/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/visiondream-library/tsconfig.lib.json",
+              "projects/visiondream-library/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "visiondream-site"
 }

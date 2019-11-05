@@ -1,0 +1,621 @@
+/**
+ * Created by:  VisionDream ICT Solutions
+ * Author:      Onkgopotse Lenake
+ * Email:       visiondreamict@gmail.com
+ * Website:     www.visiondream.wordpress.com
+ * 
+ * Copyright © 2019 VisionDream ICT Solutions. All Rights Reserved.
+ */
+
+/********************** Global color themes and variable properties **********************/
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+/*@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';*/
+
+:root {
+  /********************** Vision yellow theme **********************/
+  --electric-yellow: #ffff00;
+  --pure-yellow: #ffc000;
+  --usc-gold: #ffcc00;
+  --light-pure-yellow: #ffea00;
+  --very-light-pure-yellow: #eaff00;
+  /********************** Dream blue theme **********************/
+  --deep-sky-blue-capri: #00bfff;
+  --deep-sky-blue-capri-websafe: #00ccff;
+  --dark-sky-blue: #00aaff;
+  --dark-sky-blue-websafe: #0099ff;
+  --very-dark-sky-blue: #0080ff;
+  --vivid-blue: #027ff4;
+  --blue: #0000ff;
+  --light-blue: #0033ff;
+  --very-light-blue: #0040ff;
+  --very-dark-blue: #204060;
+  --very-dark-blue-websafe: #333366;
+  --strong-blue: #0072c6;
+  --strong-blue-websafe: #0066cc;
+  --soft-blue: #4e73df;
+  --moderate-blue: #6666cc;
+  --dark-moderate-blue: #336699;
+  --very-dark-moderate-blue: #2d5986;
+  --very-very-dark-moderate-blue: #264d73;
+  /********************** Gray color theme **********************/
+  --dark-gray: #999999;
+  --trolley-gray: #808080;
+  --medium-dark-gray: #7E7E7E;
+  --very-dark-gray: #666666;
+  --very-very-dark-gray: #616161;
+  --dark-grayish-blue: #858796;
+  --very-dark-grayish-blue: #5a5c69; /* dark */
+  --light-grayish-blue: #f8f9fc;
+  --light-gray: #cccccc;
+  --very-light-gray: #dddddd;
+  --very-very-light-gray: #eeeeee;
+  --very-very-very-light-gray: #fafafa;
+  /********************** Cyan color theme **********************/
+  --very-dark-desaturated-cyan: #336666;
+  --stong-cyan: #33cc99;
+  --green-cyan: #00ffc0;
+  --green-cyan-websafe: #00ffcc;
+  --moderate-cyan: #36b9cc;
+  --dark-moderate-cyan: #339999;
+  --aqua: #00ffff;
+  --aqua-cyan: #00d4ff;
+  --aqua-cyan-websafe: #00ccff;
+  /********************** Green color theme **********************/
+  --yellow-green: #adff2f;
+  --vivid-green: #99ff33;
+  --office-green: #008000; /* green */
+  --dark-cyan-lime-green: #009933;
+  --very-dark-cyan-lime-green: #11862f;
+  --very-dark-lime-green: #006400;
+  --pakistan-green: #006600;
+  --lawn-green: #7cfc00;
+  --bright-green: #66ff00;
+  --light-sea-green: #20b2aa;
+  --lime-green: #32cd32;
+  --strong-lime-green: #33cc33;
+  --lemon-lime: #bfff00;
+  --electric-lime: #ccff00;
+  --cyan-lime-green: #00ff40;
+  --electric-green: #00ff00;
+  --pure-lime-green: #00ff33;
+  /********************** Orange color theme **********************/
+  --bright-orange: #f6c23e;
+  --vivid-orange: #fd7e14;
+  --light-orange: #ff7f50;
+  --pure-orange: #ff8000;
+  --light-pure-orange: #ff9900;
+  --dark-pure-orange: #ff4000;
+  /********************** Red color theme **********************/
+  --pure-red: #ff3300;
+  --red: #ff0000;
+  --passion-red: #ef212c;
+  --vivid-red: #ff3333;
+  --strong-red: #CC3333;
+  --bright-red: #e74a3b;
+  --dim-bright-red: #E03930;
+  --light-red: #ff6666;
+  /********************** Other colors theme **********************/
+  --dark-pure-violet: #8000ff;
+  --light-pure-violet: #9900ff;
+  --pure-magenta: #ff00ff;
+  --white: #ffffff;
+  --black: #000000;
+  --pink: #e83e8c;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --teal: #20c9a6;
+  --secondary: #858796;
+  --success: #1cc88a;
+  --info: #36b9cc;
+  --warning: #f6c23e;
+  --danger: #e74a3b;
+  /********************** Social colors theme **********************/
+  --facebook-color: #4060A5;
+  --linkedin-color: #0094BC;
+  --twitter-color: #00ABE3;
+  /********************** Custom variable properties **********************/
+  --height-100-pc: 100%;
+  --height-100-vh: 100vh;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-family-roboto-arial: Roboto, Arial, sans-serif;
+  --font-family-roboto-helvetica: Roboto, "Helvetica Neue", sans-serif;
+  --font-family-roboto-material-design: Roboto, sans-serif;
+  --font-family-open-sans: "Open Sans", sans-serif;
+}
+
+/********************** Global Styles **********************/
+*,
+*:before,
+*:after {
+  font-family: var(--font-family-roboto-material-design);
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Resets */
+html,
+body,
+header,
+#intro {
+  height: var(--height-100-vh);
+}
+
+#intro {
+  background: url("projects/visiondream-site/src/assets/content/images/full-background.jpg")no-repeat center center fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+body {
+  margin: 0;
+  /*padding-top: 60px;*/
+  position: relative;
+  background: var(--very-very-very-light-gray);
+  color: var(--very-very-dark-gray);
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.15;
+  text-align: left;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+main, section {
+  padding: 0;
+}
+
+.footer-absolute {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+mat-tab-group {
+  text-align: left;
+}
+  mat-tab-group p {
+    padding-top: 1em;
+  }
+
+body, header, #intro,
+main, section, footer, footer-absolute,
+mat-tab-group {
+  display: block;
+}
+
+[tabindex="-1"]:focus {
+  outline: 0 !important;
+}
+
+/********************** VisionDream Styles - Start **********************/
+.vd-layout-wrapper {
+  height: var(--height-100-pc);
+}
+
+.vd-flex-wrapper {
+  height: var(--height-100-pc);
+}
+
+.vd-container {
+  width: 100%;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  margin-left: auto;
+  margin-right: auto;
+}
+  .vd-container-header {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+    .vd-container-text {
+      background: inherit;
+      font-size: 1.5em;
+      font-weight: 500;
+      text-shadow: 2px 3px 5px grey;
+      margin: 20px 0;
+    }
+
+.vd-sidenav-container, .vd-sidenav, .vd-sidenav-content, .vd-app-shell {
+  height: var(--height-100-vh);
+}
+
+.vd-sidenav {
+  width: 250px;
+}
+
+.vd-tab-body {
+  height: calc(100vh - 64px - 48px);
+}
+
+.vd-tab-action {
+  display: inline-block;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  button {
+    margin-bottom: 12px;
+  }
+}
+
+.vd-welcome-text {
+  background: transparent !important;
+  font-size: 2em;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 0.25em;
+  margin-bottom: 0.5em;
+}
+
+$vd-font-small-point: 8pt !default;
+$vd-font-small-percent: 80% !default;
+
+.vd-font-small-pt {
+  font-size: $vd-font-small-point;
+}
+
+.vd-font-small-pc {
+  font-size: $vd-font-small-percent;
+}
+
+.vd-version-info {
+  font-size: $vd-font-small-point;
+  float: right;
+}
+
+.vd-heading-text-center {
+  background: transparent !important;
+  font-size: 1.25em;
+  font-weight: 600;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.vd-heading-text-left {
+  background: transparent !important;
+  font-size: 1.25em;
+  font-weight: 600;
+  line-height: 1.15;
+  text-align: left;
+}
+
+.vd-paragraph-text {
+  background: transparent !important;
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.vd-control-text {
+  background: inherit;
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.vd-tooltip-black {
+  background: var(--black);
+}
+
+.vd-icon-16 {
+  background: transparent;
+  font-size: 16px;
+}
+
+.vd-icon-24 {
+  background: transparent;
+  font-size: 24px;
+}
+
+.vd-icon-32 {
+  background: transparent;
+  font-size: 32px;
+}
+
+.vd-icon-48 {
+  background: transparent;
+  font-size: 48px;
+}
+
+.vd-card {
+  margin: 20px;
+}
+
+.vd-card-width {
+  width: 400px;
+}
+
+/********************** VisionDream Styles - End **********************/
+
+hr {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+/*a {
+    background: transparent !important;
+    color: var(--white) !important;
+    text-decoration: none;
+    display: inline-block;
+}
+  a:hover,
+  a:focus {
+      background: inherit;
+      color: var(--pure-yellow) !important;
+      text-decoration: none;
+      display: inline-block;
+  }*/
+
+/*a:not([href]):not([tabindex]) {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:not([href]):not([tabindex]):hover,
+a:not([href]):not([tabindex]):focus {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:not([href]):not([tabindex]):focus {
+    outline: 0;
+}*/
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+svg {
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+caption {
+    padding-top: 0.75em;
+    padding-bottom: 0.75em;
+    color: var(--dark-gray) !important;
+    text-align: left;
+    caption-side: bottom;
+}
+
+th {
+    text-align: inherit;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 0.5em;
+}
+
+abbr[title],
+abbr[data-original-title] {
+  text-decoration: underline dotted;
+  cursor: help;
+  border-bottom: 0;
+}
+
+address {
+  margin-top: 0;
+  margin-bottom: 1em;
+  font-style: normal;
+  line-height: inherit;
+}
+
+ol, ul, dl {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+b, strong {
+  font-weight: bolder;
+}
+
+small {
+  font-size: 80%;
+}
+
+.opacity {
+  opacity: 1.0 !important;
+}
+
+/**
+ * Vision-Dream Brand Main Colors - Start
+ */
+/******************************** Vision Yellow Definition ********************************/
+.vd-bgbase-vision {
+  background-color: var(--pure-yellow) !important;
+}
+
+.vd-fgbase-vision {
+  color: var(--pure-yellow) !important;
+}
+
+.vd-bgprimary-vision {
+  background-color: var(--pure-yellow) !important;
+}
+
+.vd-fgprimary-vision {
+  color: var(--pure-yellow) !important;
+}
+
+.vd-bgsecondary-vision {
+  background-color: var(--usc-gold) !important;
+}
+
+.vd-fgsecondary-vision {
+  color: var(--usc-gold) !important;
+}
+
+/******************************** Dream Blue Definition ********************************/
+.vd-bgbase-dream {
+  background-color: var(--vivid-blue) !important;
+}
+
+.vd-fgbase-dream {
+  color: var(--vivid-blue) !important;
+}
+
+.vd-bgprimary-dream {
+  background-color: var(--deep-sky-blue-capri) !important;
+}
+
+.vd-fgprimary-dream {
+  color: var(--deep-sky-blue-capri) !important;
+}
+
+.vd-bgsecondary-dream {
+  background-color: var(--deep-sky-blue-websafe) !important;
+}
+
+.vd-fgsecondary-dream {
+  color: var(--deep-sky-blue-websafe) !important;
+}
+
+/******************************** Hyphen Gray Definition and others ********************************/
+.vd-bgprimary-hyphen {
+  background-color: var(--dark-gray) !important;
+}
+
+.vd-fgprimary-hyphen {
+  color: var(--dark-gray) !important;
+}
+
+.vd-bgsecondary-hyphen {
+  background-color: var(--usc-gold) !important;
+}
+
+.vd-fgsecondary-hyphen {
+  color: var(--usc-gold) !important;
+}
+
+.bg-white {
+  background-color: var(--white) !important;
+}
+
+.fg-white {
+  color: var(--white) !important;
+}
+
+.bg-black {
+  background-color: var(--black) !important;
+}
+
+.fg-black {
+  color: var(--black) !important;
+}
+
+.bg-transparent {
+  background-color: transparent !important;
+}
+
+.fg-transparent {
+  color: transparent !important;
+}
+
+/**
+ * Vision-Dream Brand Main Colors - End
+ */
+
+/******************************** Custom social button icons definition - Start  ********************************/
+#container-social {
+  margin: 1em .5em;
+  text-align: center;
+}
+  .btn-global-social {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border: 2px solid transparent !important;
+    box-shadow: 0 3px 3px var(--dark-gray) !important;
+    padding: 0px;
+    text-decoration: none;
+    text-align: center;
+    color: var(--white) !important;
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 2em;
+    border-radius: 27px;
+    -moz-border-radius: 27px;
+    -webkit-border-radius: 27px;
+  }
+    .btn-facebook {
+      background: var(--facebook-color) !important;
+    }
+      /* Use :before to add the relevant icons */
+      .btn-facebook:before {
+        font-family: "FontAwesome";
+        content: "\f09a";   /* add facebook icon */
+      }
+      .btn-facebook:hover,
+      .btn-facebook:focus {
+        color: var(--pure-yellow) !important;
+        background: var(--white) !important;
+        border-color: var(--facebook-color) !important;
+      }
+
+    .btn-linkedin {
+      background: var(--linkedin-color) !important;
+    }
+      .btn-linkedin:before {
+        font-family: "FontAwesome";
+        content: "\f0e1";
+      }
+      .btn-linkedin:hover,
+      .btn-linkedin:focus {
+        color: var(--pure-yellow) !important;
+        background: var(--white) !important;
+        border-color: var(--linkedin-color) !important;
+      }
+
+    .btn-twitter {
+      background: var(--twitter-color) !important;
+    }
+      .btn-twitter:before {
+        font-family: "FontAwesome";
+        content: "\f099";
+      }
+      .btn-twitter:hover,
+      .btn-twitter:focus {
+        color: var(--pure-yellow) !important;
+        background: var(--white) !important;
+        border-color: var(--twitter-color) !important;
+      }
+/******************************** Custom social button icons definition - End  ********************************/
+
+
+/**
+ * Copyright © 2019 VisionDream ICT Solutions. All Rights Reserved.
+ * Use of this source code is governed by VisionDream-style license 
+ * that can be found in the LICENSE file at the below link address 
+ * http://visiondream.local/#/legal/terms
+ */

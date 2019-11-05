@@ -1,0 +1,43 @@
+/*----- Sidenav link styles -----*/
+/*a {
+  color: var(--dark-gray) !important;
+  font-size: 1em;
+  font-weight: 500;
+  display: inline-block;
+}
+  a:hover, a:focus {
+    color: var(--deep-sky-blue-capri) !important;
+    display: inline-block;
+  }*/
+
+$vd-sidenav-icon-padding: 12px !default;
+$vd-sidenav-title-padding: 16px !default;
+
+.vd-sidenav-icon {
+  margin: 0 $vd-sidenav-icon-padding 0 $vd-sidenav-icon-padding;
+}
+
+.vd-sidenav-title {
+  margin: 0 $vd-sidenav-title-padding 0 $vd-sidenav-title-padding;
+}
+
+.vd-sidenav-title {
+  margin-left: 8px;
+  background: transparent;
+  color: var(--trolley-gray);
+}
+
+.vd-sidenav-items {
+  display: inline-block;
+  padding-left: 10px;
+}
+
+.vd-sidenav-items-active {
+  background: transparent;
+  color: var(--deep-sky-blue-capri) !important;
+  font-weight: bold;
+}
+
+.vd-md-sidenav {
+  width: 40vw;
+}

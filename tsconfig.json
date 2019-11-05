@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "visiondream-library": [
+        "dist/visiondream-library"
+      ],
+      "visiondream-library/*": [
+        "dist/visiondream-library/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

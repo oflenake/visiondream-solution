@@ -1,0 +1,120 @@
+<mat-toolbar color="primary" class="vd-topnav-height vd-topnav-toolbar vd-bgbase-dream mat-elevation-z7">
+  <mat-toolbar-row #sidenav class="vd-topnav-spacer">
+    <!-- Sidenav toggle button -->
+    <span class="vd-topnav-icon">
+      <button mat-icon-button
+              (click)="sidenav.toggle()"
+              aria-label="Side navigation menu toggle">
+        <mat-icon aria-hidden="false" aria-label="Sidenav navigation menu icon">
+          <fa-icon [icon]="vdFaBars" class="vd-icon-24"></fa-icon>
+        </mat-icon>
+      </button>
+    </span>
+    <!--/. Sidenav toggle button -->
+    <!-- Headernav brand button -->
+    <span class="vd-topnav-title">
+      <a mat-button
+         routerLink="/home">
+        <!--<img src="projects/visiondream-site/src/assets/vd/brand/logos/vd-logo-white.png"
+       height="36" class="d-inline-block align-bottoms" alt="{{VD_SiteAppName}}">-->
+        {{VD_SiteAppName}}
+      </a>
+    </span>
+    <!--/. Headernav brand button -->
+    <!-- Navigation links start -->
+    <span class="vd-topnav-items">
+      <span class="vd-topnav-icon">
+        <a mat-button routerLink="/services">
+          Services
+        </a>
+      </span>
+      <!--Portfolio dropdown-->
+      <span class="vd-topnav-icon">
+        <button mat-button [matMenuTriggerFor]="portfolio">
+          Portfolio
+          <mat-icon aria-hidden="false" aria-label="Portfolio dropdown navigation menu link">
+            <fa-icon [icon]="vdFaAngleDown" class="vd-icon-24"></fa-icon>
+          </mat-icon>
+        </button>
+        <mat-menu #portfolio="matMenu" yPosition="below">
+          <button mat-menu-item routerLink="/portfolio">Recent Projects</button>
+          <mat-divider></mat-divider>
+          <button mat-menu-item routerLink="/portfolio/visiondream">VisionDream</button>
+          <button mat-menu-item routerLink="/portfolio/lcf-gfi">LCF GFI</button>
+          <button mat-menu-item routerLink="/portfolio/soweto-tutor">Soweto Tutor</button>
+        </mat-menu>
+      </span>
+      <!--/.Portfolio dropdown-->
+      <span class="vd-topnav-icon">
+        <a mat-button routerLink="/contact">
+          Contact
+        </a>
+      </span>
+      <span class="vd-topnav-icon">
+        <a mat-button routerLink="/about">
+          About
+        </a>
+      </span>
+    </span>
+    <!--/. Navigation links start -->
+    <span class="vd-topnav-spacer"></span>
+    <!-- Navigation links end -->
+    <span class="vd-topnav-items">
+      <span class="vd-topnav-icon">
+        <a mat-button
+            role="button" routerLink="">
+          <mat-icon aria-hidden="false" aria-label="Contact support navigation icon">
+            <fa-icon [icon]="vdFaQuestionCircle" class="vd-icon-24"></fa-icon>
+          </mat-icon>
+          Support
+        </a>
+      </span>
+      <span class="vd-topnav-icon">
+        <a mat-button
+            role="button" routerLink="/register">
+          <mat-icon aria-hidden="false" aria-label="Register account navigation icon">
+            <fa-icon [icon]="vdFaUser" class="vd-icon-24"></fa-icon>
+          </mat-icon>
+          Register
+        </a>
+      </span>
+      <span class="vd-topnav-icon">
+        <a mat-button
+            role="button" routerLink="/login">
+          <mat-icon aria-hidden="false" aria-label="Login into account navigation icon">
+            <fa-icon [icon]="vdFaSignInAlt" class="vd-icon-24"></fa-icon>
+          </mat-icon>
+          Login
+        </a>
+      </span>
+    </span>
+    <!--/. Navigation links end -->
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<!--<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+               [mode]="(isHandset$ | async) ? 'over' : 'side'"
+               [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">Link 1</a>
+      <a mat-list-item href="#">Link 2</a>
+      <a mat-list-item href="#">Link 3</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button"
+              aria-label="Toggle sidenav"
+              mat-icon-button
+              (click)="drawer.toggle()"
+              *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>VisionDream</span>
+    </mat-toolbar>
+    !-- Add Content Here --
+  </mat-sidenav-content>
+</mat-sidenav-container>-->

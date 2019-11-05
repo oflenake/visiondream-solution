@@ -1,0 +1,173 @@
+<!--<app-layout>
+  <mat-sidenav-container autosize>
+    <mat-sidenav #sidenav mode="over" role="navigation">
+      !--SideNav navigation--
+      <app-side-nav (sidenavClose)="sidenav.close()">
+      </app-side-nav>
+      !--/.SideNav navigation--
+    </mat-sidenav>
+    <mat-sidenav-content>
+      !--TopNav navigation--
+      <app-top-nav (sidenavToggle)="sidenav.toggle()">
+      </app-top-nav>
+      !--/.TopNav navigation--
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+      <app-footer></app-footer>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</app-layout>-->
+
+<!--<app-layout>
+  <div class="vd-nav-container-responsive" [class.vd-mobile]="mobileQuery.matches">
+    <mat-toolbar color="primary" class="vd-topbar vd-topnav">
+      <span>
+        <button mat-icon-button
+                aria-label="Toggle sidenav"
+                (click)="sidenav.toggle()">
+          <mat-icon class="vd-mat-icon-20" aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+      </span>
+      <span class="vd-site-app-name">{{VD_SiteAppName}}</span>
+    </mat-toolbar>
+    <app-top-nav>
+
+    </app-top-nav>
+    <mat-sidenav-container class="vd-sidenav-container"
+                           [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+      <mat-sidenav #sidenav class="vd-sidenav"
+                   [attr.role]="mobileQuery.matches ? 'dialog' : 'navigation'"
+                   [mode]="mobileQuery.matches ? 'over' : 'side'"
+                   [fixedInViewport]="mobileQuery.matches"
+                   fixedTopGap="56">
+        <mat-nav-list>
+          <a mat-list-item routerLink="/home">Home</a>
+          <a mat-list-item routerLink="/services">Services</a>
+          <a mat-list-item routerLink="/portfolio">Portfolio</a>
+          <a mat-list-item routerLink="/contact">Contact</a>
+          <a mat-list-item routerLink="/about">About</a>
+          <a mat-list-item routerLink="/support">Support</a>
+          <a mat-list-item routerLink="/register">Register</a>
+          <a mat-list-item routerLink="/login">Login</a>
+        </mat-nav-list>
+      </mat-sidenav>
+
+      <mat-sidenav-content>
+        <main>
+          <router-outlet></router-outlet>
+        </main>
+        <app-footer></app-footer>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+</app-layout>-->
+
+<!--<div class="vd-nav-container-responsive" [class.vd-mobile]="isWeb$.matches">
+  <mat-sidenav-container class="vd-sidenav-container">
+    <mat-sidenav #sidenav class="vd-sidenav" fixedInViewport
+                  [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+                  [mode]="(isHandset$ | async) ? 'over' : 'side'"
+                  [opened]="(isHandset$ | async) === false">
+      <mat-toolbar color="primary" class="vd-sidebar">
+        <button mat-icon-button
+                (click)="sidenav.toggle()">
+          <mat-icon class="vd-mat-icon-20" aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <span class="vd-sidenav-title">Close</span>
+      </mat-toolbar>
+
+      <mat-nav-list>
+        <a mat-list-item routerLink="/home">Home</a>
+        <a mat-list-item routerLink="/services">Services</a>
+        <a mat-list-item routerLink="/portfolio">Portfolio</a>
+        <a mat-list-item routerLink="/contact">Contact</a>
+        <a mat-list-item routerLink="/about">About</a>
+        <a mat-list-item routerLink="/support">Support</a>
+        <a mat-list-item routerLink="/register">Register</a>
+        <a mat-list-item routerLink="/login">Login</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary" class="vd-topbar vd-bgbase-dream mat-elevation-z7">
+        <button type="button"
+                aria-label="Toggle sidenav"
+                mat-icon-button
+                (click)="sidenav.toggle()"
+                *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <span class="vd-topnav-title">{{VD_SiteAppName}}</span>
+      </mat-toolbar>
+      !-- Add Content Here --
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>-->
+
+<!----------------------- Responsive Sidenav ----------------------->
+<div class="vd-navigation-container-responsive" [class.vd-mobilebar-responsive]="mobileQuery.matches">
+  <mat-toolbar color="primary" class="vd-topbar-responsive vd-bgbase-dream mat-elevation-z7">
+    <button mat-icon-button
+            (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="vd-topnav-title">{{VD_SiteAppName}}</span>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="vd-sidenav-container-responsive"
+                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #sidenav class="vd-sidenav-responsive"
+                 [mode]="mobileQuery.matches ? 'over' : 'side'"
+                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+      <mat-nav-list>
+        <a mat-list-item routerLink="/home">Home</a>
+        <a mat-list-item routerLink="/services">Services</a>
+        <a mat-list-item routerLink="/portfolio">Portfolio</a>
+        <a mat-list-item routerLink="/contact">Contact</a>
+        <a mat-list-item routerLink="/about">About</a>
+        <a mat-list-item routerLink="/support">Support</a>
+        <a mat-list-item routerLink="/register">Register</a>
+        <a mat-list-item routerLink="/login">Login</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>      
+      <!-- Add Content Here -->
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+<!-----------------------/. Responsive Sidenav ----------------------->
+
+<!----------------------- Fixed Sidenav ----------------------->
+<!--<mat-toolbar color="primary" class="vd-header vd-bgbase-dream mat-elevation-z7">
+  <button mat-button
+          (click)="sidenav.toggle()">
+    <mat-icon class="vd-mat-icon-20">menu</mat-icon>
+  </button>
+  <span class="vd-topnav-title">{{VD_SiteAppName}}</span>
+</mat-toolbar>
+
+<mat-sidenav-container class="vd-navigation-container-fixed">
+  <mat-sidenav #sidenav opened class="vd-sidenav-container-fixed"
+               mode="side"
+               [fixedInViewport]="isFixed"
+               [fixedTopGap]="topGap"
+               [fixedBottomGap]="bottomGap">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/home">Home</a>
+      <a mat-list-item routerLink="/services">Services</a>
+      <a mat-list-item routerLink="/portfolio">Portfolio</a>
+      <a mat-list-item routerLink="/contact">Contact</a>
+      <a mat-list-item routerLink="/about">About</a>
+      <a mat-list-item routerLink="/support">Support</a>
+      <a mat-list-item routerLink="/register">Register</a>
+      <a mat-list-item routerLink="/login">Login</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>      
+    !-- Add Content Here --
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>-->
+<!-----------------------/. Fixed Sidenav ----------------------->
