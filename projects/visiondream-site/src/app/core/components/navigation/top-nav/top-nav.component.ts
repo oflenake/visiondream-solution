@@ -3,7 +3,7 @@ import { MediaMatcher } from '@angular/cdk/layout';
 
 // Icons - Main Navigation
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
@@ -35,7 +35,7 @@ export class TopNavComponent implements OnInit, OnDestroy {
 
   // Icons - Main Navigation
   vdFaBars = faBars;
-  vdFaAngleDown = faAngleDown;
+  vdFaCaretDown = faCaretDown;
   vdFaEnvelope = faEnvelope;
   vdFaUser = faUser;
   vdFaUserCircle = faUserCircle;

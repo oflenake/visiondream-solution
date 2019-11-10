@@ -14,7 +14,7 @@ import { AppComponent } from './app.component';
 import { LayoutComponent } from './core/components/appShell/layout/layout.component';
 import { HeaderComponent } from './core/components/appShell/header/header.component';
 import { TopNavComponent } from './core/components/navigation/top-nav/top-nav.component';
-import { SideNavComponent } from './core/components//navigation/side-nav/side-nav.component';
+import { SideNavComponent } from './core/components/navigation/side-nav/side-nav.component';
 
 import { BodyComponent } from './core/components/appShell/body/body.component';
 import { FooterComponent } from './core/components/appShell/footer/footer.component';
@@ -32,6 +32,11 @@ import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+
+import { faCaretUp } from '@fortawesome/free-solid-svg-icons';
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { faCaretLeft } from '@fortawesome/free-solid-svg-icons';
+import { faCaretRight } from '@fortawesome/free-solid-svg-icons';
 
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { faArchive } from '@fortawesome/free-solid-svg-icons';
@@ -109,9 +114,10 @@ export class AppModule {
   constructor(library: FaIconLibrary) {
     // Adding dynamic icons to library for use
     library.addIcons(
-      faAngleUp, faAngleDown, faAngleLeft, faAngleRight, faMapMarkerAlt, faArchive, faAsterisk, faBalanceScale,
-      faPlus, faUserSecret, faCircle, faBars, faEnvelope, faUser, faUserCircle, faSignInAlt, faQuestion, faWrench,
-      faCog, faCogs, faHome, faClipboardList, faProjectDiagram, faSort, faFacebook, faTwitter, faGithub
+      faAngleUp, faAngleDown, faAngleLeft, faAngleRight, faCaretUp, faCaretDown, faCaretLeft, faCaretRight,
+      faMapMarkerAlt, faArchive, faAsterisk, faBalanceScale, faPlus, faUserSecret, faCircle, faBars, faEnvelope,
+      faUser, faUserCircle, faSignInAlt, faQuestion, faWrench, faCog, faCogs, faHome, faClipboardList, faProjectDiagram,
+      faSort, faFacebook, faTwitter, faGithub
     );
   }
 

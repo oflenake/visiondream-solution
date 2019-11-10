@@ -1,120 +1,152 @@
-<mat-toolbar color="primary" class="vd-topnav-height vd-topnav-toolbar vd-bgbase-dream mat-elevation-z7">
-  <mat-toolbar-row #sidenav class="vd-topnav-spacer">
-    <!-- Sidenav toggle button -->
-    <span class="vd-topnav-icon">
-      <button mat-icon-button
-              (click)="sidenav.toggle()"
-              aria-label="Side navigation menu toggle">
-        <mat-icon aria-hidden="false" aria-label="Sidenav navigation menu icon">
-          <fa-icon [icon]="vdFaBars" class="vd-icon-24"></fa-icon>
+<mat-toolbar color="primary" class="vd-topnav-toolbar-fixed vd-topnav-toolbar vd-bg-base-dream mat-elevation-z7">
+  <mat-toolbar-row class="vd-topnav-toolbar-row">
+    <button mat-button
+            type="button"
+            aria-label="Sidenav toggle"
+            (click)="onToggleSidenav()">
+      <span class="vd-topnav-icon-menu">
+        <mat-icon aria-hidden="false"
+                  aria-label="Side navigation menu toggle button">
+          <fa-icon [icon]="vdFaBars" class="vd-icon-20"></fa-icon>
         </mat-icon>
-      </button>
-    </span>
-    <!--/. Sidenav toggle button -->
-    <!-- Headernav brand button -->
-    <span class="vd-topnav-title">
-      <a mat-button
-         routerLink="/home">
-        <!--<img src="projects/visiondream-site/src/assets/vd/brand/logos/vd-logo-white.png"
-       height="36" class="d-inline-block align-bottoms" alt="{{VD_SiteAppName}}">-->
-        {{VD_SiteAppName}}
-      </a>
-    </span>
-    <!--/. Headernav brand button -->
-    <!-- Navigation links start -->
-    <span class="vd-topnav-items">
-      <span class="vd-topnav-icon">
-        <a mat-button routerLink="/services">
-          Services
-        </a>
       </span>
-      <!--Portfolio dropdown-->
-      <span class="vd-topnav-icon">
-        <button mat-button [matMenuTriggerFor]="portfolio">
-          Portfolio
-          <mat-icon aria-hidden="false" aria-label="Portfolio dropdown navigation menu link">
-            <fa-icon [icon]="vdFaAngleDown" class="vd-icon-24"></fa-icon>
-          </mat-icon>
-        </button>
-        <mat-menu #portfolio="matMenu" yPosition="below">
-          <button mat-menu-item routerLink="/portfolio">Recent Projects</button>
+    </button>
+    <a mat-button
+        role="button"
+        aria-label="VisionDream logo home top navigation link item"
+        routerLink="/home">
+      <span class="vd-topnav-title">
+        <img src="assets/vd/brand/logos/vd-logo-white.png"
+              height="32" alt="{{VD_SiteAppName}}">
+      </span>
+    </a>
+
+    <!-- Navigation links - Flex start -->
+    <span fxFlex fxLayout fxLayoutAlign="start" fxHide.xs>
+      <span fxLayout fxLayoutGap="1px" class="vd-topnav-item">
+        <a mat-button
+           role="button"
+           aria-label="Services top navigation link item"
+           routerLink="/services">
+          <span class="vd-topnav-padding">
+            Services
+          </span>
+        </a>
+        <!-- Portfolio dropdown -->
+        <a mat-button
+           role="button"
+           aria-label="Portfolio dropdown top navigation link item"
+           [matMenuTriggerFor]="portfolio">
+          <span class="vd-topnav-padding">
+            Portfolio
+          </span>
+          <span class="vd-topnav-icon">
+            <mat-icon aria-hidden="false" aria-label="Portfolio dropdown top navigation link item icon">
+              <fa-icon [icon]="vdFaCaretDown" class="vd-icon-16"></fa-icon>
+            </mat-icon>
+          </span>
+        </a>
+        <mat-menu #portfolio="matMenu"
+                  yPosition="below">
+          <a mat-menu-item
+             role="button"
+             aria-label="Portfolio dropdown menu item link Recent projects"
+             routerLink="/portfolio">
+            <span class="vd-topnav-padding">
+              Recent Projects
+            </span>
+          </a>
           <mat-divider></mat-divider>
-          <button mat-menu-item routerLink="/portfolio/visiondream">VisionDream</button>
-          <button mat-menu-item routerLink="/portfolio/lcf-gfi">LCF GFI</button>
-          <button mat-menu-item routerLink="/portfolio/soweto-tutor">Soweto Tutor</button>
+          <a mat-menu-item
+             role="button"
+             aria-label="Portfolio dropdown menu item link VisionDream"
+             routerLink="/portfolio/visiondream">
+            <span class="vd-topnav-padding">
+              VisionDream
+            </span>
+          </a>
+          <a mat-menu-item
+             role="button"
+             aria-label="Portfolio dropdown menu item link LCF GFI"
+             routerLink="/portfolio/lcf-gfi">
+            <span class="vd-topnav-padding">
+              LCF GFI
+            </span>
+          </a>
+          <a mat-menu-item
+             role="button"
+             aria-label="Portfolio dropdown menu item link Soweto Tutor"
+             routerLink="/portfolio/soweto-tutor">
+            <span class="vd-topnav-padding">
+              Soweto Tutor
+            </span>
+          </a>
         </mat-menu>
-      </span>
-      <!--/.Portfolio dropdown-->
-      <span class="vd-topnav-icon">
-        <a mat-button routerLink="/contact">
-          Contact
+        <!--/. Portfolio dropdown -->
+        <a mat-button
+           role="button"
+           aria-label="Contact top navigation link item"
+           routerLink="/contact">
+          <span class="vd-topnav-padding">
+            Contact
+          </span>
         </a>
-      </span>
-      <span class="vd-topnav-icon">
-        <a mat-button routerLink="/about">
-          About
+        <a mat-button
+           role="button"
+           aria-label="About top navigation link item"
+           routerLink="/about">
+          <span class="vd-topnav-padding">
+            About
+          </span>
         </a>
       </span>
     </span>
-    <!--/. Navigation links start -->
+    <!--/. Navigation links - Flex start -->
     <span class="vd-topnav-spacer"></span>
-    <!-- Navigation links end -->
-    <span class="vd-topnav-items">
-      <span class="vd-topnav-icon">
+    <!-- Navigation links - Flex end -->
+    <span fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+      <span fxLayout fxLayoutGap="1px" class="vd-topnav-item">
         <a mat-button
-            role="button" routerLink="">
-          <mat-icon aria-hidden="false" aria-label="Contact support navigation icon">
-            <fa-icon [icon]="vdFaQuestionCircle" class="vd-icon-24"></fa-icon>
-          </mat-icon>
-          Support
+           role="button"
+           aria-label="Support top navigation link item"
+           routerLink="/support">
+          <span class="vd-topnav-icon">
+            <mat-icon aria-hidden="false" aria-label="Support top navigation link item icon">
+              <fa-icon [icon]="vdFaQuestionCircle" class="vd-icon-20"></fa-icon>
+            </mat-icon>
+          </span>
+          <span class="vd-topnav-padding">
+            Support
+          </span>
         </a>
-      </span>
-      <span class="vd-topnav-icon">
         <a mat-button
-            role="button" routerLink="/register">
-          <mat-icon aria-hidden="false" aria-label="Register account navigation icon">
-            <fa-icon [icon]="vdFaUser" class="vd-icon-24"></fa-icon>
-          </mat-icon>
-          Register
+           role="button"
+           aria-label="Register top navigation link item"
+           routerLink="/register">
+          <span class="vd-topnav-icon">
+            <mat-icon aria-hidden="false" aria-label="Register top navigation link item icon">
+              <fa-icon [icon]="vdFaUser" class="vd-icon-20"></fa-icon>
+            </mat-icon>
+          </span>
+          <span class="vd-topnav-padding">
+            Register
+          </span>
         </a>
-      </span>
-      <span class="vd-topnav-icon">
         <a mat-button
-            role="button" routerLink="/login">
-          <mat-icon aria-hidden="false" aria-label="Login into account navigation icon">
-            <fa-icon [icon]="vdFaSignInAlt" class="vd-icon-24"></fa-icon>
-          </mat-icon>
-          Login
+           role="button"
+           aria-label="Login top navigation link item"
+           routerLink="/login">
+          <span class="vd-topnav-icon">
+            <mat-icon aria-hidden="false" aria-label="Login top navigation link item icon">
+              <fa-icon [icon]="vdFaSignInAlt" class="vd-icon-20"></fa-icon>
+            </mat-icon>
+          </span>
+          <span class="vd-topnav-padding">
+            Login
+          </span>
         </a>
       </span>
     </span>
-    <!--/. Navigation links end -->
+    <!--/. Navigation links - Flex end -->
   </mat-toolbar-row>
 </mat-toolbar>
-
-<!--<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
-               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-               [mode]="(isHandset$ | async) ? 'over' : 'side'"
-               [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button type="button"
-              aria-label="Toggle sidenav"
-              mat-icon-button
-              (click)="drawer.toggle()"
-              *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-      <span>VisionDream</span>
-    </mat-toolbar>
-    !-- Add Content Here --
-  </mat-sidenav-content>
-</mat-sidenav-container>-->

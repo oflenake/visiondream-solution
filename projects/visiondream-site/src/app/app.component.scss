@@ -3,7 +3,7 @@
   Responsive Sidenav
   ------------------
 */
-.vd-navigation-container-responsive {
+.vd-navigation-container {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -13,42 +13,34 @@
   right: 0;
 }
 
-mat-sidenav, mat-sidenav-content, .vd-sidenav-container-responsive {
-  height: var(--height-100-vh);
+.vd-sidenav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  background: var(--very-very-very-light-gray);
 }
 
-.vd-sidenav-responsive .mat-toolbar {
+.vd-topnav-toolbar-mobile {
   background: inherit;
 }
 
-.mat-toolbar.mat-primary {
-  position: sticky;
-  top: 0;
-  z-index: 2;
-}
-
-.vd-mobilebar-responsive .vd-topbar-responsive {
-  /*Make sure the topbar toolbar stay on top of the content as it scrolls past.*/
+.vd-topnav-toolbar-mobile {
+  /* Make sure the topbar toolbar stay on top of the content as it scrolls past. */
   position: fixed;
-  z-index: 2;
+  z-index: 10;
 }
 
-.vd-sidenav-container-responsive {
-  /*When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
-     causes `<mat-sidenav-content>` to act as scrolling element for desktop layouts.*/
+.vd-sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+     causes `<mat-sidenav-content>` to act as scrolling element for desktop layouts. */
   flex: 1;
 }
 
-.vd-mobilebar-responsive .vd-sidenav-container-responsive {
-  /*When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
-     `<body>` to be our scrolling element for mobile layouts.*/
+.vd-sidenav-container .vd-topnav-toolbar-mobile {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+     `<body>` to be the scrolling element for mobile layouts. */
   flex: 1 1 auto;
-}
-
-.vd-topnav-title {
-  margin-left: 8px;
-  background: transparent;
-  color: var(--white);
 }
 
 /**

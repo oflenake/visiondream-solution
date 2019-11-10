@@ -1,1 +1,41 @@
-<p>footer works!</p>
+<!--<div fxLayout="row wrap" fxLayoutAlign="center center" class="vd-layout-wrapper">
+  <div fxFlex="100%" fxFlex.lt-md="100%" class="vd-flex-wrapper">-->
+
+<footer class="vd-bg-base-dream border-top">
+  <div class="container py-3">
+    <div class="fg-black">
+      <small>
+        <span>
+          &copy; {{VDBuildVersionModel.VDCopyright}}
+          <a routerLink="/legal/terms-of-service">
+            <mat-icon>
+              <fa-icon [icon]="vdFaBalanceScale" class="vd-icon-small-left"></fa-icon>
+            </mat-icon>
+            Terms
+          </a>
+          <mat-icon>
+            <fa-icon [icon]="vdFaPlus" class="vd-icon-small"></fa-icon>
+          </mat-icon>
+
+          <a routerLink="/legal/privacy-policy">
+            Privacy
+            <mat-icon>
+              <fa-icon [icon]="vdFaUserSecret" class="vd-icon-small-right"></fa-icon>
+            </mat-icon>
+          </a>
+
+        </span>
+        <span>
+          <mat-icon>
+            <fa-icon [icon]="vdFaCircle" class="vd-icon-extra-small"></fa-icon>
+          </mat-icon>
+          Super-powered by
+          <a href="{{VDBuildVersionModel.VDUrlLocal}}" target="_blank" rel="noreferrer">{{VDBuildVersionModel.VDDesc}}</a>
+        </span>
+      </small>
+    </div>
+  </div>
+</footer>
+
+<!--</div>
+</div>-->

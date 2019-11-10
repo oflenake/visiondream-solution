@@ -10,34 +10,59 @@
     display: inline-block;
   }*/
 
-$vd-sidenav-icon-padding: 12px !default;
-$vd-sidenav-title-padding: 16px !default;
+$vd-sidebar-height: 56px !default;
+$vd-sidebar-icon-menu: 16px !default;
+$vd-sidebar-title: 16px !default;
+
+$vd-sidebar-icon: 8px !default;
+$vd-sidebar-item: 8px !default;
+
+.vd-sidenav-height {
+  height: $vd-sidebar-height;
+}
+
+.vd-sidenav-spacer {
+  flex: 1 1 auto;
+}
+
+.vd-sidenav-icon-menu {
+  margin: 0 $vd-sidebar-icon-menu 0 $vd-sidebar-icon-menu;
+  display: inline-block;
+}
+
+.vd-sidenav-title {
+  margin: 0 $vd-sidebar-title 0 $vd-sidebar-title;
+  display: inline-block;
+}
+
+.vd-sidenav-icon-social {
+  padding: 0 $vd-sidebar-icon;
+  display: inline-block;
+  background: inherit;
+  color: var(--dark-gray) !important;
+}
 
 .vd-sidenav-icon {
-  margin: 0 $vd-sidenav-icon-padding 0 $vd-sidenav-icon-padding;
-}
-
-.vd-sidenav-title {
-  margin: 0 $vd-sidenav-title-padding 0 $vd-sidenav-title-padding;
-}
-
-.vd-sidenav-title {
-  margin-left: 8px;
-  background: transparent;
-  color: var(--trolley-gray);
-}
-
-.vd-sidenav-items {
+  padding: 0 $vd-sidebar-icon;
   display: inline-block;
-  padding-left: 10px;
 }
 
-.vd-sidenav-items-active {
+.vd-sidenav-item {
+  padding: 0 $vd-sidebar-item;
+  display: inline-block;
+}
+
+.vd-sidenav-item-active {
+  display: inline-block;
   background: transparent;
   color: var(--deep-sky-blue-capri) !important;
   font-weight: bold;
 }
 
-.vd-md-sidenav {
-  width: 40vw;
+.vd-sidenav-toolbar .mat-toolbar {
+  background: inherit;
+}
+
+.vd-sidenav-toolbar-row {
+  justify-content: center;
 }

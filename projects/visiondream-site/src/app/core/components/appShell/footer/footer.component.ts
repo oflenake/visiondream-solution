@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { VDBuildVersionModel } from 'projects/visiondream-site/src/app/shared/models/vd-buildversion-model';
+
+// Icons - Footer
+import { faBalanceScale } from '@fortawesome/free-solid-svg-icons';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faUserSecret } from '@fortawesome/free-solid-svg-icons';
+import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-footer',
@@ -7,8 +14,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  // Properties
+  VDBuildVersionModel: VDBuildVersionModel;
 
+  // Icons - Footer
+  vdFaBalanceScale = faBalanceScale;
+  vdFaPlus = faPlus;
+  vdFaUserSecret = faUserSecret;
+  vdFaCircle = faCircle;
+
+  // Constructor
+  constructor() {
+    this.VDBuildVersionModel = new VDBuildVersionModel();
+  }
+
+  // Initialize
   ngOnInit() {
   }
 

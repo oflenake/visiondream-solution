@@ -30,6 +30,8 @@
   --very-light-blue: #0040ff;
   --very-dark-blue: #204060;
   --very-dark-blue-websafe: #333366;
+  --very-very-dark-blue: #0e0c33;
+  --very-very-dark-blue-websafe: #000033;
   --strong-blue: #0072c6;
   --strong-blue-websafe: #0066cc;
   --soft-blue: #4e73df;
@@ -41,13 +43,15 @@
   --dark-gray: #999999;
   --trolley-gray: #808080;
   --medium-dark-gray: #7E7E7E;
-  --very-dark-gray: #666666;
+  --very-dark-gray: #717171;
+  --very-dark-gray-websafe: #666666;
   --very-very-dark-gray: #616161;
   --dark-grayish-blue: #858796;
   --very-dark-grayish-blue: #5a5c69; /* dark */
   --light-grayish-blue: #f8f9fc;
   --light-gray: #cccccc;
   --very-light-gray: #dddddd;
+  --very-light-gray-white: #f3f3f3;
   --very-very-light-gray: #eeeeee;
   --very-very-very-light-gray: #fafafa;
   /********************** Cyan color theme **********************/
@@ -188,6 +192,21 @@ mat-tab-group {
     padding-top: 1em;
   }
 
+.vd-tab-body {
+  height: calc(100vh - 64px - 48px);
+}
+
+.vd-tab-action {
+  display: inline-block;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  button {
+    margin-bottom: 12px;
+  }
+}
+
 body, header, #intro,
 main, section, footer, footer-absolute,
 mat-tab-group {
@@ -225,29 +244,6 @@ mat-tab-group {
       text-shadow: 2px 3px 5px grey;
       margin: 20px 0;
     }
-
-.vd-sidenav-container, .vd-sidenav, .vd-sidenav-content, .vd-app-shell {
-  height: var(--height-100-vh);
-}
-
-.vd-sidenav {
-  width: 250px;
-}
-
-.vd-tab-body {
-  height: calc(100vh - 64px - 48px);
-}
-
-.vd-tab-action {
-  display: inline-block;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-
-  button {
-    margin-bottom: 12px;
-  }
-}
 
 .vd-welcome-text {
   background: transparent !important;
@@ -308,9 +304,47 @@ $vd-font-small-percent: 80% !default;
   background: var(--black);
 }
 
+.vd-spacer {
+  background: transparent;
+  flex: 1 1 auto;
+}
+
+.vd-spacer-right {
+  background: transparent;
+  flex: 1 1 auto;
+}
+
+.vd-spacer-left {
+  background: transparent;
+  flex: auto 1 1;
+}
+
+.vd-caption {
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
+  color: var(--dark-gray) !important;
+  text-align: left;
+  caption-side: bottom;
+}
+
+.vd-caption-left {
+  display: inline-block;
+  padding-left: 10px;
+}
+
+.vd-caption-right {
+  display: inline-block;
+  padding-right: 10px;
+}
+
 .vd-icon-16 {
   background: transparent;
   font-size: 16px;
+}
+
+.vd-icon-20 {
+  background: transparent;
+  font-size: 20px;
 }
 
 .vd-icon-24 {
@@ -318,14 +352,28 @@ $vd-font-small-percent: 80% !default;
   font-size: 24px;
 }
 
-.vd-icon-32 {
+.vd-icon-extra-small {
   background: transparent;
-  font-size: 32px;
+  font-size: 8px;
+  padding: 0 10px;
 }
 
-.vd-icon-48 {
+.vd-icon-small {
   background: transparent;
-  font-size: 48px;
+  font-size: 12px;
+  padding: 0 10px;
+}
+
+.vd-icon-small-left {
+  background: transparent;
+  font-size: 12px;
+  padding-left: 10px;
+}
+
+.vd-icon-small-right {
+  background: transparent;
+  font-size: 12px;
+  padding-right: 10px;
 }
 
 .vd-card {
@@ -450,74 +498,82 @@ small {
  * Vision-Dream Brand Main Colors - Start
  */
 /******************************** Vision Yellow Definition ********************************/
-.vd-bgbase-vision {
-  background-color: var(--pure-yellow) !important;
+.vd-bg-base-vision {
+  background: var(--pure-yellow) !important;
 }
 
-.vd-fgbase-vision {
+.vd-fg-base-vision {
   color: var(--pure-yellow) !important;
 }
 
-.vd-bgprimary-vision {
-  background-color: var(--pure-yellow) !important;
+.vd-bg-primary-vision {
+  background: var(--pure-yellow) !important;
 }
 
-.vd-fgprimary-vision {
+.vd-fg-primary-vision {
   color: var(--pure-yellow) !important;
 }
 
-.vd-bgsecondary-vision {
-  background-color: var(--usc-gold) !important;
+.vd-bg-secondary-vision {
+  background: var(--usc-gold) !important;
 }
 
-.vd-fgsecondary-vision {
+.vd-fg-secondary-vision {
   color: var(--usc-gold) !important;
 }
 
 /******************************** Dream Blue Definition ********************************/
-.vd-bgbase-dream {
-  background-color: var(--vivid-blue) !important;
+.vd-bg-base-dream {
+  background: var(--vivid-blue) !important;
 }
 
-.vd-fgbase-dream {
+.vd-fg-base-dream {
   color: var(--vivid-blue) !important;
 }
 
-.vd-bgprimary-dream {
-  background-color: var(--deep-sky-blue-capri) !important;
+.vd-bg-primary-dream {
+  background: var(--deep-sky-blue-capri) !important;
 }
 
-.vd-fgprimary-dream {
+.vd-fg-primary-dream {
   color: var(--deep-sky-blue-capri) !important;
 }
 
-.vd-bgsecondary-dream {
-  background-color: var(--deep-sky-blue-websafe) !important;
+.vd-bg-secondary-dream {
+  background: var(--deep-sky-blue-websafe) !important;
 }
 
-.vd-fgsecondary-dream {
+.vd-fg-secondary-dream {
   color: var(--deep-sky-blue-websafe) !important;
 }
 
-/******************************** Hyphen Gray Definition and others ********************************/
-.vd-bgprimary-hyphen {
-  background-color: var(--dark-gray) !important;
+/******************************** Gray and other definition ********************************/
+.vd-bg-dark-gray {
+  background: var(--dark-gray) !important;
 }
 
-.vd-fgprimary-hyphen {
+.vd-fg-dark-gray {
   color: var(--dark-gray) !important;
 }
 
-.vd-bgsecondary-hyphen {
-  background-color: var(--usc-gold) !important;
+.vd-bg-light-gray {
+  background: var(--light-gray) !important;
 }
 
-.vd-fgsecondary-hyphen {
-  color: var(--usc-gold) !important;
+.vd-fg-light-gray {
+  color: var(--light-gray) !important;
+}
+
+.vd-bg-very-light-gray-white {
+  background: var(--very-light-gray-white) !important;
+}
+
+.vd-fg-very-light-gray-white {
+  color: var(--very-light-gray-white) !important;
 }
 
 .bg-white {
-  background-color: var(--white) !important;
+  background: var(--white) !important;
 }
 
 .fg-white {
@@ -525,7 +581,7 @@ small {
 }
 
 .bg-black {
-  background-color: var(--black) !important;
+  background: var(--black) !important;
 }
 
 .fg-black {
@@ -533,7 +589,7 @@ small {
 }
 
 .bg-transparent {
-  background-color: transparent !important;
+  background: transparent !important;
 }
 
 .fg-transparent {

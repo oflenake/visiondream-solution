@@ -21,22 +21,18 @@
 
 <!----------------------- Responsive Sidenav ----------------------->
 <app-layout>
-  <div class="vd-navigation-container-responsive" [class.vd-mobilebar-responsive]="mobileQuery.matches">
-    <!--<mat-toolbar color="primary" class="vd-topbar-responsive vd-bgbase-dream mat-elevation-z7">
-      <button mat-icon-button
-              (click)="sidenav.toggle()">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span class="vd-topnav-title">{{VD_SiteAppName}}</span>
-    </mat-toolbar>-->
-    <app-top-nav></app-top-nav>
-
-    <mat-sidenav-container class="vd-sidenav-container-responsive"
+  <div class="vd-navigation-container" [class.vd-topnav-toolbar-mobile]="mobileQuery.matches">
+    <app-top-nav (sidenavToggle)="sidenav.toggle()">
+    </app-top-nav>
+    <mat-sidenav-container class="vd-sidenav-container"
                            [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-      <mat-sidenav #sidenav class="vd-sidenav-responsive"
+      <mat-sidenav #sidenav class="vd-sidenav"
                    [mode]="mobileQuery.matches ? 'over' : 'side'"
-                   [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
-        <mat-nav-list>
+                   [fixedInViewport]="mobileQuery.matches"
+                   fixedTopGap="56">
+        <app-side-nav (sidenavClose)="sidenav.close()">
+        </app-side-nav>
+        <!--<mat-nav-list>
           <a mat-list-item routerLink="/home">Home</a>
           <a mat-list-item routerLink="/services">Services</a>
           <a mat-list-item routerLink="/portfolio">Portfolio</a>
@@ -45,11 +41,10 @@
           <a mat-list-item routerLink="/support">Support</a>
           <a mat-list-item routerLink="/register">Register</a>
           <a mat-list-item routerLink="/login">Login</a>
-        </mat-nav-list>
+        </mat-nav-list>-->
       </mat-sidenav>
       <mat-sidenav-content>
         <main>
-          <!-- Add Content Here -->
           <router-outlet></router-outlet>
         </main>
         <app-footer></app-footer>

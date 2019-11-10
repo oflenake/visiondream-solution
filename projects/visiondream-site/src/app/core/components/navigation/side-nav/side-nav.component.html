@@ -1,110 +1,220 @@
 <mat-nav-list>
-    <mat-toolbar>
-        <mat-toolbar-row>
-            <a mat-list-item routerLink="/home" (click)="onSidenavClose()">
-                <mat-icon>
-                    <img src="projects/visiondream-site/src/assets/vd/brand/logo/vd-logo-colour.png"
-                        height="32" alt="VisionDream logo">
-                </mat-icon>
-                <span class="nav-caption"></span>
-            </a>
-        </mat-toolbar-row>
-        <mat-divider></mat-divider>
-        <mat-toolbar-row>
-            <!--Social connect-->
-            <a mat-list-item role="button" href="" target="_blank" rel="noreferrer">
-                <mat-icon aria-hidden="false" aria-label="Facebook connect">
-                    <!--<fa-icon [icon]="vdFaFacebook" class="vd-icon-size"></fa-icon>-->
-                </mat-icon>
-                <span class="nav-caption"></span>
-            </a>
-            <a mat-list-item role="button" href="" target="_blank" rel="noreferrer">
-                <mat-icon class="vd-icon-padding" aria-hidden="false" aria-label="Twitter connect">
-                    <!--<fa-icon [icon]="vdFaTwitter" class="vd-icon-size"></fa-icon>-->
-                </mat-icon>
-                <span class="nav-caption"></span>
-            </a>
-            <a mat-list-item role="button" href="" target="_blank" rel="noreferrer">
-                <mat-icon class="vd-icon-padding" aria-hidden="false" aria-label="Github connect">
-                    <!--<fa-icon [icon]="vdFaGithub" class="vd-icon-size"></fa-icon>-->
-                </mat-icon>
-                <span class="nav-caption"></span>
-            </a>
-            <!--/.Social connect-->
-        </mat-toolbar-row>
-    </mat-toolbar>
-    <!--Search form-->
-    <form class="form-inline">
+  <mat-toolbar color="primary" class="vd-sidenav-toolbar vd-bg-very-light-gray-white">
+    <mat-toolbar-row class="vd-sidenav-toolbar-row">
+      <a mat-list-item
+         role="button"
+         aria-label="VisionDream logo home side navigation link item"
+         routerLink="/home"
+         (click)="onSidenavClose()">
+        <span class="vd-sidenav-title">
+          <img src="assets/vd/brand/logos/vd-logo-color.png"
+               height="32" alt="{{VD_SiteAppName}}">
+        </span>
+      </a>
+    </mat-toolbar-row>
+    <!-- Social connect -->
+    <mat-toolbar-row class="vd-sidenav-toolbar-row">
+      <a mat-list-item
+         role="button"
+         aria-label="Facebook side navigation link item"
+         href="https://web.facebook.com/VisionDreamICT/"
+         target="_blank" rel="noreferrer">
+        <span class="vd-sidenav-icon-social">
+          <mat-icon aria-hidden="false" aria-label="Facebook side navigation link item icon">
+            <fa-icon [icon]="vdFaFacebook" class="vd-icon-20"></fa-icon>
+          </mat-icon>
+        </span>
+      </a>
+      <a mat-list-item
+         role="button"
+         aria-label="Twitter side navigation link item"
+         href="https://twitter.com/VisionDreamICT"
+         target="_blank" rel="noreferrer">
+        <span class="vd-sidenav-icon-social">
+          <mat-icon aria-hidden="false" aria-label="Twitter side navigation link item icon">
+            <fa-icon [icon]="vdFaTwitter" class="vd-icon-20"></fa-icon>
+          </mat-icon>
+        </span>
+      </a>
+      <a mat-list-item
+         role="button"
+         aria-label="GitHub side navigation link item"
+         href="https://github.com/visiondream-organization/visiondream-solution"
+         target="_blank" rel="noreferrer">
+        <span class="vd-sidenav-icon-social">
+          <mat-icon aria-hidden="false" aria-label="GitHub side navigation link item icon">
+            <fa-icon [icon]="vdFaGithub" class="vd-icon-20"></fa-icon>
+          </mat-icon>
+        </span>
+      </a>
+    </mat-toolbar-row>
+    <!--/. Social connect -->
+    <!-- Search form -->
+    <mat-toolbar-row class="vd-sidenav-toolbar-row">
+      <form class="form-inline">
         <div class="md-form my-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <mat-form-field appearance="standard">
+            <input matInput type="text" class="form-control mr-sm-2" placeholder="Search VisionDream" aria-label="Search">
+          </mat-form-field>
         </div>
-    </form>
-    <!--/.Search form-->
-
+      </form>
+      <!--/. Search form -->
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-divider></mat-divider>
+  <!-- Sidenav menu -->
+  <a mat-list-item
+     role="button"
+     aria-label="Home side navigation link item"
+     routerLink="/home"
+     (click)="onSidenavClose()">
+    <span class="vd-sidenav-icon">
+      <mat-icon aria-hidden="false" aria-label="Home side navigation link item icon">
+        <fa-icon [icon]="vdFaHome" class="vd-icon-20"></fa-icon>
+      </mat-icon>
+    </span>
+    <span class="vd-sidenav-item">
+      Home
+    </span>
+  </a>
+  <a mat-list-item
+     role="button"
+     aria-label="Services side navigation link item"
+     routerLink="/services"
+     (click)="onSidenavClose()">
+    <span class="vd-sidenav-icon">
+      <mat-icon aria-hidden="false" aria-label="Services side navigation link item icon">
+        <fa-icon [icon]="vdFaClipboardList" class="vd-icon-size"></fa-icon>
+      </mat-icon>
+    </span>
+    <span class="vd-sidenav-item">
+      Services
+    </span>
+  </a>
+  <a mat-list-item
+     role="button"
+     aria-label="Portfolio dropdown side navigation link item"
+     [matMenuTriggerFor]="portfolio">
+    <span class="vd-sidenav-icon">
+      <mat-icon aria-hidden="false" aria-label="Portfolio dropdown side navigation link item icon">
+        <fa-icon [icon]="vdFaProjectDiagram" class="vd-icon-size"></fa-icon>
+      </mat-icon>
+    </span>
+    <span class="vd-sidenav-item">
+      Portfolio
+    </span>
+    <span class="vd-sidenav-icon">
+      <mat-icon aria-hidden="false" aria-label="Portfolio dropdown top navigation link item icon">
+        <fa-icon [icon]="vdFaAngleDown" class="vd-icon-16"></fa-icon>
+      </mat-icon>
+    </span>
+  </a>
+  <mat-menu #portfolio="matMenu"
+            yPosition="below">
+    <a mat-menu-item
+       role="button"
+       aria-label="Portfolio dropdown menu item link Recent projects"
+       routerLink="/portfolio">
+      <span class="vd-sidenav-item">
+        Recent Projects
+      </span>
+    </a>
     <mat-divider></mat-divider>
+    <a mat-menu-item
+       role="button"
+       aria-label="Portfolio dropdown menu item link VisionDream"
+       routerLink="/portfolio/visiondream">
+      <span class="vd-sidenav-item">
+        VisionDream
+      </span>
+    </a>
+    <a mat-menu-item
+       role="button"
+       aria-label="Portfolio dropdown menu item link LCF GFI"
+       routerLink="/portfolio/lcf-gfi">
+      <span class="vd-sidenav-item">
+        LCF GFI
+      </span>
+    </a>
+    <a mat-menu-item
+       role="button"
+       aria-label="Portfolio dropdown menu item link Soweto Tutor"
+       routerLink="/portfolio/soweto-tutor">
+      <span class="vd-sidenav-item">
+        Soweto Tutor
+      </span>
+    </a>
+  </mat-menu>
 
-    <a mat-list-item routerLink="/services" (click)="onSidenavClose()">
-        <mat-icon>
-            <!--<fa-icon [icon]="vdFaClipboardList" class="vd-icon-size"></fa-icon>-->
-        </mat-icon>
-        <span class="nav-caption">Services</span>
-    </a>
-    <a mat-list-item routerLink="/portfolio" (click)="onSidenavClose()">
-        <mat-icon>
-            <!--<fa-icon [icon]="vdFaProjectDiagram" class="vd-icon-size"></fa-icon>-->
-        </mat-icon>
-        <span class="nav-caption">Portfolio</span>
-    </a>
-    <a mat-list-item routerLink="/contact" (click)="onSidenavClose()">
-        <mat-icon>
-            <!--<fa-icon [icon]="vdFaEnvelope" class="vd-icon-size"></fa-icon>-->
-        </mat-icon>
-        <span class="nav-caption">Contact</span>
-    </a>
-    <a mat-list-item routerLink="/about" (click)="onSidenavClose()">
-        <mat-icon>
-            <!--<fa-icon [icon]="vdFaInfo" class="vd-icon-size"></fa-icon>-->
-        </mat-icon>
-        <span class="nav-caption">About</span>
-    </a>
-    <a mat-list-item routerLink="/register" (click)="onSidenavClose()">
-        <mat-icon>
-            <!--<fa-icon [icon]="vdFaUser" class="vd-icon-size"></fa-icon>-->
-        </mat-icon>
-        <span class="nav-caption">Register</span>
-    </a>
-    <a mat-list-item routerLink="/login" (click)="onSidenavClose()">
-        <mat-icon>
-            <!--<fa-icon [icon]="vdFaSignInAlt" class="vd-icon-size"></fa-icon>-->
-        </mat-icon>
-        <span class="nav-caption">Log In</span>
-    </a>
+  <a mat-list-item
+     role="button"
+     aria-label="Contact side navigation link item"
+     routerLink="/contact"
+     (click)="onSidenavClose()">
+    <span class="vd-sidenav-icon">
+      <mat-icon aria-hidden="false" aria-label="Contact side navigation link item icon">
+        <fa-icon [icon]="vdFaEnvelope" class="vd-icon-size"></fa-icon>
+      </mat-icon>
+    </span>
+    <span class="vd-sidenav-item">
+      Contact
+    </span>
+  </a>
+  <a mat-list-item
+     role="button"
+     aria-label="About side navigation link item"
+     routerLink="/about"
+     (click)="onSidenavClose()">
+    <span class="vd-sidenav-icon">
+      <mat-icon aria-hidden="false" aria-label="About side navigation link item icon">
+        <fa-icon [icon]="vdFaInfoCircle" class="vd-icon-size"></fa-icon>
+      </mat-icon>
+    </span>
+    <span class="vd-sidenav-item">
+      About
+    </span>
+  </a>
+  <a mat-list-item
+     role="button"
+     aria-label="Support side navigation link item"
+     routerLink="/support"
+     (click)="onSidenavClose()">
+    <span class="vd-sidenav-icon">
+      <mat-icon aria-hidden="false" aria-label="Support side navigation link item icon">
+        <fa-icon [icon]="vdFaQuestionCircle" class="vd-icon-size"></fa-icon>
+      </mat-icon>
+    </span>
+    <span class="vd-sidenav-item">
+      Support
+    </span>
+  </a>
+  <a mat-list-item
+     role="button"
+     aria-label="Register side navigation link item"
+     routerLink="/register"
+     (click)="onSidenavClose()">
+    <span class="vd-sidenav-icon">
+      <mat-icon aria-hidden="false" aria-label="Register side navigation link item icon">
+        <fa-icon [icon]="vdFaUser" class="vd-icon-size"></fa-icon>
+      </mat-icon>
+    </span>
+    <span class="vd-sidenav-item">
+      Register
+    </span>
+  </a>
+  <a mat-list-item
+     role="button"
+     aria-label="Login side navigation link item"
+     routerLink="/login"
+     (click)="onSidenavClose()">
+    <span class="vd-sidenav-icon">
+      <mat-icon aria-hidden="false" aria-label="Login side navigation link item icon">
+        <fa-icon [icon]="vdFaSignInAlt" class="vd-icon-size"></fa-icon>
+      </mat-icon>
+    </span>
+    <span class="vd-sidenav-item">
+      Login
+    </span>
+  </a>
+  <!--/. Sidenav menu -->
 </mat-nav-list>
-
-<!--<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-      <span>VisionDream</span>
-    </mat-toolbar>
-    !-- Add Content Here --
-  </mat-sidenav-content>
-</mat-sidenav-container>-->

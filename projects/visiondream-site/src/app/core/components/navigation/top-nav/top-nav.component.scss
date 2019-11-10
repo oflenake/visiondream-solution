@@ -11,75 +11,87 @@
   }*/
 
 $vd-topbar-height: 56px !default;
-$vd-topbar-icon-padding: 12px !default;
-$vd-topbar-title-padding: 16px !default;
-$vd-topbar-item-padding: 8px !default;
+$vd-topbar-icon-menu: 2px !default;
+$vd-topbar-title: 4px !default;
+
+$vd-topbar-icon: 1px !default;
+$vd-topbar-item: 1px !default;
 
 .vd-topnav-height {
   height: $vd-topbar-height;
-}
-
-.vd-topnav-toolbar {
-  display: flex;
-  flex-direction: row;
-  position: fixed;
-  z-index: 2;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-.vd-topnav-icon-old {
-  padding: 0 14px;
 }
 
 .vd-topnav-spacer {
   flex: 1 1 auto;
 }
 
-.vd-topnav-icon {
-  margin: 0 $vd-topbar-icon-padding 0 $vd-topbar-icon-padding;
-  background: transparent;
-  color: var(--white);
+.vd-topnav-icon-menu {
+  padding: 0 $vd-topbar-icon-menu 0 $vd-topbar-icon-menu;
 }
 
 .vd-topnav-title {
-  margin: 0 $vd-topbar-title-padding 0 $vd-topbar-title-padding;
+  margin-left: $vd-topbar-title;
+}
+
+.vd-topnav-icon {
+  padding: 0 $vd-topbar-icon;
+}
+
+.vd-topnav-padding {
+  padding: 0 $vd-topbar-item;
+}
+
+.vd-topnav-toolbar-fixed {
+  position: absolute;
+  top: 60px;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+}
+
+.vd-topnav-toolbar-container-item {
+  margin: 0 $vd-topbar-item 0 $vd-topbar-item;
   background: transparent;
-  color: var(--white);
+  color: var(--white) !important;
   cursor: pointer;
 }
 
-.vd-topnav-items {
+.vd-topnav-toolbar-item {
+  background: transparent;
+  color: var(--white) !important;
+  cursor: pointer;
+}
+
+.vd-topnav-item {
   list-style: none;
-  margin: 0 $vd-topbar-item-padding 0 $vd-topbar-item-padding;
-  background: transparent;
-  color: var(--white);
+  padding: 0;
+  margin: 0;
   cursor: pointer;
 }
 
-.vd-topnav-items-active {
+.vd-topnav-item-active {
   background: transparent;
   color: var(--pure-yellow) !important;
   font-weight: bold;
+  cursor: pointer;
 }
 
-.vd-topnav-toolbar .vd-topnav-mobilebar {
-  /*Make sure the topbar toolbar stay on top of the content as it scrolls past.*/
-  position: fixed;
-  z-index: 2;
+.vd-topnav-toolbar .mat-toolbar {
+  background: inherit;
 }
 
-.vd-md-toolbar {
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
   z-index: 10;
 }
 
-.vd-md-toolbar-row {
-  justify-content: space-between;
+.vd-topnav-toolbar {
+  /* Make sure the topbar toolbar stay on top of the content as it scrolls past. */
+  position: fixed;
+  z-index: 10;
 }
 
-.vd-md-toolbar-row-fill-space {
-  background: transparent;
-  flex: 1 1 auto;
+.vd-topnav-toolbar-row {
+  justify-content: space-between;
 }

@@ -1,3 +1,20 @@
+a {
+  background: transparent;
+  color: var(--white) !important;
+  padding: 1px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+  a:hover, a:active {
+    background: inherit;
+    color: var(--pure-yellow) !important;
+    padding: 1px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+
 .vd-footer {
   position: fixed;
   bottom: 0;
