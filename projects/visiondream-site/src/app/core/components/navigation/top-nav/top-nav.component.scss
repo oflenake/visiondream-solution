@@ -1,18 +1,8 @@
 /*----- Topnav link styles -----*/
-/*a {
-  color: var(--dark-gray) !important;
-  font-size: 1em;
-  font-weight: 500;
-  display: inline-block;
-}
-  a:hover, a:focus {
-    color: var(--deep-sky-blue-capri) !important;
-    display: inline-block;
-  }*/
 
 $vd-topbar-height: 56px !default;
 $vd-topbar-icon-menu: 2px !default;
-$vd-topbar-title: 4px !default;
+$vd-topbar-title: 2px !default;
 
 $vd-topbar-icon: 1px !default;
 $vd-topbar-item: 1px !default;
@@ -26,11 +16,12 @@ $vd-topbar-item: 1px !default;
 }
 
 .vd-topnav-icon-menu {
-  padding: 0 $vd-topbar-icon-menu 0 $vd-topbar-icon-menu;
+  padding: 0 $vd-topbar-icon-menu;
 }
 
 .vd-topnav-title {
-  margin-left: $vd-topbar-title;
+  margin: 0 $vd-topbar-title;
+  margin-bottom: 4px;
 }
 
 .vd-topnav-icon {

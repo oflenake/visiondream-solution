@@ -31,12 +31,13 @@ $vd-sidebar-item: 8px !default;
 }
 
 .vd-sidenav-title {
+  width: 100%;
   margin: 0 $vd-sidebar-title 0 $vd-sidebar-title;
   display: inline-block;
 }
 
 .vd-sidenav-icon-social {
-  padding: 0 $vd-sidebar-icon;
+  margin: 0 $vd-sidebar-icon 0 $vd-sidebar-icon;
   display: inline-block;
   background: inherit;
   color: var(--dark-gray) !important;
@@ -48,7 +49,8 @@ $vd-sidebar-item: 8px !default;
 }
 
 .vd-sidenav-item {
-  padding: 0 $vd-sidebar-item;
+  margin: 0 $vd-sidebar-item;
+  margin-top: 8px;
   display: inline-block;
 }
 

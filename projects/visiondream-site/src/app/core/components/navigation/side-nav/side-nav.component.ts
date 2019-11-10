@@ -7,7 +7,7 @@ import { map, shareReplay } from 'rxjs/operators';
 // Icons - Side Navigation (includes: vdFaEnvelope, vdFaUser, vdFaSignInAlt)
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { faClipboardList } from '@fortawesome/free-solid-svg-icons';
-import { faProjectDiagram } from '@fortawesome/free-solid-svg-icons';
+import { faArchive } from '@fortawesome/free-solid-svg-icons';
 import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
@@ -32,7 +32,7 @@ export class SideNavComponent implements OnInit {
   // Icons - Side Navigation (includes: vdFaEnvelope, vdFaUser, vdFaSignInAlt)
   vdFaHome = faHome;
   vdFaClipboardList = faClipboardList;
-  vdFaProjectDiagram = faProjectDiagram;
+  vdFaArchive = faArchive;
   vdFaAngleUp = faAngleUp;
   vdFaAngleDown = faAngleDown;
   vdFaCaretDown = faCaretDown;
