@@ -1,8 +1,4 @@
-/*----- Sidenav CSS styles -----*/
-/**
-  Responsive Sidenav
-  ------------------
-*/
+/*----- Navigation and sidenav CSS styles -----*/
 .vd-navigation-container {
   display: flex;
   flex-direction: column;
@@ -18,15 +14,12 @@
   align-items: center;
   justify-content: center;
   width: 250px;
-  background: var(--very-very-very-light-gray);
-}
-
-.vd-topnav-toolbar-mobile {
-  background: inherit;
+  background: var(--vd-clr-gray-very-very-very-light);
 }
 
 .vd-topnav-toolbar-mobile {
   /* Make sure the topbar toolbar stay on top of the content as it scrolls past. */
+  background: inherit;
   position: fixed;
   z-index: 10;
 }
@@ -40,52 +33,5 @@
 .vd-sidenav-container .vd-topnav-toolbar-mobile {
   /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
      `<body>` to be the scrolling element for mobile layouts. */
-  flex: 1 1 auto;
-}
-
-/**
-  Fixed Sidenav
-  -------------
-*/
-.vd-navigation-container-fixed {
-  position: absolute;
-  top: 60px;
-  bottom: 60px;
-  left: 0;
-  right: 0;
-}
-
-.vd-sidenav-container-fixed {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 0, 0, 0.5);
-}
-
-.vd-sidenav-title {
-  margin-left: 8px;
-  background: transparent;
-  color: var(--trolley-gray);
-}
-
-.vd-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-.vd-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-.vd-icon {
-  padding: 0 14px;
-}
-
-.vd-spacer {
   flex: 1 1 auto;
 }

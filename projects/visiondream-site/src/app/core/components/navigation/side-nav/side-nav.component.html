@@ -15,7 +15,7 @@
     <!-- Social connect -->
     <mat-toolbar-row class="vd-sidenav-toolbar-row">
       <a mat-list-item
-         role="button"
+         type="button"
          aria-label="Facebook side navigation link item"
          href="https://web.facebook.com/VisionDreamICT/"
          target="_blank" rel="noreferrer">
@@ -26,7 +26,7 @@
         </span>
       </a>
       <a mat-list-item
-         role="button"
+         type="button"
          aria-label="Twitter side navigation link item"
          href="https://twitter.com/VisionDreamICT"
          target="_blank" rel="noreferrer">
@@ -37,7 +37,7 @@
         </span>
       </a>
       <a mat-list-item
-         role="button"
+         type="button"
          aria-label="GitHub side navigation link item"
          href="https://github.com/visiondream-organization/visiondream-solution"
          target="_blank" rel="noreferrer">
@@ -52,10 +52,12 @@
     <!-- Search form -->
     <mat-toolbar-row class="vd-sidenav-toolbar-row">
       <form class="form-inline">
-        <div class="md-form my-0">
-          <mat-form-field appearance="standard">
-            <input matInput type="text" class="form-control mr-sm-2" placeholder="Search VisionDream" aria-label="Search">
-          </mat-form-field>
+        <div class="row">
+          <div class="col">
+            <mat-form-field appearance="standard" class="full-width">
+              <input matInput placeholder="Search" type="text" aria-label="Search">
+            </mat-form-field>
+          </div>
         </div>
       </form>
       <!--/. Search form -->

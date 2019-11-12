@@ -1,100 +1,127 @@
-<form novalidate (ngSubmit)="onSubmit()">
-  <mat-card class="shipping-card">
-    <mat-card-header>
-      <mat-card-title>Shipping Information</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Company" formControlName="company">
-          </mat-form-field>
-        </div>
+<div fxLayoutAlign="center" class="vd-container-header vd-bg-primary-dream px-4">
+  <h2 class="vd-container-text vd-fg-primary-vision">Welcome Back</h2>
+</div>
+
+<div fxLayout="row wrap" fxLayoutAlign="center center" class="vd-layout-wrapper">
+  <div fxFlex="80%" fxFlex.lt-md="100%" class="vd-flex-wrapper">
+    <div class="vd-container">
+
+      <!-- Brand Icon -->
+      <!--<div class="vd-item text-center h5 mb-4">
+      </div>-->
+
+      <!-- Mat Card Container - Start -->
+      <div fxLayoutAlign="center" class="vd-container-card">
+        <mat-card class="vd-card-width">
+
+          <!-- Mat Card Header -->
+          <mat-card-header fxLayoutAlign="center" class="vd-bg-primary-dream">
+            <mat-card-title>
+              <strong class="fg-white">Log in</strong>
+            </mat-card-title>
+          </mat-card-header>
+
+          <!-- Mat Card Content - Start -->
+          <mat-card-content fxLayoutAlign="center" class="vd-container-card">
+            <!-- Form Section - Start -->
+            <form autocomplete="off" novalidate class="form-dark vd-container-card">
+              <div class="vd-container-card">
+                <!-- E-mail / Username Field -->
+                <mat-form-field [floatLabel]="options.value.floatLabel">
+                  <mat-label>E-mail / Username</mat-label>
+                  <input matInput type="email" placeholder="Your e-mail or username">
+                </mat-form-field>
+                <!-- Password Field -->
+                <mat-form-field [floatLabel]="options.value.floatLabel">
+                  <mat-label>Password</mat-label>
+                  <input matInput type="password" placeholder="Your password">
+                </mat-form-field>
+              </div>
+
+              <!-- Remember Me and Forgot Password Section -->
+              <div fxLayoutAlign="center" class="d-flex align-items-center justify-content-between">
+                <div>
+                  <mat-checkbox formControlName="rememberMeCheck">Remember me</mat-checkbox>
+                </div>
+                <div>
+                  <a href="/#/my-account/lost-password">Forgot password?</a>
+                </div>
+              </div>
+
+              <!-- Log in Button -->
+              <div id="vd-btn-container">
+                <button mat-raised-button
+                        type="submit"
+                        aria-label="Email login option"
+                        class="vd-btn-global vd-btn-dream-secondary btn-block">
+                  <span class="text-uppercase">Log in</span>
+                </button>
+              </div>
+
+              <!-- Not a Member or Social Log in -->
+              <div fxLayoutAlign="center">
+                <p>Not a member? <a href="/#/register">Register</a></p>
+              </div>
+
+              <div fxLayoutAlign="center">
+                <p>or log in with:</p>
+              </div>
+              <div fxLayoutAlign="center">
+                <a type="button"
+                   aria-label="Facebook social login option"
+                   class="btn-floating btn-fb btn-sm"
+                   href="">
+                  <mat-icon aria-hidden="false" aria-label="Facebook social login option icon">
+                    <fa-icon [icon]="vdFaFacebook" class="vd-icon-20"></fa-icon>
+                  </mat-icon>
+                </a>
+                <a type="button"
+                   aria-label="Twitter social login option"
+                   class="btn-floating btn-tw btn-sm"
+                   href="">
+                  <mat-icon aria-hidden="false" aria-label="Twitter social login option icon">
+                    <fa-icon [icon]="vdFaTwitter" class="vd-icon-20"></fa-icon>
+                  </mat-icon>
+                </a>
+                <a type="button"
+                   aria-label="Google social login option"
+                   class="btn-floating btn-git btn-sm"
+                   href="">
+                  <mat-icon aria-hidden="false" aria-label="Google social login option icon">
+                    <fa-icon [icon]="vdFaGoogle" class="vd-icon-20"></fa-icon>
+                  </mat-icon>
+                </a>
+              </div>
+              <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+              <hr>
+              <!-- Legal Section -->
+              <div fxLayoutAlign="center">
+                <small class="text-muted">
+                  By clicking
+                  <span class="text-uppercase"><em>Log in</em></span> you agree to our
+                  <a href="/#/legal/terms-of-service">Terms of Service</a> and
+                  <a href="/#/legal/privacy-policy">Privacy Policy</a>.
+                </small>
+              </div>
+            </form>
+            <!-- Form Section - End -->
+          </mat-card-content>
+          <!-- Mat Card Content - End -->
+
+          <!--<mat-card-actions>
+            <div class="text-center">
+              <p>
+                By clicking
+                <span class="text-uppercase"><em>Log in</em></span> you agree to our
+                <a href="" target="_blank">terms of service</a> and
+                <a href="" target="_blank">privacy</a>.
+              </p>
+            </div>
+          </mat-card-actions>-->
+        </mat-card>
       </div>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <input matInput placeholder="First name" formControlName="firstName">
-            <mat-error *ngIf="addressForm.controls['firstName'].hasError('required')">
-              First name is <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
-        </div>
-        <div class="col">
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Last name" formControlName="lastName">
-            <mat-error *ngIf="addressForm.controls['lastName'].hasError('required')">
-              Last name is <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <textarea matInput placeholder="Address" formControlName="address"></textarea>
-            <mat-error *ngIf="addressForm.controls['address'].hasError('required')">
-              Address is <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="row" *ngIf="!hasUnitNumber">
-        <div class="col">
-          <button mat-button type="button" (click)="hasUnitNumber = !hasUnitNumber">
-            + Add C/O, Apt, Suite, Unit
-          </button>
-        </div>
-      </div>
-      <div class="row" *ngIf="hasUnitNumber">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <textarea matInput placeholder="Address 2" formControlName="address2"></textarea>
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <input matInput placeholder="City" formControlName="city">
-            <mat-error *ngIf="addressForm.controls['city'].hasError('required')">
-              City is <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
-        </div>
-        <div class="col">
-          <mat-form-field class="full-width">
-            <mat-select placeholder="State" formControlName="state">
-              <mat-option *ngFor="let state of states" [value]="state.abbreviation">
-                {{ state.name }}
-              </mat-option>
-            </mat-select>
-            <mat-error *ngIf="addressForm.controls['state'].hasError('required')">
-              State is <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <input matInput #postalCode maxlength="5" placeholder="Postal Code" type="number" formControlName="postalCode">
-            <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <mat-radio-group formControlName="shipping">
-            <mat-radio-button value="free">Free Shipping</mat-radio-button>
-            <mat-radio-button value="priority">Priority Shipping</mat-radio-button>
-            <mat-radio-button value="nextday">Next Day Shipping</mat-radio-button>
-          </mat-radio-group>
-        </div>
-      </div>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button color="primary" type="submit">Submit</button>
-    </mat-card-actions>
-  </mat-card>
-</form>
+      <!-- Mat Card Container - End -->
+    </div>
+  </div>
+</div>

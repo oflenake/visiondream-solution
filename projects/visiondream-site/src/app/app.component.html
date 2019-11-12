@@ -1,47 +1,14 @@
-<!--<app-layout>
-  <mat-sidenav-container autosize>
-    <mat-sidenav #sidenav mode="over" role="navigation">
-      !--SideNav navigation--
-      <app-side-nav (sidenavClose)="sidenav.close()">
-      </app-side-nav>
-      !--/.SideNav navigation--
-    </mat-sidenav>
-    <mat-sidenav-content>
-      !--TopNav navigation--
-      <app-top-nav (sidenavToggle)="sidenav.toggle()">
-      </app-top-nav>
-      !--/.TopNav navigation--
-      <main>
-        <router-outlet></router-outlet>
-      </main>
-      <app-footer></app-footer>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-</app-layout>-->
-
-<!----------------------- Responsive Sidenav ----------------------->
 <app-layout>
   <div class="vd-navigation-container" [class.vd-topnav-toolbar-mobile]="mobileQuery.matches">
-    <app-top-nav (sidenavToggle)="sidenav.toggle()">
+    <app-top-nav class="vd-header" (sidenavToggle)="sidenav.toggle()">
     </app-top-nav>
-    <mat-sidenav-container class="vd-sidenav-container"
-                           [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav-container class="vd-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
       <mat-sidenav #sidenav class="vd-sidenav"
                    [mode]="mobileQuery.matches ? 'over' : 'side'"
                    [fixedInViewport]="mobileQuery.matches"
                    fixedTopGap="56">
         <app-side-nav (sidenavClose)="sidenav.close()">
         </app-side-nav>
-        <!--<mat-nav-list>
-          <a mat-list-item routerLink="/home">Home</a>
-          <a mat-list-item routerLink="/services">Services</a>
-          <a mat-list-item routerLink="/portfolio">Portfolio</a>
-          <a mat-list-item routerLink="/contact">Contact</a>
-          <a mat-list-item routerLink="/about">About</a>
-          <a mat-list-item routerLink="/support">Support</a>
-          <a mat-list-item routerLink="/register">Register</a>
-          <a mat-list-item routerLink="/login">Login</a>
-        </mat-nav-list>-->
       </mat-sidenav>
       <mat-sidenav-content>
         <main>
@@ -52,4 +19,3 @@
     </mat-sidenav-container>
   </div>
 </app-layout>
-<!-----------------------/. Responsive Sidenav ----------------------->

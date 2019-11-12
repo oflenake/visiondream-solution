@@ -14,6 +14,13 @@ import { SupportComponent } from './components/navigation/menu/support/support.c
 import { LoginComponent } from './auth/components/login/login.component';
 import { RegisterComponent } from './auth/components/register/register.component';
 
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+
+// Icons - Brands
+import { faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -29,7 +36,8 @@ import { RegisterComponent } from './auth/components/register/register.component
     CommonModule,
     MaterialModule,
     FlexLayoutModule,
-    SharedModule
+    SharedModule,
+    FontAwesomeModule
   ],
   exports: [
     MaterialModule,
@@ -37,4 +45,13 @@ import { RegisterComponent } from './auth/components/register/register.component
     SharedModule
   ]
 })
-export class CoreModule { }
+export class CoreModule {
+  // Constructor
+  constructor(library: FaIconLibrary) {
+    // Adding dynamic icons to library for use
+    library.addIcons(
+      faFacebook, faTwitter, faGithub
+    );
+  }
+
+}

@@ -1,27 +1,33 @@
-import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+
+// Icons - Brands
+import { faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
-  addressForm = this.fb.group({
-    company: null,
-    firstName: [null, Validators.required],
-    lastName: [null, Validators.required],
-    address: [null, Validators.required],
-    address2: null,
-    city: [null, Validators.required],
-    state: [null, Validators.required],
-    postalCode: [null, Validators.compose([
-      Validators.required, Validators.minLength(5), Validators.maxLength(5)])
-    ],
-    shipping: ['free', Validators.required]
-  });
+
+export class LoginComponent implements OnInit {
+
+  // Properties
+  options: FormGroup;
+
+  emailControl = new FormControl('', [Validators.required, Validators.email]);
+  passwordControl = new FormControl('', [Validators.required]);
 
   hasUnitNumber = false;
+
+  // Icons - Brands
+  vdFaFacebook = faFacebook;
+  vdFaTwitter = faTwitter;
+  vdFaGithub = faGithub;
+  vdFaGoogle = faGoogle;
 
   states = [
     {name: 'Alabama', abbreviation: 'AL'},
@@ -85,9 +91,25 @@ export class LoginComponent {
     {name: 'Wyoming', abbreviation: 'WY'}
   ];
 
-  constructor(private fb: FormBuilder) {}
+  // Constructor
+  constructor(fb: FormBuilder) {
+    this.options = fb.group({
+      rememberMeCheck: false,
+      floatLabel: 'auto',
+    });
+  }
+
+  ngOnInit() {
+  }
+
+  getErrorMessage() {
+    return this.emailControl.hasError('required') ? 'You must enter a value' :
+      this.emailControl.hasError('email') ? 'Not a valid email' :
+        '';
+  }
 
   onSubmit() {
     alert('Thanks!');
   }
+
 }

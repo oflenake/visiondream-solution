@@ -18,6 +18,11 @@ import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { faSort } from '@fortawesome/free-solid-svg-icons';
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
+// Icons - Brands
+import { faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+
 @Component({
   selector: 'app-side-nav',
   templateUrl: './side-nav.component.html',
@@ -42,6 +47,11 @@ export class SideNavComponent implements OnInit {
   vdFaSignInAlt = faSignInAlt;
   vdFaSort = faSort;
   vdFaInfoCircle = faInfoCircle;
+
+  // Icons - Brands
+  vdFaFacebook = faFacebook;
+  vdFaTwitter = faTwitter;
+  vdFaGithub = faGithub;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(

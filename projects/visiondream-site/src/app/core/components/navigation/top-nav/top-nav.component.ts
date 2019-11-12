@@ -28,7 +28,14 @@ export class TopNavComponent implements OnInit, OnDestroy {
   // Properties
   VD_SiteAppName = 'VisionDream';
   @Output() public sidenavToggle = new EventEmitter();
-  isOpened: boolean;
+  isOpened: false;
+
+  centered = true;
+  disabled = false;
+  unbounded = false;
+
+  radius: number;
+  color: string;
 
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;

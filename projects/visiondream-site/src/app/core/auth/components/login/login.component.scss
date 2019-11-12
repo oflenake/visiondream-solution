@@ -1,13 +1,61 @@
-.full-width {
+/*.vd-mat-form-container {
+  display: flex;
+  flex-flow: row nowrap;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.vd-mat-form-container > * {
   width: 100%;
 }
 
-.shipping-card {
+.vd-mat-form-container form {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.vd-mat-form-container form > * {
+  margin: 5px 0;
+}
+
+.vd-mat-form-container .mat-card {
+  margin-bottom: 20px;
+}
+
+.vd-mat-form-container .mat-card > * {
+  margin: 5px 0;
+}
+
+.vd-mat-form-container .button {
+  margin: 0 12px;
+}
+
+.vd-mat-form-container .mat-raised-button {
+  margin: 0 12px;
+}
+
+.vd-login-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.vd-full-width {
+  width: 100%;
+}
+
+.vd-card-center {
+  display: flex;
+  justify-content: center;
+}
+
+.vd-login-card {
   min-width: 120px;
   margin: 20px auto;
 }
 
-.mat-radio-button {
+.button.mat-raised-button {
   display: block;
   margin: 5px 0;
 }
@@ -24,4 +72,151 @@
 
 .col:last-child {
   margin-right: 0;
+}*/
+
+/**
+ * Global Component Styles
+ */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a {
+  background: transparent !important;
+  color: var(--vd-clr-blue-capri) !important;
+  text-decoration: none;
+  display: inline-block;
+}
+  a:hover,
+  a:focus {
+    background: inherit;
+    color: var(--vd-clr-yellow-pure) !important;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+/********************** VD Card and Mat Card **********************/
+mat-card-title {
+  text-align: center;
+  padding-top: 0.5em;
+}
+
+mat-form-field {
+  width: 400px;
+}
+
+.vd-item {
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 0;
+}
+
+.vd-card-width {
+  max-width: 450px;
+}
+
+.vd-container-card {
+  display: flex;
+  flex-direction: column;
+}
+  .vd-container-card > * {
+    width: 100%;
+  }
+  
+  .vd-container-card mat-card {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+    .vd-container-card mat-card > * {
+      margin: 5px 0;
+    }
+
+  .vd-container-card form {
+    margin-bottom: 0;
+  }
+    .vd-container-card form > * {
+      margin: 5px 0;
+    }
+
+  .vd-container-card .mat-checkbox,
+  .vd-container-card .mat-radio-button {
+    margin: 0 12px;
+  }
+
+/**
+ * Form Login Styles
+ */
+.form-dark .font-small {
+  font-size: 0.8em;
+}
+
+.form-dark [type="checkbox"] + label,
+.form-dark [type="radio"] + label {
+  font-size: 0.8em;
+}
+
+.form-dark [type="checkbox"] + label:before {
+  top: 2px;
+  width: 15px;
+  height: 15px;
+}
+
+.form-dark .md-form label {
+  color: var(--vd-clr-other-white) !important;
+}
+
+.form-dark input[type=text]:focus:not([readonly]) {
+  border-bottom: 1px solid var(--vd-clr-blue-capri);
+  -webkit-box-shadow: 0 1px 0 0 var(--vd-clr-blue-capri);
+  box-shadow: 0 1px 0 0 var(--vd-clr-blue-capri);
+}
+
+.form-dark input[type=text]:focus:not([readonly]) + label {
+  color: var(--vd-clr-other-white) !important;
+}
+
+.form-dark input[type=password]:focus:not([readonly]) {
+  border-bottom: 1px solid var(--vd-clr-blue-capri);
+  -webkit-box-shadow: 0 1px 0 0 var(--vd-clr-blue-capri);
+  box-shadow: 0 1px 0 0 var(--vd-clr-blue-capri);
+}
+
+.form-dark input[type=password]:focus:not([readonly]) + label {
+  color: var(--vd-clr-other-white) !important;
+}
+
+.form-dark input[type="checkbox"] + label:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 17px;
+  height: 17px;
+  z-index: 0;
+  border: 1.5px solid var(--vd-clr-other-white) !important;
+  border-radius: 1px;
+  margin-top: 2px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.form-dark input[type="checkbox"]:checked + label:before {
+  top: -4px;
+  left: -3px;
+  width: 12px;
+  height: 22px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: transparent var(--vd-clr-blue-capri) var(--vd-clr-blue-capri) transparent;
+  -webkit-transform: rotate(40deg);
+  -ms-transform: rotate(40deg);
+  transform: rotate(40deg);
+  -webkit-backface-visibility: hidden;
+  -webkit-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
 }

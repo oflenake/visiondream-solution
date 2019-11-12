@@ -32,39 +32,12 @@ $vd-topbar-item: 1px !default;
   padding: 0 $vd-topbar-item;
 }
 
-.vd-topnav-toolbar-fixed {
+.vd-topnav-header {
   position: absolute;
-  top: 60px;
-  bottom: 60px;
+  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
-}
-
-.vd-topnav-toolbar-container-item {
-  margin: 0 $vd-topbar-item 0 $vd-topbar-item;
-  background: transparent;
-  color: var(--white) !important;
-  cursor: pointer;
-}
-
-.vd-topnav-toolbar-item {
-  background: transparent;
-  color: var(--white) !important;
-  cursor: pointer;
-}
-
-.vd-topnav-item {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-}
-
-.vd-topnav-item-active {
-  background: transparent;
-  color: var(--pure-yellow) !important;
-  font-weight: bold;
-  cursor: pointer;
 }
 
 .vd-topnav-toolbar .mat-toolbar {
@@ -78,11 +51,46 @@ $vd-topbar-item: 1px !default;
 }
 
 .vd-topnav-toolbar {
-  /* Make sure the topbar toolbar stay on top of the content as it scrolls past. */
   position: fixed;
   z-index: 10;
 }
 
 .vd-topnav-toolbar-row {
   justify-content: space-between;
+}
+
+.vd-topnav-item {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.vd-topnav-item-active {
+  background: transparent;
+  color: var(--vd-clr-yellow-pure) !important;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.vd-ripple-container {
+  cursor: pointer;
+  text-align: center;
+  width: 300px;
+  height: 300px;
+  line-height: 300px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.vd-ripple-checkbox {
+  margin: 6px 12px 6px 0;
+}
+
+.vd-ripple-form-field {
+  margin: 0 12px 0 0;
 }

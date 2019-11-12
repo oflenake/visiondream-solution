@@ -1,6 +1,6 @@
 a {
-  background: transparent;
-  color: var(--white) !important;
+  background: transparent !important;
+  color: var(--vd-clr-other-white) !important;
   padding: 1px 5px;
   text-align: center;
   text-decoration: none;
@@ -8,16 +8,34 @@ a {
 }
   a:hover, a:active {
     background: inherit;
-    color: var(--pure-yellow) !important;
+    color: var(--vd-clr-yellow-pure) !important;
     padding: 1px 5px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
   }
 
-.vd-footer {
+.vd-footer-fixed {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+.vd-footer-container {
+  display: flex;
+  flex-flow: row nowrap;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.vd-footer {
+  text-align: center;
+  padding: 10px 0 10px 0;
+  box-shadow: 0 -1px 4px rgba(0,0,0,0.1);
+}
+
+.vd-footer-logo {
+  height: 40px;
 }

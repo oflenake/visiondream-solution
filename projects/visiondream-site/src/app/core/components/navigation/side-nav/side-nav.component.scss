@@ -39,8 +39,6 @@ $vd-sidebar-item: 8px !default;
 .vd-sidenav-icon-social {
   margin: 0 $vd-sidebar-icon 0 $vd-sidebar-icon;
   display: inline-block;
-  background: inherit;
-  color: var(--dark-gray) !important;
 }
 
 .vd-sidenav-icon {
@@ -57,7 +55,7 @@ $vd-sidebar-item: 8px !default;
 .vd-sidenav-item-active {
   display: inline-block;
   background: transparent;
-  color: var(--deep-sky-blue-capri) !important;
+  color: var(--vd-clr-blue-capri) !important;
   font-weight: bold;
 }
 
@@ -67,4 +65,22 @@ $vd-sidebar-item: 8px !default;
 
 .vd-sidenav-toolbar-row {
   justify-content: center;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.col:last-child {
+  margin-right: 0;
 }
