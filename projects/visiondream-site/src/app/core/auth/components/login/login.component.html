@@ -92,8 +92,12 @@
                   </mat-icon>
                 </a>
               </div>
-              <div class="g-signin2" data-onsuccess="onSignIn"></div>
-
+              <!-- Google login option -->
+              <div fxLayoutAlign="center"
+                   class="g-signin2"
+                   data-onsuccess="onSignIn">
+                <span>Google Log in</span>
+              </div>
               <hr>
               <!-- Legal Section -->
               <div fxLayoutAlign="center">
@@ -108,17 +112,6 @@
             <!-- Form Section - End -->
           </mat-card-content>
           <!-- Mat Card Content - End -->
-
-          <!--<mat-card-actions>
-            <div class="text-center">
-              <p>
-                By clicking
-                <span class="text-uppercase"><em>Log in</em></span> you agree to our
-                <a href="" target="_blank">terms of service</a> and
-                <a href="" target="_blank">privacy</a>.
-              </p>
-            </div>
-          </mat-card-actions>-->
         </mat-card>
       </div>
       <!-- Mat Card Container - End -->
