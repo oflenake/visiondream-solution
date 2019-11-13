@@ -32,27 +32,16 @@ $vd-topbar-item: 1px !default;
   padding: 0 $vd-topbar-item;
 }
 
-.vd-topnav-header {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-.vd-topnav-toolbar .mat-toolbar {
-  background: inherit;
-}
-
-.mat-toolbar.mat-primary {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-.vd-topnav-toolbar {
+.vd-topnav-toolbar-mobile .vd-topnav-toolbar {
   position: fixed;
   z-index: 10;
+}
+
+.vd-fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .vd-topnav-toolbar-row {

@@ -1,20 +1,25 @@
 <app-layout>
-  <div class="vd-navigation-container" [class.vd-topnav-toolbar-mobile]="mobileQuery.matches">
-    <app-top-nav class="vd-header" (sidenavToggle)="sidenav.toggle()">
+  <div class="vd-responsive-nav-container" [class.vd-topnav-toolbar-mobile]="_mobileQuery.matches">
+    <app-top-nav (sidenavToggle)="sidenav.toggle()">
     </app-top-nav>
-    <mat-sidenav-container class="vd-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-      <mat-sidenav #sidenav class="vd-sidenav"
-                   [mode]="mobileQuery.matches ? 'over' : 'side'"
-                   [fixedInViewport]="mobileQuery.matches"
+    <mat-sidenav-container class="vd-responsive-sidenav-container"
+                           [style.marginTop.px]="_mobileQuery.matches ? 56 : 0">
+      <mat-sidenav #sidenav
+                   [mode]="_mobileQuery.matches ? 'over' : 'side'"
+                   [fixedInViewport]="_mobileQuery.matches"
                    fixedTopGap="56">
         <app-side-nav (sidenavClose)="sidenav.close()">
         </app-side-nav>
       </mat-sidenav>
       <mat-sidenav-content>
         <main>
-          <router-outlet></router-outlet>
+          <div class="container">
+            <router-outlet></router-outlet>
+          </div>
         </main>
-        <app-footer></app-footer>
+        <div class="container">
+          <app-footer></app-footer>
+        </div>
       </mat-sidenav-content>
     </mat-sidenav-container>
   </div>

@@ -1,5 +1,5 @@
-/*----- Navigation and sidenav CSS styles -----*/
-.vd-navigation-container {
+/*----- Responsive navigation and sidenav CSS styles -----*/
+.vd-responsive-nav-container {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -9,7 +9,29 @@
   right: 0;
 }
 
-.vd-sidenav {
+.vd-topnav-toolbar-mobile .vd-topnav-toolbar {
+  position: fixed;
+  z-index: 10;
+}
+
+.vd-responsive-sidenav-container {
+  flex: 1;
+}
+
+.vd-topnav-toolbar-mobile .vd-responsive-sidenav-container {
+  flex: 1 0 auto;
+}
+
+/*----- Fixed navigation and sidenav CSS styles -----*/
+.vd-fixed-nav-container {
+  position: absolute;
+  top: 60px;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+}
+
+.vd-fixed-sidenav-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,21 +39,36 @@
   background: var(--vd-clr-gray-very-very-very-light);
 }
 
-.vd-topnav-toolbar-mobile {
-  /* Make sure the topbar toolbar stay on top of the content as it scrolls past. */
-  background: inherit;
+.vd-fixed-header {
   position: fixed;
-  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
-.vd-sidenav-container {
-  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
-     causes `<mat-sidenav-content>` to act as scrolling element for desktop layouts. */
-  flex: 1;
+.vd-fixed-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
-.vd-sidenav-container .vd-topnav-toolbar-mobile {
-  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
-     `<body>` to be the scrolling element for mobile layouts. */
-  flex: 1 1 auto;
+/*----- Double navbar and sidenav CSS styles -----*/
+.navbar {
+  z-index: 1040;
+}
+
+.vd-side-nav {
+  margin-top: 57px !important;
+}
+
+.vd-double-nav .vd-breadcrumb-dn p {
+  color: var(--vd-clr-other-white);
+}
+
+@media (min-width: 1200px){
+.vd-fixed-sn main {
+    margin-left: 20% !important;
+    margin-right: 20% !important;
+  }
 }

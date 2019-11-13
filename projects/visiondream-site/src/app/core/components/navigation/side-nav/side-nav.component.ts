@@ -1,6 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { MediaMatcher, BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { ChangeDetectorRef, Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 
@@ -28,11 +27,14 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
   templateUrl: './side-nav.component.html',
   styleUrls: ['./side-nav.component.scss']
 })
-export class SideNavComponent implements OnInit {
+export class SideNavComponent implements OnInit, OnDestroy {
 
   // Properties
   VD_SiteAppName = 'VisionDream';
   @Output() sidenavClose = new EventEmitter();
+
+  _mobileQuery: MediaQueryList;
+  private _mobileQueryListener: () => void;
 
   // Icons - Side Navigation (includes: vdFaEnvelope, vdFaUser, vdFaSignInAlt)
   vdFaHome = faHome;
@@ -53,14 +55,34 @@ export class SideNavComponent implements OnInit {
   vdFaTwitter = faTwitter;
   vdFaGithub = faGithub;
 
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+  isHandset$: Observable<boolean> = this._breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => result.matches),
+      shareReplay()
+    );
+
+  isTablet$: Observable<boolean> = this._breakpointObserver.observe(Breakpoints.Tablet)
+    .pipe(
+      map(result => result.matches),
+      shareReplay()
+    );
+
+  isWeb$: Observable<boolean> = this._breakpointObserver.observe(Breakpoints.Web)
     .pipe(
       map(result => result.matches),
       shareReplay()
     );
 
   // Constructor
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(
+    _changeDetectorRef: ChangeDetectorRef,
+    _media: MediaMatcher,
+    private _breakpointObserver: BreakpointObserver)
+  {
+    this._mobileQuery = _media.matchMedia('(max-width: 600px)');
+    this._mobileQueryListener = () => _changeDetectorRef.detectChanges();
+    this._mobileQuery.addListener(this._mobileQueryListener);
+  }
 
   // Initialize
   ngOnInit() {
@@ -69,6 +91,11 @@ export class SideNavComponent implements OnInit {
   // Function Methods - onSidenavClose function
   public onSidenavClose = () => {
     this.sidenavClose.emit();
+  }
+
+  // Housekeeping
+  ngOnDestroy(): void {
+    this._mobileQuery.removeListener(this._mobileQueryListener);
   }
 
 }
