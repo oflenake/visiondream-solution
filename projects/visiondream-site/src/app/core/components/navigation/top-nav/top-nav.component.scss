@@ -15,6 +15,32 @@ $vd-topbar-item: 1px !default;
   flex: 1 1 auto;
 }
 
+.vd-topnav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.vd-mobile-toolbar .vd-topnav-toolbar {
+  position: fixed;
+  z-index: 10;
+}
+
+.vd-topnav-toolbar .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.vd-topnav-toolbar-row {
+  justify-content: space-between;
+}
+
 .vd-topnav-icon-menu {
   padding: 0 $vd-topbar-icon-menu;
 }
@@ -30,22 +56,6 @@ $vd-topbar-item: 1px !default;
 
 .vd-topnav-padding {
   padding: 0 $vd-topbar-item;
-}
-
-.vd-topnav-toolbar-mobile .vd-topnav-toolbar {
-  position: fixed;
-  z-index: 10;
-}
-
-.vd-fixed-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-.vd-topnav-toolbar-row {
-  justify-content: space-between;
 }
 
 .vd-topnav-item {
@@ -82,4 +92,11 @@ $vd-topbar-item: 1px !default;
 
 .vd-ripple-form-field {
   margin: 0 12px 0 0;
+}
+
+.vd-fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }

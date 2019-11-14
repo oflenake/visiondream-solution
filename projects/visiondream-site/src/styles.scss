@@ -102,11 +102,12 @@
   --vd-clr-red-dim-bright: #E03930;
   --vd-clr-red-light: #ff6666;
   /********************** Other colors theme **********************/
+  --vd-clr-other-transparent: transparent;
+  --vd-clr-other-white: #ffffff;
+  --vd-clr-other-black: #000000;
   --vd-clr-other-violet-light: #9900ff;
   --vd-clr-other-violet-dark: #8000ff;
   --vd-clr-other-magenta: #ff00ff;
-  --vd-clr-other-white: #ffffff;
-  --vd-clr-other-black: #000000;
   --vd-clr-other-pink: #e83e8c;
   --vd-clr-other-indigo: #6610f2;
   --vd-clr-other-purple: #6f42c1;
@@ -125,12 +126,10 @@
   --vd-ph-100: 100%;
   --vd-vw-100: 100vw;
   --vd-vh-100: 100vh;
-
   --vd-pw-40: 40%;
   --vd-ph-40: 40%;
   --vd-vw-40: 40vw;
   --vd-vh-40: 40vh;
-
   --vd-bpt-xs: 0;
   --vd-bpt-sm: 576px;
   --vd-bpt-md: 768px;
@@ -147,19 +146,15 @@
   --vd-icn-brand-fb: "\f09a";
   --vd-icn-brand-li: "\f0e1";
   --vd-icn-brand-tt: "\f099";
-
   --vd-icn-regular-fb: "\f09a";
   --vd-icn-regular-li: "\f0e1";
   --vd-icn-regular-tt: "\f099";
-
   --vd-icn-solid-fb: "\f09a";
   --vd-icn-solid-li: "\f0e1";
   --vd-icn-solid-tt: "\f099";
-
   --visiondream-icon-brand: "\f099";
   --visiondream-icon-regular: "\f099";
   --visiondream-icon-solid: "\f099";
-
   --visiondream-logo-brand: "\f099";
   --visiondream-logo-regular: "\f099";
   --visiondream-logo-solid: "\f099";
@@ -167,10 +162,9 @@
 
 /********************** Global Styles **********************/
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: border-box;
-  margin: 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
@@ -183,19 +177,12 @@ body,
 header,
 #intro {
   width: var(--vd-pw-100);
-  height: var(--vd-vh-100);
-}
-
-#intro {
-  background: url('assets/content/images/full-bg.jpg')no-repeat center center fixed;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+  height: var(--vd-ph-100);
 }
 
 body {
   /*padding-top: 60px;*/
+  margin: 0;
   position: relative;
   background: var(--vd-clr-gray-very-very-very-light);
   color: var(--vd-clr-gray-very-very-dark);
@@ -208,12 +195,23 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+#intro {
+  background: url('assets/content/images/full-bg.jpg')no-repeat center center fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+.vd-layout-wrapper,
+.vd-flex-wrapper {
+  height: var(--pd-vh-100);
+}
+
 .vd-full-screen {
   width: var(--vd-pw-100);
   height: var(--vd-vh-100);
   padding: var(--vd-vh-40);
-  background: var(--vd-clr-gray-very-very-very-light);
-  color: var(--vd-clr-gray-very-very-dark);
 }
 
 .vd-bg-img {
@@ -264,14 +262,6 @@ mat-tab-group {
 }
 
 /********************** VisionDream Styles - Start **********************/
-.vd-layout-wrapper {
-  height: var(--vd-ph-100);
-}
-
-.vd-flex-wrapper {
-  height: var(--vd-ph-100);
-}
-
 .vd-container {
   width: var(--vd-pw-100);
   padding-left: 0.75em;
@@ -315,9 +305,9 @@ $vd-font-small-percent: 80% !default;
   font-size: $vd-font-small-percent;
 }
 
-.vd-version-info {
-  font-size: $vd-font-small-point;
-  float: right;
+.vd-footer-text {
+  background: inherit;
+  color: var(--vd-clr-other-white);
 }
 
 .vd-heading-text-center {
@@ -446,10 +436,10 @@ $vd-font-small-percent: 80% !default;
 }
 
 hr {
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box;
   height: 0;
+  box-sizing: content-box;
   overflow: visible;
+  -webkit-box-sizing: content-box;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -631,27 +621,27 @@ small {
   color: var(--vd-clr-gray-very-light-white) !important;
 }
 
-.bg-white {
+.vd-bg-white {
   background: var(--vd-clr-other-white) !important;
 }
 
-.fg-white {
+.vd-fg-white {
   color: var(--vd-clr-other-white) !important;
 }
 
-.bg-black {
+.vd-bg-black {
   background: var(--vd-clr-other-black) !important;
 }
 
-.fg-black {
+.vd-fg-black {
   color: var(--vd-clr-other-black) !important;
 }
 
-.bg-transparent {
+.vd-bg-transparent {
   background: transparent !important;
 }
 
-.fg-transparent {
+.vd-fg-transparent {
   color: transparent !important;
 }
 

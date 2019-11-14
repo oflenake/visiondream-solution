@@ -22,6 +22,11 @@ import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
+export interface SidenavItems {
+  name: string;
+  updated: Date;
+}
+
 @Component({
   selector: 'app-side-nav',
   templateUrl: './side-nav.component.html',
@@ -54,6 +59,32 @@ export class SideNavComponent implements OnInit, OnDestroy {
   vdFaFacebook = faFacebook;
   vdFaTwitter = faTwitter;
   vdFaGithub = faGithub;
+
+  // Sidenav links
+  folders: SidenavItems[] = [
+    {
+      name: 'Photos',
+      updated: new Date('1/1/16'),
+    },
+    {
+      name: 'Recipes',
+      updated: new Date('1/17/16'),
+    },
+    {
+      name: 'Work',
+      updated: new Date('1/28/16'),
+    }
+  ];
+  notes: SidenavItems[] = [
+    {
+      name: 'Vacation Itinerary',
+      updated: new Date('2/20/16'),
+    },
+    {
+      name: 'Kitchen Remodel',
+      updated: new Date('1/18/16'),
+    }
+  ];
 
   isHandset$: Observable<boolean> = this._breakpointObserver.observe(Breakpoints.Handset)
     .pipe(

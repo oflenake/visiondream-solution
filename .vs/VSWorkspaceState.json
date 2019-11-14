@@ -1,0 +1,17 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\projects",
+    "\\projects\\visiondream-site",
+    "\\projects\\visiondream-site\\src",
+    "\\projects\\visiondream-site\\src\\app",
+    "\\projects\\visiondream-site\\src\\app\\core",
+    "\\projects\\visiondream-site\\src\\app\\core\\components",
+    "\\projects\\visiondream-site\\src\\app\\core\\components\\appShell",
+    "\\projects\\visiondream-site\\src\\app\\core\\components\\appShell\\footer",
+    "\\projects\\visiondream-site\\src\\app\\core\\components\\navigation",
+    "\\projects\\visiondream-site\\src\\app\\core\\components\\navigation\\side-nav"
+  ],
+  "SelectedNode": "\\projects\\visiondream-site\\src\\app\\core\\components\\navigation\\side-nav\\side-nav.component.html",
+  "PreviewInSolutionExplorer": false
+}

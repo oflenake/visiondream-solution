@@ -1,5 +1,5 @@
 /*----- Responsive navigation and sidenav CSS styles -----*/
-.vd-responsive-nav-container {
+.vd-nav-container-responsive {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -9,21 +9,7 @@
   right: 0;
 }
 
-.vd-topnav-toolbar-mobile .vd-topnav-toolbar {
-  position: fixed;
-  z-index: 10;
-}
-
-.vd-responsive-sidenav-container {
-  flex: 1;
-}
-
-.vd-topnav-toolbar-mobile .vd-responsive-sidenav-container {
-  flex: 1 0 auto;
-}
-
-/*----- Fixed navigation and sidenav CSS styles -----*/
-.vd-fixed-nav-container {
+.vd-nav-container-fixed {
   position: absolute;
   top: 60px;
   bottom: 60px;
@@ -31,6 +17,11 @@
   right: 0;
 }
 
+.vd-mobile-toolbar {
+  background: inherit;
+}
+
+/*----- Fixed navigation and sidenav CSS styles -----*/
 .vd-fixed-sidenav-container {
   display: flex;
   align-items: center;
