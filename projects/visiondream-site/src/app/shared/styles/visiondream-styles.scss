@@ -679,13 +679,24 @@ $vd-font-small-percent: 80% !default;
 .vd-icon-small-left {
   background: transparent !important;
   font-size: 12px;
-  padding-left: 1px;
+  padding: 0;
 }
 
 .vd-icon-small-right {
   background: transparent !important;
   font-size: 12px;
-  padding-right: 1px;
+  padding: 0;
+}
+
+.vd-item-padding {
+  background: inherit;
+  margin: 14px 0 14px 0;
+  padding-left: 0 5px;
+}
+
+.vd-group-padding {
+  background: inherit;
+  padding: 0 -5px;
 }
 
 /********************** VisionDream Styles - End **********************/
