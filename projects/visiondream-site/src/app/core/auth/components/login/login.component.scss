@@ -97,55 +97,10 @@ a {
     color: var(--vd-clr-yellow-pure) !important;
     text-decoration: none;
     display: inline-block;
+    outline-width: 0;
   }
 
 /********************** VD Card and Mat Card **********************/
-mat-card-title {
-  text-align: center;
-  padding-top: 0.5em;
-}
-
-mat-form-field {
-  width: 400px;
-}
-
-.vd-item {
-  text-align: center;
-  padding-top: 1em;
-  padding-bottom: 0;
-}
-
-.vd-card-width {
-  max-width: 450px;
-}
-
-.vd-container-card {
-  display: flex;
-  flex-direction: column;
-}
-  .vd-container-card > * {
-    width: 100%;
-  }
-  
-  .vd-container-card mat-card {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-    .vd-container-card mat-card > * {
-      margin: 5px 0;
-    }
-
-  .vd-container-card form {
-    margin-bottom: 0;
-  }
-    .vd-container-card form > * {
-      margin: 5px 0;
-    }
-
-  .vd-container-card .mat-checkbox,
-  .vd-container-card .mat-radio-button {
-    margin: 0 12px;
-  }
 
 /**
  * Form Login Styles

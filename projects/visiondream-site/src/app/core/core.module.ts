@@ -7,12 +7,15 @@ import { SharedModule } from '../shared/shared.module';
 import { HomeComponent } from './components/navigation/menu/home/home.component';
 import { ServicesComponent } from './components/navigation/menu/services/services.component';
 import { PortfolioComponent } from './components/navigation/menu/portfolio/portfolio.component';
+import { VisionDreamComponent } from './components/navigation/menu/portfolio/visiondream/visiondream.component';
+import { SowetoTutorComponent } from './components/navigation/menu/portfolio/soweto-tutor/soweto-tutor.component';
+import { LcfGfiComponent } from './components/navigation/menu/portfolio/lcf-gfi/lcf-gfi.component';
 import { ContactComponent } from './components/navigation/menu/contact/contact.component';
 import { AboutComponent } from './components/navigation/menu/about/about.component';
 
 import { SupportComponent } from './components/navigation/menu/support/support.component';
-import { LoginComponent } from './auth/components/login/login.component';
 import { RegisterComponent } from './auth/components/register/register.component';
+import { LoginComponent } from './auth/components/login/login.component';
 
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 
@@ -26,11 +29,14 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
     HomeComponent,
     ServicesComponent,
     PortfolioComponent,
+    VisionDreamComponent,
+    SowetoTutorComponent,
+    LcfGfiComponent,
     ContactComponent,
     AboutComponent,
     SupportComponent,
-    LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
@@ -46,9 +52,10 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
   ]
 })
 export class CoreModule {
+
   // Constructor
   constructor(library: FaIconLibrary) {
-    // Adding dynamic icons to library for use
+    // Add dynamic icons to the library for use
     library.addIcons(
       faFacebook, faTwitter, faGithub
     );

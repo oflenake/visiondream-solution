@@ -1,0 +1,20 @@
+$vd-action-icon: 8px !default;
+$vd-action-caption: 8px !default;
+
+.vd-action-icon-jumbo {
+  padding: 0 $vd-action-icon;
+  display: inline-block;
+}
+
+.vd-action-caption-jumbo {
+  /*background: transparent !important;*/
+  /*color: var(--vd-clr-other-white) !important;*/
+  margin: 0 $vd-action-caption 0 $vd-action-caption;
+  /*margin-top: 8px;*/
+  display: inline-block;
+}
+
+.vd-action-group-jumbo {
+  padding: 0 $vd-action-caption;
+  display: inline-block;
+}

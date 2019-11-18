@@ -1,5 +1,6 @@
 import { ChangeDetectorRef, Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
+import { VDBuildVersionModel } from 'projects/visiondream-site/src/app/shared/models/vd-buildversion-model';
 
 // Icons - Main Navigation
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -27,6 +28,7 @@ export class TopNavComponent implements OnInit, OnDestroy {
 
   // Properties
   VD_SiteAppName = 'VisionDream';
+  VDBuildVersionModel: VDBuildVersionModel;
   @Output() public sidenavToggle = new EventEmitter();
   isOpened: false;
 
@@ -62,6 +64,7 @@ export class TopNavComponent implements OnInit, OnDestroy {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
+    this.VDBuildVersionModel = new VDBuildVersionModel();
   }
 
   // Initialize

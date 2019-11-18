@@ -6,12 +6,18 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { SuccessDialogComponent } from './dialogs/success-dialog/success-dialog.component';
 import { ErrorDialogComponent } from './dialogs/error-dialog/error-dialog.component';
 import { LogoutDialogComponent } from './dialogs/logout-dialog/logout-dialog.component';
+import { GlobalDialogComponent } from './dialogs/global-dialog/global-dialog.component';
+import { DatePickerDirective } from './directives/date-picker.directive';
+import { RequiredLabelDirective } from './directives/required-label.directive';
 
 @NgModule({
   declarations: [
     SuccessDialogComponent,
     ErrorDialogComponent,
-    LogoutDialogComponent
+    LogoutDialogComponent,
+    GlobalDialogComponent,
+    DatePickerDirective,
+    RequiredLabelDirective
   ],
   imports: [
     CommonModule,

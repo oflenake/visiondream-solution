@@ -1,34 +1,67 @@
-<div fxLayoutAlign="center" class="vd-container-header vd-bg-primary-dream px-4">
+<!--<div fxLayoutAlign="center" class="vd-container-header vd-bg-primary-dream px-4">
   <h1 class="vd-container-text vd-fg-primary-vision">Welcome</h1>
+</div>-->
+
+<div class="jumbotron vd-bg-base-dream">
+
+  <div fxLayoutAlign="center">
+    <div class="vd-app-welcome-title">
+      <span class="vd-fg-primary-vision">Vision</span>
+      <span class="vd-fg-primary-dream">Dream </span>
+      <span class="vd-fg-white">ICT Solutions</span>
+    </div>
+  </div>
+
+  <div fxLayoutAlign="center">
+    <p class="vd-fg-white">Your vision is your dream</p>
+  </div>
+
+  <div fxLayoutAlign="center">
+    <div id="vd-btn-container">
+      <button mat-raised-button
+              type="button"
+              aria-label="Learn more action button"
+              href="/#/services"
+              class="vd-btn-global vd-btn-dream-primary-outline">
+        <span class="vd-action-caption-jumbo">
+          Learn more
+        </span>
+      </button>
+    </div>
+  </div>
+
 </div>
 
-<div fxLayout="row wrap" fxLayoutAlign="center center" class="vd-layout-wrapper">
-  <div fxFlex="80%" fxFlex.lt-md="100%" class="vd-flex-wrapper">
+<div fxLayout="row wrap" fxLayoutAlign="center center" class="vd-wrapper-layout">
+  <div fxFlex="90%" fxFlex.lt-md="100%" class="vd-wrapper-flex">
     <div class="vd-container">
 
       <!--<div class="vd-full-screen vd-bg-img">
-        <p>Fullscreen<p>
-      </div>-->
+    <p>Fullscreen<p>
+  </div>-->
 
-      <div class="vd-welcome-text">
-        <span class="vd-fg-primary-vision">Vision</span>
-        <span class="vd-fg-primary-dream">Dream </span>
-        <span class="vd-fg-dark-gray">ICT Solutions</span>
+      <div class="vd-app-welcome-text">
+        <span class="vd-fg-body-gray">Welcome to VisionDream, where your vision is your dream.</span>
       </div>
 
-      <p>
-        Welcome to VisionDream Our vision to become a dream focuses on providing small and medium enterprises
-        with custom web designed and developed Information and Communications Technology (ICT) solutions. We
-        favour a philosophy of simple, flexible and elegant solutions that add value to address business needs.
-        We pride ourselves on delivering solutions that are relevant to your business and that keep abreast
-        with current technology standards.
-      </p>
-      <p>
-        We are not driven by ICT technology trends or hype, but by good old-fashioned common sense,
-        so to realise your business ICT <b>vision</b> and <b>dream</b>.
-      </p>
+      <div class="vd-paragraph-text-left">
+        <p>
+          Our vision to become a dream focuses on providing small and medium enterprises
+          with custom web designed and developed Information and Communications Technology (ICT) solutions. We
+          favour a philosophy of simple, flexible and elegant solutions that add value to address business needs.
+          We pride ourselves on delivering solutions that are relevant to your business and that keep abreast
+          with current technology standards.
+        </p>
 
-      <h3 class="vd-heading-text-center vd-fg-primary-dream">
+        <p>
+          We are not driven by ICT technology trends or hype, but by good old-fashioned common sense,
+          so to realise your business ICT <b>vision</b> and <b>dream</b>.
+        </p>
+      </div>
+
+      <br />
+
+      <h3 class="vd-heading-text-left vd-fg-body-gray">
         Recent Projects
       </h3>
       <mat-tab-group (selectedTabChange)="executeSelectedChange($event)" class="vd-container fg-black">
@@ -37,7 +70,7 @@
             <b>
               <span class="vd-fg-primary-vision">Vision</span>
               <span class="vd-fg-primary-dream">Dream</span>
-            </b> website project. Our in-house website development
+            </b> website project. Our in-house development
             project offering business services on providing small and medium enterprises with custom developed
             web technology solutions.
           </p>
@@ -56,8 +89,10 @@
         </mat-tab>
       </mat-tab-group>
 
-      <h3 class="vd-heading-text-center vd-fg-primary-dream">
-        Follow Us
+      <br />
+
+      <h3 class="vd-heading-text-left vd-fg-body-gray">
+        Follow {{VDBuildVersionModel.Title}}
       </h3>
       <div id="vd-btn-social-container">
         <a class="vd-btn-social-global vd-btn-facebook"

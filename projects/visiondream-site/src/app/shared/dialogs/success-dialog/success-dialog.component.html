@@ -1,1 +1,12 @@
-<p>success-dialog works!</p>
+<section fxLayout="column" fxLayoutAlign="center center">
+
+  <h1 mat-dialog-title>Success message</h1>
+  <mat-dialog-content>
+    <p>Action completed successfully</p>
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true">Ok</button>
+  </mat-dialog-actions>
+
+</section>

@@ -1,5 +1,49 @@
+/**
+* Move down content because we have a fixed navbar that is 4.5rem tall.
+* Show that the navbar is fixed to the top.
+**/
+/*body {
+  min-height: 75em;
+  padding-top: 4.5em;
+}
+
+html {
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}*/
+
+/*----- Side nav css styles -----*/
+#vd-container-sidenav, #vd-sidenav, #vd-sidenav-content {
+  height: var(--vd-ph-100);
+}
+
+#vd-sidenav {
+  width: 250px;
+}
+
+#vd-main {
+  padding: 0;
+}
+
+#vd-container-sidenav {
+  flex: 1;
+}
+
+.vd-mobile-toolbar {
+  background: inherit;
+}
+
+.vd-mobile-toolbar #vd-container-sidenav {
+  flex: 1 0 auto;
+}
+
 /*----- Responsive navigation and sidenav CSS styles -----*/
-.vd-nav-container-responsive {
+#vd-nav-container-responsive {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -9,16 +53,12 @@
   right: 0;
 }
 
-.vd-nav-container-fixed {
+#vd-nav-container-fixed {
   position: absolute;
   top: 60px;
   bottom: 60px;
   left: 0;
   right: 0;
-}
-
-.vd-mobile-toolbar {
-  background: inherit;
 }
 
 /*----- Fixed navigation and sidenav CSS styles -----*/
@@ -27,7 +67,7 @@
   align-items: center;
   justify-content: center;
   width: 250px;
-  background: var(--vd-clr-gray-very-very-very-light);
+  background: var(--vd-clr-gray-very-very-light);
 }
 
 .vd-fixed-header {
@@ -45,7 +85,7 @@
 }
 
 /*----- Double navbar and sidenav CSS styles -----*/
-.navbar {
+/*.navbar {
   z-index: 1040;
 }
 
@@ -62,4 +102,4 @@
     margin-left: 20% !important;
     margin-right: 20% !important;
   }
-}
+}*/

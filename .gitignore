@@ -46,3 +46,7 @@ testem.log
 Thumbs.db
 /.vs/slnx.sqlite
 /.vs/slnx.sqlite-journal
+/projects/visiondream-site/src/assets/vd/brand/icon/serendipity_logo_875x875.svg
+/projects/visiondream-site/src/assets/content/img/weather
+/projects/visiondream-site/src/assets/vd/brand/icon
+/projects/visiondream-site/src/assets/vd/icn/site

@@ -29,7 +29,11 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "projects/visiondream-site/src/styles.scss"
+              "projects/visiondream-site/src/app/shared/styles/vd/css/site/visiondream.css",
+              "projects/visiondream-site/src/app/shared/styles/vd/css/site/visiondream-modal.css",
+              "projects/visiondream-site/src/app/shared/styles/vd/css/theme/visiondream-theme-blue.css",
+              "projects/visiondream-site/src/app/shared/styles/vendor/css/site/fontawesome.css",
+              "projects/visiondream-site/src/app/shared/styles/visiondream-styles.scss"
             ],
             "scripts": []
           },
@@ -69,12 +73,12 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "visiondream-site:build",
-            "port": 44340
+            "port": 44303
           },
           "configurations": {
             "production": {
               "browserTarget": "visiondream-site:build:production",
-              "port": 44341
+              "port": 44304
             }
           }
         },
@@ -160,6 +164,1470 @@
             "exclude": [
               "**/node_modules/**"
             ]
+          }
+        }
+      }
+    },
+    "visiondream-blog": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/visiondream-blog",
+      "sourceRoot": "projects/visiondream-blog/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/visiondream-blog",
+            "index": "projects/visiondream-blog/src/index.html",
+            "main": "projects/visiondream-blog/src/main.ts",
+            "polyfills": "projects/visiondream-blog/src/polyfills.ts",
+            "tsConfig": "projects/visiondream-blog/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/visiondream-blog/src/favicon.ico",
+              "projects/visiondream-blog/src/assets"
+            ],
+            "styles": [
+              "projects/visiondream-blog/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/visiondream-blog/src/environments/environment.ts",
+                  "with": "projects/visiondream-blog/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "visiondream-blog:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "visiondream-blog:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "visiondream-blog:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/visiondream-blog/src/test.ts",
+            "polyfills": "projects/visiondream-blog/src/polyfills.ts",
+            "tsConfig": "projects/visiondream-blog/tsconfig.spec.json",
+            "karmaConfig": "projects/visiondream-blog/karma.conf.js",
+            "assets": [
+              "projects/visiondream-blog/src/favicon.ico",
+              "projects/visiondream-blog/src/assets"
+            ],
+            "styles": [
+              "projects/visiondream-blog/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/visiondream-blog/tsconfig.app.json",
+              "projects/visiondream-blog/tsconfig.spec.json",
+              "projects/visiondream-blog/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/visiondream-blog/e2e/protractor.conf.js",
+            "devServerTarget": "visiondream-blog:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "visiondream-blog:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "visiondream-store": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/visiondream-store",
+      "sourceRoot": "projects/visiondream-store/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/visiondream-store",
+            "index": "projects/visiondream-store/src/index.html",
+            "main": "projects/visiondream-store/src/main.ts",
+            "polyfills": "projects/visiondream-store/src/polyfills.ts",
+            "tsConfig": "projects/visiondream-store/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/visiondream-store/src/favicon.ico",
+              "projects/visiondream-store/src/assets"
+            ],
+            "styles": [
+              "projects/visiondream-store/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/visiondream-store/src/environments/environment.ts",
+                  "with": "projects/visiondream-store/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "visiondream-store:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "visiondream-store:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "visiondream-store:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/visiondream-store/src/test.ts",
+            "polyfills": "projects/visiondream-store/src/polyfills.ts",
+            "tsConfig": "projects/visiondream-store/tsconfig.spec.json",
+            "karmaConfig": "projects/visiondream-store/karma.conf.js",
+            "assets": [
+              "projects/visiondream-store/src/favicon.ico",
+              "projects/visiondream-store/src/assets"
+            ],
+            "styles": [
+              "projects/visiondream-store/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/visiondream-store/tsconfig.app.json",
+              "projects/visiondream-store/tsconfig.spec.json",
+              "projects/visiondream-store/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/visiondream-store/e2e/protractor.conf.js",
+            "devServerTarget": "visiondream-store:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "visiondream-store:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "visiondream-bank": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/visiondream-bank",
+      "sourceRoot": "projects/visiondream-bank/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/visiondream-bank",
+            "index": "projects/visiondream-bank/src/index.html",
+            "main": "projects/visiondream-bank/src/main.ts",
+            "polyfills": "projects/visiondream-bank/src/polyfills.ts",
+            "tsConfig": "projects/visiondream-bank/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/visiondream-bank/src/favicon.ico",
+              "projects/visiondream-bank/src/assets"
+            ],
+            "styles": [
+              "projects/visiondream-bank/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/visiondream-bank/src/environments/environment.ts",
+                  "with": "projects/visiondream-bank/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "visiondream-bank:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "visiondream-bank:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "visiondream-bank:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/visiondream-bank/src/test.ts",
+            "polyfills": "projects/visiondream-bank/src/polyfills.ts",
+            "tsConfig": "projects/visiondream-bank/tsconfig.spec.json",
+            "karmaConfig": "projects/visiondream-bank/karma.conf.js",
+            "assets": [
+              "projects/visiondream-bank/src/favicon.ico",
+              "projects/visiondream-bank/src/assets"
+            ],
+            "styles": [
+              "projects/visiondream-bank/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/visiondream-bank/tsconfig.app.json",
+              "projects/visiondream-bank/tsconfig.spec.json",
+              "projects/visiondream-bank/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/visiondream-bank/e2e/protractor.conf.js",
+            "devServerTarget": "visiondream-bank:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "visiondream-bank:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "visiondream-home": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/visiondream-home",
+      "sourceRoot": "projects/visiondream-home/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/visiondream-home",
+            "index": "projects/visiondream-home/src/index.html",
+            "main": "projects/visiondream-home/src/main.ts",
+            "polyfills": "projects/visiondream-home/src/polyfills.ts",
+            "tsConfig": "projects/visiondream-home/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/visiondream-home/src/favicon.ico",
+              "projects/visiondream-home/src/assets"
+            ],
+            "styles": [
+              "projects/visiondream-home/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/visiondream-home/src/environments/environment.ts",
+                  "with": "projects/visiondream-home/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "visiondream-home:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "visiondream-home:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "visiondream-home:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/visiondream-home/src/test.ts",
+            "polyfills": "projects/visiondream-home/src/polyfills.ts",
+            "tsConfig": "projects/visiondream-home/tsconfig.spec.json",
+            "karmaConfig": "projects/visiondream-home/karma.conf.js",
+            "assets": [
+              "projects/visiondream-home/src/favicon.ico",
+              "projects/visiondream-home/src/assets"
+            ],
+            "styles": [
+              "projects/visiondream-home/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/visiondream-home/tsconfig.app.json",
+              "projects/visiondream-home/tsconfig.spec.json",
+              "projects/visiondream-home/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/visiondream-home/e2e/protractor.conf.js",
+            "devServerTarget": "visiondream-home:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "visiondream-home:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "visiondream-macs": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/visiondream-macs",
+      "sourceRoot": "projects/visiondream-macs/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/visiondream-macs",
+            "index": "projects/visiondream-macs/src/index.html",
+            "main": "projects/visiondream-macs/src/main.ts",
+            "polyfills": "projects/visiondream-macs/src/polyfills.ts",
+            "tsConfig": "projects/visiondream-macs/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/visiondream-macs/src/favicon.ico",
+              "projects/visiondream-macs/src/assets"
+            ],
+            "styles": [
+              "projects/visiondream-macs/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/visiondream-macs/src/environments/environment.ts",
+                  "with": "projects/visiondream-macs/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "visiondream-macs:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "visiondream-macs:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "visiondream-macs:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/visiondream-macs/src/test.ts",
+            "polyfills": "projects/visiondream-macs/src/polyfills.ts",
+            "tsConfig": "projects/visiondream-macs/tsconfig.spec.json",
+            "karmaConfig": "projects/visiondream-macs/karma.conf.js",
+            "assets": [
+              "projects/visiondream-macs/src/favicon.ico",
+              "projects/visiondream-macs/src/assets"
+            ],
+            "styles": [
+              "projects/visiondream-macs/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/visiondream-macs/tsconfig.app.json",
+              "projects/visiondream-macs/tsconfig.spec.json",
+              "projects/visiondream-macs/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/visiondream-macs/e2e/protractor.conf.js",
+            "devServerTarget": "visiondream-macs:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "visiondream-macs:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "visiondream-webt": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/visiondream-webt",
+      "sourceRoot": "projects/visiondream-webt/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/visiondream-webt",
+            "index": "projects/visiondream-webt/src/index.html",
+            "main": "projects/visiondream-webt/src/main.ts",
+            "polyfills": "projects/visiondream-webt/src/polyfills.ts",
+            "tsConfig": "projects/visiondream-webt/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/visiondream-webt/src/favicon.ico",
+              "projects/visiondream-webt/src/assets"
+            ],
+            "styles": [
+              "projects/visiondream-webt/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/visiondream-webt/src/environments/environment.ts",
+                  "with": "projects/visiondream-webt/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "visiondream-webt:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "visiondream-webt:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "visiondream-webt:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/visiondream-webt/src/test.ts",
+            "polyfills": "projects/visiondream-webt/src/polyfills.ts",
+            "tsConfig": "projects/visiondream-webt/tsconfig.spec.json",
+            "karmaConfig": "projects/visiondream-webt/karma.conf.js",
+            "assets": [
+              "projects/visiondream-webt/src/favicon.ico",
+              "projects/visiondream-webt/src/assets"
+            ],
+            "styles": [
+              "projects/visiondream-webt/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/visiondream-webt/tsconfig.app.json",
+              "projects/visiondream-webt/tsconfig.spec.json",
+              "projects/visiondream-webt/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/visiondream-webt/e2e/protractor.conf.js",
+            "devServerTarget": "visiondream-webt:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "visiondream-webt:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "visiondream-gym": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/visiondream-gym",
+      "sourceRoot": "projects/visiondream-gym/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/visiondream-gym",
+            "index": "projects/visiondream-gym/src/index.html",
+            "main": "projects/visiondream-gym/src/main.ts",
+            "polyfills": "projects/visiondream-gym/src/polyfills.ts",
+            "tsConfig": "projects/visiondream-gym/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/visiondream-gym/src/favicon.ico",
+              "projects/visiondream-gym/src/assets"
+            ],
+            "styles": [
+              "projects/visiondream-gym/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/visiondream-gym/src/environments/environment.ts",
+                  "with": "projects/visiondream-gym/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "visiondream-gym:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "visiondream-gym:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "visiondream-gym:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/visiondream-gym/src/test.ts",
+            "polyfills": "projects/visiondream-gym/src/polyfills.ts",
+            "tsConfig": "projects/visiondream-gym/tsconfig.spec.json",
+            "karmaConfig": "projects/visiondream-gym/karma.conf.js",
+            "assets": [
+              "projects/visiondream-gym/src/favicon.ico",
+              "projects/visiondream-gym/src/assets"
+            ],
+            "styles": [
+              "projects/visiondream-gym/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/visiondream-gym/tsconfig.app.json",
+              "projects/visiondream-gym/tsconfig.spec.json",
+              "projects/visiondream-gym/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/visiondream-gym/e2e/protractor.conf.js",
+            "devServerTarget": "visiondream-gym:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "visiondream-gym:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "visiondream-coffeeShop": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/visiondream-coffeeShop",
+      "sourceRoot": "projects/visiondream-coffeeShop/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/visiondream-coffeeShop",
+            "index": "projects/visiondream-coffeeShop/src/index.html",
+            "main": "projects/visiondream-coffeeShop/src/main.ts",
+            "polyfills": "projects/visiondream-coffeeShop/src/polyfills.ts",
+            "tsConfig": "projects/visiondream-coffeeShop/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/visiondream-coffeeShop/src/favicon.ico",
+              "projects/visiondream-coffeeShop/src/assets"
+            ],
+            "styles": [
+              "projects/visiondream-coffeeShop/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/visiondream-coffeeShop/src/environments/environment.ts",
+                  "with": "projects/visiondream-coffeeShop/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "visiondream-coffeeShop:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "visiondream-coffeeShop:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "visiondream-coffeeShop:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/visiondream-coffeeShop/src/test.ts",
+            "polyfills": "projects/visiondream-coffeeShop/src/polyfills.ts",
+            "tsConfig": "projects/visiondream-coffeeShop/tsconfig.spec.json",
+            "karmaConfig": "projects/visiondream-coffeeShop/karma.conf.js",
+            "assets": [
+              "projects/visiondream-coffeeShop/src/favicon.ico",
+              "projects/visiondream-coffeeShop/src/assets"
+            ],
+            "styles": [
+              "projects/visiondream-coffeeShop/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/visiondream-coffeeShop/tsconfig.app.json",
+              "projects/visiondream-coffeeShop/tsconfig.spec.json",
+              "projects/visiondream-coffeeShop/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/visiondream-coffeeShop/e2e/protractor.conf.js",
+            "devServerTarget": "visiondream-coffeeShop:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "visiondream-coffeeShop:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "visiondream-scheduler": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/visiondream-scheduler",
+      "sourceRoot": "projects/visiondream-scheduler/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/visiondream-scheduler",
+            "index": "projects/visiondream-scheduler/src/index.html",
+            "main": "projects/visiondream-scheduler/src/main.ts",
+            "polyfills": "projects/visiondream-scheduler/src/polyfills.ts",
+            "tsConfig": "projects/visiondream-scheduler/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/visiondream-scheduler/src/favicon.ico",
+              "projects/visiondream-scheduler/src/assets"
+            ],
+            "styles": [
+              "projects/visiondream-scheduler/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/visiondream-scheduler/src/environments/environment.ts",
+                  "with": "projects/visiondream-scheduler/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "visiondream-scheduler:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "visiondream-scheduler:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "visiondream-scheduler:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/visiondream-scheduler/src/test.ts",
+            "polyfills": "projects/visiondream-scheduler/src/polyfills.ts",
+            "tsConfig": "projects/visiondream-scheduler/tsconfig.spec.json",
+            "karmaConfig": "projects/visiondream-scheduler/karma.conf.js",
+            "assets": [
+              "projects/visiondream-scheduler/src/favicon.ico",
+              "projects/visiondream-scheduler/src/assets"
+            ],
+            "styles": [
+              "projects/visiondream-scheduler/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/visiondream-scheduler/tsconfig.app.json",
+              "projects/visiondream-scheduler/tsconfig.spec.json",
+              "projects/visiondream-scheduler/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/visiondream-scheduler/e2e/protractor.conf.js",
+            "devServerTarget": "visiondream-scheduler:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "visiondream-scheduler:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "visiondream-bookStore": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/visiondream-bookStore",
+      "sourceRoot": "projects/visiondream-bookStore/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/visiondream-bookStore",
+            "index": "projects/visiondream-bookStore/src/index.html",
+            "main": "projects/visiondream-bookStore/src/main.ts",
+            "polyfills": "projects/visiondream-bookStore/src/polyfills.ts",
+            "tsConfig": "projects/visiondream-bookStore/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/visiondream-bookStore/src/favicon.ico",
+              "projects/visiondream-bookStore/src/assets"
+            ],
+            "styles": [
+              "projects/visiondream-bookStore/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/visiondream-bookStore/src/environments/environment.ts",
+                  "with": "projects/visiondream-bookStore/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "visiondream-bookStore:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "visiondream-bookStore:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "visiondream-bookStore:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/visiondream-bookStore/src/test.ts",
+            "polyfills": "projects/visiondream-bookStore/src/polyfills.ts",
+            "tsConfig": "projects/visiondream-bookStore/tsconfig.spec.json",
+            "karmaConfig": "projects/visiondream-bookStore/karma.conf.js",
+            "assets": [
+              "projects/visiondream-bookStore/src/favicon.ico",
+              "projects/visiondream-bookStore/src/assets"
+            ],
+            "styles": [
+              "projects/visiondream-bookStore/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/visiondream-bookStore/tsconfig.app.json",
+              "projects/visiondream-bookStore/tsconfig.spec.json",
+              "projects/visiondream-bookStore/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/visiondream-bookStore/e2e/protractor.conf.js",
+            "devServerTarget": "visiondream-bookStore:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "visiondream-bookStore:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "visiondream-chatDoctor": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/visiondream-chatDoctor",
+      "sourceRoot": "projects/visiondream-chatDoctor/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/visiondream-chatDoctor",
+            "index": "projects/visiondream-chatDoctor/src/index.html",
+            "main": "projects/visiondream-chatDoctor/src/main.ts",
+            "polyfills": "projects/visiondream-chatDoctor/src/polyfills.ts",
+            "tsConfig": "projects/visiondream-chatDoctor/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/visiondream-chatDoctor/src/favicon.ico",
+              "projects/visiondream-chatDoctor/src/assets"
+            ],
+            "styles": [
+              "projects/visiondream-chatDoctor/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/visiondream-chatDoctor/src/environments/environment.ts",
+                  "with": "projects/visiondream-chatDoctor/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "visiondream-chatDoctor:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "visiondream-chatDoctor:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "visiondream-chatDoctor:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/visiondream-chatDoctor/src/test.ts",
+            "polyfills": "projects/visiondream-chatDoctor/src/polyfills.ts",
+            "tsConfig": "projects/visiondream-chatDoctor/tsconfig.spec.json",
+            "karmaConfig": "projects/visiondream-chatDoctor/karma.conf.js",
+            "assets": [
+              "projects/visiondream-chatDoctor/src/favicon.ico",
+              "projects/visiondream-chatDoctor/src/assets"
+            ],
+            "styles": [
+              "projects/visiondream-chatDoctor/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/visiondream-chatDoctor/tsconfig.app.json",
+              "projects/visiondream-chatDoctor/tsconfig.spec.json",
+              "projects/visiondream-chatDoctor/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/visiondream-chatDoctor/e2e/protractor.conf.js",
+            "devServerTarget": "visiondream-chatDoctor:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "visiondream-chatDoctor:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "visiondream-chatBot": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/visiondream-chatBot",
+      "sourceRoot": "projects/visiondream-chatBot/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/visiondream-chatBot",
+            "index": "projects/visiondream-chatBot/src/index.html",
+            "main": "projects/visiondream-chatBot/src/main.ts",
+            "polyfills": "projects/visiondream-chatBot/src/polyfills.ts",
+            "tsConfig": "projects/visiondream-chatBot/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/visiondream-chatBot/src/favicon.ico",
+              "projects/visiondream-chatBot/src/assets"
+            ],
+            "styles": [
+              "projects/visiondream-chatBot/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/visiondream-chatBot/src/environments/environment.ts",
+                  "with": "projects/visiondream-chatBot/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "visiondream-chatBot:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "visiondream-chatBot:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "visiondream-chatBot:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/visiondream-chatBot/src/test.ts",
+            "polyfills": "projects/visiondream-chatBot/src/polyfills.ts",
+            "tsConfig": "projects/visiondream-chatBot/tsconfig.spec.json",
+            "karmaConfig": "projects/visiondream-chatBot/karma.conf.js",
+            "assets": [
+              "projects/visiondream-chatBot/src/favicon.ico",
+              "projects/visiondream-chatBot/src/assets"
+            ],
+            "styles": [
+              "projects/visiondream-chatBot/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/visiondream-chatBot/tsconfig.app.json",
+              "projects/visiondream-chatBot/tsconfig.spec.json",
+              "projects/visiondream-chatBot/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/visiondream-chatBot/e2e/protractor.conf.js",
+            "devServerTarget": "visiondream-chatBot:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "visiondream-chatBot:serve:production"
+            }
           }
         }
       }

@@ -3,7 +3,7 @@
 </div>
 
 <div fxLayout="row wrap" fxLayoutAlign="center center" class="vd-layout-wrapper">
-  <div fxFlex="80%" fxFlex.lt-md="100%" class="vd-flex-wrapper">
+  <div fxFlex="90%" fxFlex.lt-md="100%" class="vd-flex-wrapper">
     <div class="vd-container">
 
       <!-- Brand Icon -->
@@ -16,8 +16,8 @@
 
           <!-- Mat Card Header -->
           <mat-card-header fxLayoutAlign="center" class="vd-bg-primary-dream">
-            <mat-card-title>
-              <strong class="fg-white">Log in</strong>
+            <mat-card-title class="vd-card-title">
+              Log in
             </mat-card-title>
           </mat-card-header>
 
@@ -53,14 +53,19 @@
                 <button mat-raised-button
                         type="submit"
                         aria-label="Email login option"
-                        class="vd-btn-global vd-btn-dream-secondary btn-block">
+                        class="vd-btn-global vd-btn-dream-primary">
                   <span class="text-uppercase">Log in</span>
                 </button>
               </div>
 
               <!-- Not a Member or Social Log in -->
               <div fxLayoutAlign="center">
-                <p>Not a member? <a href="/#/register">Register</a></p>
+                <span>
+                  Not a member?
+                  <a href="/#/register">
+                    Register
+                  </a>
+                </span>
               </div>
 
               <div fxLayoutAlign="center">

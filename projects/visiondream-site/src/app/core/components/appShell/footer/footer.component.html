@@ -1,35 +1,35 @@
-<footer class="vd-footer-container vd-bg-base-dream py-3 border-top">
-  <div class="vd-footer vd-footer-info">
-    <span class="vd-footer-text"> &copy; {{VDBuildVersionModel.VDCopyright}} </span>
-    <span class="vd-footer-text">
-      <a routerLink="/legal/terms-of-service">
-        <mat-icon aria-hidden="false" aria-label="Terms of service footer navigation link item">
-          <fa-icon [icon]="vdFaBalanceScale" class="vd-icon-small-left"></fa-icon>
+<footer class="vd-container-footer vd-font-small-pc vd-bg-base-dream vd-footer-border-top pt-4 mt-4">
+  <div fxLayout="row wrap" fxLayoutAlign="center center" class="vd-wrapper-layout">
+    <div fxFlex="90%" fxFlex.lt-md="100%" class="vd-wrapper-flex">
+      <span fxFlex fxLayout fxLayoutAlign="start">
+        {{VDBuildVersionModel.Alias}} {{VDBuildVersionModel.Version}}
+        | Super-powered by
+        <a href="{{VDBuildVersionModel.VDUrlLocal}}"
+            target="_blank" rel="noreferrer">
+          {{VDBuildVersionModel.VDDesc}}
+        </a>
+      </span>
+
+      <!--<span class="vd-spacer"></span>-->
+
+      <span fxFlex fxLayout fxLayoutAlign="end">
+        <a routerLink="/legal/privacy-policy">
+          Privacy
+          <mat-icon aria-hidden="false" aria-label="Privacy policy footer navigation link item">
+            <fa-icon [icon]="vdFaUserSecret" class="vd-icon-small-right"></fa-icon>
+          </mat-icon>
+        </a>
+        <mat-icon aria-hidden="true">
+          <fa-icon [icon]="vdFaPlus" class="vd-icon-small"></fa-icon>
         </mat-icon>
-        Terms
-      </a>
-    </span>
-    <span class="vd-footer-text">
-      <mat-icon aria-hidden="true">
-        <fa-icon [icon]="vdFaPlus" class="vd-icon-small"></fa-icon>
-      </mat-icon>
-      <a routerLink="/legal/privacy-policy">
-        Privacy
-        <mat-icon aria-hidden="false" aria-label="Privacy policy footer navigation link item">
-          <fa-icon [icon]="vdFaUserSecret" class="vd-icon-small-right"></fa-icon>
-        </mat-icon>
-      </a>
-    </span>
-    &middot;
-    <span class="vd-footer-text">
-      Super-powered by
-      <a href="{{VDBuildVersionModel.VDUrlLocal}}" target="_blank" rel="noreferrer">
-        {{VDBuildVersionModel.VDDesc}}
-      </a>
-    </span>
-    &middot;
-    <span class="vd-footer-text">
-      Current build: {{VDBuildVersionModel.Version}}
-    </span>
+        <a routerLink="/#/legal/terms-of-service">
+          <mat-icon aria-hidden="false" aria-label="Terms of service footer navigation link item">
+            <fa-icon [icon]="vdFaBalanceScale" class="vd-icon-small-left"></fa-icon>
+          </mat-icon>
+          Terms
+        </a>
+        &copy; {{VDBuildVersionModel.VDCopyright}}
+      </span>
+    </div>
   </div>
 </footer>

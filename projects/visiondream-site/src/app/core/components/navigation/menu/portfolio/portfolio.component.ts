@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { VDBuildVersionModel } from 'projects/visiondream-site/src/app/shared/models/vd-buildversion-model';
 
 @Component({
   selector: 'app-portfolio',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortfolioComponent implements OnInit {
 
-  constructor() { }
+  VDBuildVersionModel: VDBuildVersionModel;
+
+  constructor() {
+    this.VDBuildVersionModel = new VDBuildVersionModel();
+  }
 
   ngOnInit() {
   }
