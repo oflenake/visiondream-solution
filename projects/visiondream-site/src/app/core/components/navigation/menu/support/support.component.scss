@@ -1,8 +1,29 @@
-.full-width {
+/*.vd-container-form .mat-radio-button {
+  margin: 0 12px;
+}
+
+.vd-right-align {
+  text-align: right;
+}
+
+input.vd-right-align::-webkit-outer-spin-button,
+input.vd-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.vd-right-align {
+  -moz-appearance: textfield;
+}
+
+td {
+  padding-right: 8px;
+}*/
+
+/*.full-width {
   width: var(--vd-pw-100);
 }
 
-.shipping-card {
+.support-card {
   min-width: 120px;
   margin: 20px auto;
 }
@@ -24,4 +45,14 @@
 
 .col:last-child {
   margin-right: 0;
+}*/
+
+label {
+  display: block;
+  font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+  margin: .4rem 0;
 }

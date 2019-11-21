@@ -1,27 +1,33 @@
+<section fxLayout="column wrap" fxLayoutAlign="center center" class="vd-container-header vd-bg-primary-dream">
+  <div fxFlex class="vd-container-text vd-fg-primary-vision">
+    <span>Register Account</span>
+  </div>
+</section>
+
 <form novalidate (ngSubmit)="onSubmit()">
-  <mat-card class="shipping-card">
+  <mat-card class="vd-register-card">
     <mat-card-header>
-      <mat-card-title>Shipping Information</mat-card-title>
+      <mat-card-title>Account Information</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
+      <div class="vd-row">
+        <div class="vd-col">
+          <mat-form-field class="vd-full-width">
             <input matInput placeholder="Company" formControlName="company">
           </mat-form-field>
         </div>
       </div>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
+      <div class="vd-row">
+        <div class="vd-col">
+          <mat-form-field class="vd-full-width">
             <input matInput placeholder="First name" formControlName="firstName">
             <mat-error *ngIf="addressForm.controls['firstName'].hasError('required')">
               First name is <strong>required</strong>
             </mat-error>
           </mat-form-field>
         </div>
-        <div class="col">
-          <mat-form-field class="full-width">
+        <div class="vd-col">
+          <mat-form-field class="vd-full-width">
             <input matInput placeholder="Last name" formControlName="lastName">
             <mat-error *ngIf="addressForm.controls['lastName'].hasError('required')">
               Last name is <strong>required</strong>
@@ -29,9 +35,9 @@
           </mat-form-field>
         </div>
       </div>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
+      <div class="vd-row">
+        <div class="vd-col">
+          <mat-form-field class="vd-full-width">
             <textarea matInput placeholder="Address" formControlName="address"></textarea>
             <mat-error *ngIf="addressForm.controls['address'].hasError('required')">
               Address is <strong>required</strong>
@@ -39,31 +45,31 @@
           </mat-form-field>
         </div>
       </div>
-      <div class="row" *ngIf="!hasUnitNumber">
-        <div class="col">
+      <div class="vd-row" *ngIf="!hasUnitNumber">
+        <div class="vd-col">
           <button mat-button type="button" (click)="hasUnitNumber = !hasUnitNumber">
             + Add C/O, Apt, Suite, Unit
           </button>
         </div>
       </div>
-      <div class="row" *ngIf="hasUnitNumber">
-        <div class="col">
+      <div class="vd-row" *ngIf="hasUnitNumber">
+        <div class="vd-col">
           <mat-form-field class="full-width">
             <textarea matInput placeholder="Address 2" formControlName="address2"></textarea>
           </mat-form-field>
         </div>
       </div>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
+      <div class="vd-row">
+        <div class="vd-col">
+          <mat-form-field class="vd-full-width">
             <input matInput placeholder="City" formControlName="city">
             <mat-error *ngIf="addressForm.controls['city'].hasError('required')">
               City is <strong>required</strong>
             </mat-error>
           </mat-form-field>
         </div>
-        <div class="col">
-          <mat-form-field class="full-width">
+        <div class="vd-col">
+          <mat-form-field class="vd-full-width">
             <mat-select placeholder="State" formControlName="state">
               <mat-option *ngFor="let state of states" [value]="state.abbreviation">
                 {{ state.name }}
@@ -75,16 +81,16 @@
           </mat-form-field>
         </div>
       </div>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
+      <div class="vd-row">
+        <div class="vd-col">
+          <mat-form-field class="vd-full-width">
             <input matInput #postalCode maxlength="5" placeholder="Postal Code" type="number" formControlName="postalCode">
             <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
           </mat-form-field>
         </div>
       </div>
-      <div class="row">
-        <div class="col">
+      <div class="vd-row">
+        <div class="vd-col">
           <mat-radio-group formControlName="shipping">
             <mat-radio-button value="free">Free Shipping</mat-radio-button>
             <mat-radio-button value="priority">Priority Shipping</mat-radio-button>

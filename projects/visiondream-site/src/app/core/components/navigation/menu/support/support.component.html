@@ -1,4 +1,48 @@
-<form novalidate (ngSubmit)="onSubmit()">
+<section fxLayout="column wrap" fxLayoutAlign="center center" class="vd-container-header vd-bg-primary-dream">
+  <div fxFlex class="vd-container-text vd-fg-primary-vision">
+    <span>VisionDream Support</span>
+  </div>
+</section>
+
+<section fxLayout="row wrap" fxLayoutAlign="center center" class="vd-wrapper-layout">
+  <div fxFlex="90%" fxFlex.lt-md="100%" class="vd-wrapper-flex">
+    <div class="vd-container">
+
+      <div class="vd-heading-text-center">
+        <span class="vd-fg-body-gray">Welcome to VisionDream Support</span>
+      </div>
+
+      <div class="vd-container-form">
+        <form class="vd-container-form vd-form-support">
+          <mat-form-field appearance="outline">
+            <input matInput type="search" placeholder="Search for help">
+            <mat-icon matSuffix>
+              <img src="assets/content/icn/support_search_24x24.png"
+                   height="24" alt="">
+            </mat-icon>
+          </mat-form-field>
+        </form>
+      </div>
+
+      <div>
+        <h3 class="vd-heading-text-center vd-fg-body-gray">
+          What do you need help with?
+        </h3>
+      </div>
+
+      <div>
+        <label for="site-search">Search the site:</label>
+        <input type="search" id="site-search" name="q"
+               aria-label="Search through site content">
+
+        <button>Search</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!--<form novalidate (ngSubmit)="onSubmit()">
   <mat-card class="shipping-card">
     <mat-card-header>
       <mat-card-title>Shipping Information</mat-card-title>
@@ -97,4 +141,4 @@
       <button mat-raised-button color="primary" type="submit">Submit</button>
     </mat-card-actions>
   </mat-card>
-</form>
+</form>-->

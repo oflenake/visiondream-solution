@@ -1,38 +1,38 @@
-<!--<div fxLayoutAlign="center" class="vd-container-header vd-bg-primary-dream px-4">
-  <h1 class="vd-container-text vd-fg-primary-vision">Welcome</h1>
-</div>-->
-
-<div class="jumbotron vd-bg-base-dream">
-
-  <div fxLayoutAlign="center">
-    <div class="vd-app-welcome-title">
-      <span class="vd-fg-primary-vision">Vision</span>
-      <span class="vd-fg-primary-dream">Dream </span>
-      <span class="vd-fg-white">ICT Solutions</span>
-    </div>
+<section fxLayout="column wrap" fxLayoutAlign="center center" class="vd-container-header vd-bg-base-dream">
+  <div class="vd-app-welcome-title">
+    <br>
+    <span class="vd-fg-primary-vision">Vision</span>
+    <span class="vd-fg-primary-dream">Dream </span>
+    <span class="vd-fg-white">ICT Solutions</span>
   </div>
 
-  <div fxLayoutAlign="center">
-    <p class="vd-fg-white">Your vision is your dream</p>
+  <div class="vd-app-welcome-tagline">
+    <span class="vd-fg-white">Your vision, your dream</span>
+    <br><br>
   </div>
 
-  <div fxLayoutAlign="center">
-    <div id="vd-btn-container">
-      <button mat-raised-button
-              type="button"
-              aria-label="Learn more action button"
-              href="/#/services"
-              class="vd-btn-global vd-btn-dream-primary-outline">
-        <span class="vd-action-caption-jumbo">
-          Learn more
-        </span>
-      </button>
-    </div>
+  <div id="vd-btn-container"
+        class="vd-container-ripple mat-elevation-z4"
+        matRipple
+        [matRippleCentered]="rippleCentered"
+        [matRippleDisabled]="rippleDisabled"
+        [matRippleUnbounded]="rippleUnbounded"
+        [matRippleRadius]="rippleRadius"
+        [matRippleColor]="rippleColor">
+    <a mat-raised-button
+        role="button"
+        href="/#/services"
+        class="vd-btn-global vd-btn-dream-primary-outline">
+      <span class="vd-action-group">
+        Learn more
+      </span>
+    </a>
   </div>
+  <br>
 
-</div>
+</section>
 
-<div fxLayout="row wrap" fxLayoutAlign="center center" class="vd-wrapper-layout">
+<section fxLayout="row wrap" fxLayoutAlign="center center" class="vd-wrapper-layout">
   <div fxFlex="90%" fxFlex.lt-md="100%" class="vd-wrapper-flex">
     <div class="vd-container">
 
@@ -41,7 +41,7 @@
   </div>-->
 
       <div class="vd-app-welcome-text">
-        <span class="vd-fg-body-gray">Welcome to VisionDream, where your vision is your dream.</span>
+        <span class="vd-fg-body-gray">Welcome to VisionDream ICT Solutions</span>
       </div>
 
       <div class="vd-paragraph-text-left">
@@ -94,24 +94,24 @@
       <h3 class="vd-heading-text-left vd-fg-body-gray">
         Follow {{VDBuildVersionModel.Title}}
       </h3>
-      <div id="vd-btn-social-container">
-        <a class="vd-btn-social-global vd-btn-facebook"
-           href="https://web.facebook.com/VisionDreamICT/"
-           target="_blank" rel="noreferrer">
+      <div id="vd-btn-container-social">
+        <a class="vd-btn-global-social vd-btn-facebook"
+           href="{{VDBuildVersionModel.VDUrlFacebook}}" target="_blank">
         </a>
-        <a class="vd-btn-social-global vd-btn-twitter"
-           href="https://twitter.com/VisionDreamICT"
-           target="_blank" rel="noreferrer">
+        <a class="vd-btn-global-social vd-btn-twitter"
+           href="{{VDBuildVersionModel.VDUrlTwitter}}" target="_blank">
         </a>
-        <a class="vd-btn-social-global vd-btn-linkedin"
-           href="https://www.linkedin.com/in/vision-dream-ict-solutions-7a73bb14a/"
-           target="_blank" rel="noreferrer">
+        <a class="vd-btn-global-social vd-btn-linkedin"
+           href="{{VDBuildVersionModel.VDUrlLinkedIn}}" target="_blank">
+        </a>
+        <a class="vd-btn-global-social vd-btn-github"
+           href="{{VDBuildVersionModel.VDUrlGitHub}}" target="_blank">
         </a>
       </div>
 
     </div>
     </div>
-</div>
+</section>
 
 
 <!--
