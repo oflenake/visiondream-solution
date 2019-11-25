@@ -1,22 +1,24 @@
 section div p:nth-child(1) {
+  margin-top: 20px;
   font-size: 50px;
   text-align: center;
-  color: var(--vd-clr-red-bright);
+  color: var(--vd-red-bright) !important;
 }
 
 section div p:nth-child(2) {
   font-size: 20px;
   text-align: center;
-  color: var(--vd-clr-blue-moderate);
+  color: var(--vd-blue-original-large) !important;
 }
 
 mat-checkbox {
-  color: var(--vd-clr-blue-moderate);
+  color: var(--vd-blue-original-large) !important;
 }
 
 section div h1 {
+  margin-bottom: 20px;
   text-align: center;
-  color: var(--vd-clr-blue-moderate);
+  color: var(--vd-blue-original-large) !important;
   position: relative;
   top: -85px;
 }
