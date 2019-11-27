@@ -1,0 +1,236 @@
+/*!
+ * Created by:  VisionDream ICT Solutions
+ * Author:      Onkgopotse Lenake
+ * File:        VisionDream-Buttons.CSS
+ * Version:     4.14.0
+ * Date:        2019-11-27
+ * Description:	VisionDream Buttons 4.14.0 by Onkgopotse Lenake and VisionDream contributors.
+ *
+ * © 2019 VisionDream ICT Solutions. All rights reserved.
+ */
+
+/********************** Global theme and properties **********************/
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+:root {
+  /********************** Vision Yellow Color Config **********************/
+  --electric-yellow: #ffff00;
+  --pure-yellow: #ffc000;
+  --usc-gold: #ffcc00;
+  --light-pure-yellow: #ffea00;
+  --very-light-pure-yellow: #eaff00;
+  /********************** Dream Blue Color Config **********************/
+  --deep-sky-blue-capri: #00bfff;
+  --deep-sky-blue-capri-websafe: #00ccff;
+  --dark-sky-blue: #00aaff;
+  --dark-sky-blue-websafe: #0099ff;
+  --very-dark-sky-blue: #0080ff;
+  --blue: #0000ff;
+  --light-blue: #0033ff;
+  --very-light-blue: #0040ff;
+  --very-dark-blue: #204060;
+  --very-dark-blue-websafe: #333366;
+  --soft-blue: #4e73df;
+  --moderate-blue: #6666cc;
+  --dark-moderate-blue: #336699;
+  --very-dark-moderate-blue: #2d5986;
+  --very-very-dark-moderate-blue: #264d73;
+  /********************** Cyan Color Config **********************/
+  --very-dark-desaturated-cyan: #336666;
+  --stong-cyan: #33cc99;
+  --green-cyan: #00ffc0;
+  --green-cyan-websafe: #00ffcc;
+  --moderate-cyan: #36b9cc;
+  --dark-moderate-cyan: #339999;
+  --aqua: #00ffff;
+  --aqua-cyan: #00d4ff;
+  --aqua-cyan-websafe: #00ccff;
+  /********************** Social Color Config **********************/
+  --facebook-color: #4060A5;
+  --linkedin-color: #0094BC;
+  --twitter-color: #00ABE3;
+  /********************** Gray Color Config **********************/
+  --dark-gray: #999999;
+  --very-dark-gray: #666666;
+  --dark-grayish-blue: #858796;
+  --very-dark-grayish-blue: #5a5c69; /* dark */
+  --light-grayish-blue: #f8f9fc;
+  --light-gray: #cccccc;
+  --very-light-gray: #dddddd;
+  --very-very-light-gray: #eeeeee;
+  --very-very-very-light-gray: #fafafa;
+  /********************** Green Color Config **********************/
+  --yellow-green: #adff2f;
+  --vivid-green: #99ff33;
+  --office-green: #008000; /* green */
+  --dark-cyan-lime-green: #009933;
+  --very-dark-cyan-lime-green: #11862f;
+  --very-dark-lime-green: #006400;
+  --pakistan-green: #006600;
+  --lawn-green: #7cfc00;
+  --bright-green: #66ff00;
+  --light-sea-green: #20b2aa;
+  --lime-green: #32cd32;
+  --strong-lime-green: #33cc33;
+  --lemon-lime: #bfff00;
+  --electric-lime: #ccff00;
+  --cyan-lime-green: #00ff40;
+  --electric-green: #00ff00;
+  --pure-lime-green: #00ff33;
+  /********************** Orange Color Config **********************/
+  --bright-orange: #f6c23e;
+  --vivid-orange: #fd7e14;
+  --light-orange: #ff7f50;
+  --pure-orange: #ff8000;
+  --light-pure-orange: #ff9900;
+  --dark-pure-orange: #ff4000;
+  /********************** Red Color Config **********************/
+  --pure-red: #ff3300;
+  --red: #ff0000;
+  --passion-red: #ef212c;
+  --vivid-red: #ff3333;
+  --bright-red: #e74a3b;
+  --light-red: #ff6666;
+  /********************** Other Main Color Config **********************/
+  --dark-pure-violet: #8000ff;
+  --light-pure-violet: #9900ff;
+  --pure-magenta: #ff00ff;
+  --white: #ffffff;
+  --black: #000000;
+  --pink: #e83e8c;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --teal: #20c9a6;
+  --secondary: #858796;
+  --success: #1cc88a;
+  --info: #36b9cc;
+  --warning: #f6c23e;
+  --danger: #e74a3b;
+  /********************** Other Custom Properties Config **********************/
+  /*--full-page-height: calc(100vh - 114px);*/
+  --full-page-height: 100%;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-family-roboto: Roboto, Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: var(--full-page-height);
+  position: relative;
+  box-sizing: border-box;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+header, body, footer, main, nav, vd-container, vd-container-header, vd-container-text, mat-tab-group {
+  display: block;
+}
+
+body {
+  background-color: var(--very-very-light-gray) !important;
+  color: var(--dark-gray) !important;
+  margin: 0;
+  font-family: var(--font-family-sans-serif);
+  font-size: 1em;
+  font-weight: 400;
+  text-align: left;
+}
+
+.footer-absolute {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.vd-container {
+  width: 100%;
+  padding-right: 0.75em;
+  padding-left: 0.75em;
+  margin-right: auto;
+  margin-left: auto;
+}
+  /*.vd-container-header {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+    .vd-container-text {
+      font-size: 1em;
+      font-weight: 500;
+      text-shadow: 2px 3px 5px grey;
+      margin: 20px 0;
+    }*/
+
+.vd-small {
+  font-size: 8pt;
+}
+
+.vd-version-info {
+  font-size: 8pt;
+  float: right;
+}
+
+.vd-button-row button,
+.vd-button-row a {
+  margin-right: 8px;
+}
+
+.vd-control-text {
+  font-size: 0.5em;
+  font-weight: 500;
+}
+
+.vd-button {
+  background: transparent;
+  padding: 10px 20px;
+  margin-left: 60px;
+  width: 200px;
+  font-size: 0.5em;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  border-radius: 5px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.vd-button-primary {
+  color: #28a745;
+  border: 2px solid #28a745;
+}
+  .vd-button-primary:hover,
+  .vd-button-primary:focus {
+    background: #28a745;
+    color: #ffffff;
+  }
+
+.vd-button-secondary {
+  color: #000;
+  border: 2px solid #000;
+}
+  .vd-button-secondary:hover,
+  .vd-button-secondary:focus {
+    background: #000;
+    color: #ffffff;
+  }
+
+/**
+* Copyright © 2019 VisionDream ICT Solutions. All Rights Reserved.
+* Use of this source code is governed by VisionDream-style license 
+* that can be found in the LICENSE file at the below link address 
+* http://visiondream.local/#/legal/terms
+*/

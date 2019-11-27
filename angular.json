@@ -29,11 +29,22 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "projects/visiondream-site/src/app/shared/styles/vd/css/site/visiondream.css",
-              "projects/visiondream-site/src/app/shared/styles/vd/css/site/visiondream-modal.css",
-              "projects/visiondream-site/src/app/shared/styles/vd/css/theme/visiondream-theme-blue.css",
-              "projects/visiondream-site/src/app/shared/styles/vendor/css/site/fontawesome.css",
-              "projects/visiondream-site/src/app/shared/styles/visiondream-styles.scss"
+              "lib/css/themes/4/vd/visiondream-theme-blue.css",
+              "lib/css/themes/4/vd/visiondream-theme-blue-capri.css",
+              "lib/css/themes/4/vd/visiondream-theme-blue-grey.css",
+              "lib/css/themes/4/vd/visiondream-theme-indigo.css",
+              "lib/css/themes/4/vd/visiondream-theme-yellow-purei.css",
+              "lib/css/colors/4/vd/visiondream-colors-2019.css",
+              "lib/css/colors/4/vd/visiondream-colors-flat.css",
+              "lib/css/colors/4/vd/visiondream-colors-ios.css",
+              "lib/css/colors/4/vd/visiondream-colors-metro.css",
+              "lib/css/colors/4/vd/visiondream-colors-vivid.css",
+              "lib/css/colors/4/vd/visiondream-colors-win8.css",
+              "lib/css/controls/4/vd/visiondream-buttons.css",
+              "lib/css/modals/4/vd/visiondream-modals.css",
+              "lib/css/styles/4/vendor/fontawesome-v5.11.2.min.css",
+              "lib/css/styles/4/vd/visiondream.css",
+              "lib/css/styles/4/vd/visiondream.scss"
             ],
             "scripts": []
           },
