@@ -1,34 +1,44 @@
-<footer class="vd-container-footer vd-font-small-pc vd-bg-base-dream vd-footer-border-top pt-4 mt-4">
+<footer class="vd-container-footer vd-font-small-pc vd-bg-base-dream vd-footer-border-top">
   <div fxLayout="row wrap" fxLayoutAlign="center center" class="vd-wrapper-layout">
     <div fxFlex="90%" fxFlex.lt-md="100%" class="vd-wrapper-flex">
       <span fxFlex fxLayout fxLayoutAlign="start">
-        {{VDBuildVersionModel.Alias}} {{VDBuildVersionModel.Version}}
-        | Super-powered by
-        <a href="{{VDBuildVersionModel.VDUrlLocal}}"
-            target="_blank" rel="noreferrer">
-          {{VDBuildVersionModel.VDDesc}}
-        </a>
+        <span class="vd-item-padding">
+          {{VDBuildVersionModel.Alias}} {{VDBuildVersionModel.Version}}
+          | Super-powered by
+          <a href="{{VDBuildVersionModel.VDUrlLocal}}"
+              target="_blank" rel="noreferrer">
+            {{VDBuildVersionModel.VDDesc}}
+          </a>
+        </span>
       </span>
 
       <!--<span class="vd-spacer"></span>-->
 
       <span fxFlex fxLayout fxLayoutAlign="end">
-        <a routerLink="/legal/privacy-policy">
-          Privacy
-          <mat-icon aria-hidden="false" aria-label="Privacy policy footer navigation link item">
-            <fa-icon [icon]="vdFaUserSecret" class="vd-icon-small-right"></fa-icon>
+        <span class="vd-group-padding">
+          <a routerLink="/legal/privacy-policy">
+            Privacy
+            <mat-icon aria-hidden="false" aria-label="Privacy policy footer navigation link item">
+              <fa-icon [icon]="vdFaUserSecret" class="vd-icon-small-right"></fa-icon>
+            </mat-icon>
+          </a>
+        </span>
+        <span class="vd-group-padding">
+          <mat-icon aria-hidden="true">
+            <fa-icon [icon]="vdFaPlus" class="vd-icon-small"></fa-icon>
           </mat-icon>
-        </a>
-        <mat-icon aria-hidden="true">
-          <fa-icon [icon]="vdFaPlus" class="vd-icon-small"></fa-icon>
-        </mat-icon>
-        <a routerLink="/#/legal/terms-of-service">
-          <mat-icon aria-hidden="false" aria-label="Terms of service footer navigation link item">
-            <fa-icon [icon]="vdFaBalanceScale" class="vd-icon-small-left"></fa-icon>
-          </mat-icon>
-          Terms
-        </a>
-        &copy; {{VDBuildVersionModel.VDCopyright}}
+        </span>
+        <span class="vd-group-padding">
+          <a routerLink="/#/legal/terms-of-service">
+            <mat-icon aria-hidden="false" aria-label="Terms of service footer navigation link item">
+              <fa-icon [icon]="vdFaBalanceScale" class="vd-icon-small-left"></fa-icon>
+            </mat-icon>
+            Terms
+          </a>
+        </span>
+        <span class="vd-item-padding">
+          | &copy; {{VDBuildVersionModel.VDCopyright}}
+        </span>
       </span>
     </div>
   </div>

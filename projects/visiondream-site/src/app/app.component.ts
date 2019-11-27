@@ -1,5 +1,14 @@
+/**
+ * @license
+ * Copyright VisionDream ICT Solutions 2019. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at http://visiondream.local/#/legal/terms
+ */
+
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component, OnInit, OnDestroy } from '@angular/core';
+import { VDBuildVersionModel } from 'projects/visiondream-site/src/app/shared/models/vd-buildversion-model';
 import { NGXLogger } from 'ngx-logger';
 import { environment } from '../environments/environment';
 
@@ -35,10 +44,9 @@ import { environment } from '../environments/environment';
 export class AppComponent implements OnInit, OnDestroy {
 
   // Properties
-  VD_SiteAppName = 'VisionDream';
-  isOpened: true;
+  VDBuildVersionModel = new VDBuildVersionModel();
 
-  _mobileQuery: MediaQueryList;
+  mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;
 
   navMenuFiller = [
@@ -65,15 +73,15 @@ export class AppComponent implements OnInit, OnDestroy {
 
   // Constructor
   constructor(
-    _changeDetectorRef: ChangeDetectorRef,
-    _media: MediaMatcher,
+    changeDetectorRef: ChangeDetectorRef,
+    media: MediaMatcher,
     private _Logger: NGXLogger)
   {
-    this._mobileQuery = _media.matchMedia('(max-width: 600px)');
-    this._mobileQueryListener = () => _changeDetectorRef.detectChanges();
-    this._mobileQuery.addListener(this._mobileQueryListener);
+    this.mobileQuery = media.matchMedia('(max-width: 600px)');
+    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
+    this.mobileQuery.addListener(this._mobileQueryListener);
 
-    this._Logger.log(`[DEFAULT] - Application name is: ${this.VD_SiteAppName}`);
+    this._Logger.log(`[DEFAULT] - Application name is: ${this.VDBuildVersionModel.Title}`);
     //this._Logger.log(`[DEFAULT] - Application name is: ${this.appName}`);
     //this._Logger.log(`[DEFAULT] - Server secrete is: ${this.serverSecrete}`);
     //this._Logger.log(`[DEFAULT] - Server base api url is: ${this.serverApiUrl}`);
@@ -92,7 +100,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   // Housekeeping
   ngOnDestroy(): void {
-    this._mobileQuery.removeListener(this._mobileQueryListener);
+    this.mobileQuery.removeListener(this._mobileQueryListener);
   }
 
 }

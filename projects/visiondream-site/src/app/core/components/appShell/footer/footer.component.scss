@@ -1,6 +1,6 @@
 a {
-  background: transparent !important;
-  color: var(--vd-clr-other-white) !important;
+  background: var(--vd-transparent) !important;
+  color: var(--vd-white) !important;
   padding: 1px 5px;
   text-align: center;
   text-decoration: none;
@@ -8,7 +8,7 @@ a {
 }
   a:active, a:hover {
     background: inherit;
-    color: var(--vd-clr-yellow-pure) !important;
+    color: var(--vd-secondary) !important;
     padding: 1px 5px;
     text-align: center;
     text-decoration: none;
@@ -17,7 +17,7 @@ a {
   }
 
 .vd-footer-border-top {
-  border-top: 2px solid var(--vd-clr-gray-dark) !important;
+  border-top: 2px solid var(--vd-gray-dark-medium) !important;
 }
 
 #vd-container-footer-old {
@@ -30,7 +30,7 @@ a {
 
 .vd-container-footer {
   /*background: inherit;*/
-  color: var(--vd-clr-other-white);
+  color: var(--vd-white) !important;
   text-align: center;
   padding: 5px 0 5px 0;
   box-shadow: 0 -1px 4px rgba(0,0,0,0.1);

@@ -11,6 +11,12 @@ export class HomeComponent implements OnInit {
   // Properties
   VDBuildVersionModel: VDBuildVersionModel;
 
+  rippleCentered = false;
+  rippleDisabled = false;
+  rippleUnbounded = false;
+  rippleRadius: number;
+  rippleColor: string;
+
   // Constructor
   constructor() {
     this.VDBuildVersionModel = new VDBuildVersionModel();

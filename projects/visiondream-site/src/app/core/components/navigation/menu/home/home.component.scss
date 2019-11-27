@@ -1,20 +1,21 @@
-$vd-action-icon: 8px !default;
-$vd-action-caption: 8px !default;
+$vd-action-padding: 10px !default;
 
-.vd-action-icon-jumbo {
-  padding: 0 $vd-action-icon;
+.vd-button-row button,
+.vd-button-row a {
+  margin-right: $vd-action-padding;
+}
+
+.vd-action-icon {
+  margin: 0 $vd-action-padding;
   display: inline-block;
 }
 
-.vd-action-caption-jumbo {
-  /*background: transparent !important;*/
-  /*color: var(--vd-clr-other-white) !important;*/
-  margin: 0 $vd-action-caption 0 $vd-action-caption;
-  /*margin-top: 8px;*/
+.vd-action-caption {
+  margin: $vd-action-padding 0;
   display: inline-block;
 }
 
-.vd-action-group-jumbo {
-  padding: 0 $vd-action-caption;
+.vd-action-group {
+  margin: 0 $vd-action-padding 0 $vd-action-padding;
   display: inline-block;
 }

@@ -7,4 +7,8 @@ export class VDBuildVersionModel {
   public VDCopyright: string = ' VisionDream 2019';
   public VDUrlLocal: string = 'http://visiondream.local';
   public VDUrlExternal: string = 'https://visiondreamict.wordpress.com';
+  public VDUrlFacebook: string = 'https://web.facebook.com/VisionDreamICT/';
+  public VDUrlTwitter: string = 'https://twitter.com/VisionDreamICT';
+  public VDUrlLinkedIn: string = 'https://www.linkedin.com/in/vision-dream-ict-solutions-7a73bb14a/';
+  public VDUrlGitHub: string = 'https://github.com/visiondream-organization/visiondream-solution';
 }

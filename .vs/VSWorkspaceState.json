@@ -5,13 +5,12 @@
     "\\projects\\visiondream-site",
     "\\projects\\visiondream-site\\src",
     "\\projects\\visiondream-site\\src\\app",
-    "\\projects\\visiondream-site\\src\\app\\core",
-    "\\projects\\visiondream-site\\src\\app\\core\\components",
-    "\\projects\\visiondream-site\\src\\app\\core\\components\\appShell",
-    "\\projects\\visiondream-site\\src\\app\\core\\components\\appShell\\footer",
-    "\\projects\\visiondream-site\\src\\app\\core\\components\\navigation",
-    "\\projects\\visiondream-site\\src\\app\\core\\components\\navigation\\side-nav"
+    "\\projects\\visiondream-site\\src\\app\\public",
+    "\\projects\\visiondream-site\\src\\app\\public\\pages",
+    "\\projects\\visiondream-site\\src\\app\\public\\pages\\errors",
+    "\\projects\\visiondream-site\\src\\app\\public\\pages\\errors\\not-found",
+    "\\projects\\visiondream-site\\src\\app\\shared"
   ],
-  "SelectedNode": "\\projects\\visiondream-site\\src\\app\\core\\components\\navigation\\side-nav\\side-nav.component.html",
+  "SelectedNode": "\\projects\\visiondream-site\\src\\app\\shared\\styles\\visiondream-styles.scss",
   "PreviewInSolutionExplorer": false
 }

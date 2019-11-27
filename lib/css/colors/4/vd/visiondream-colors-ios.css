@@ -1,0 +1,70 @@
+﻿/*!
+ * Created by:  VisionDream ICT Solutions
+ * Author:      Onkgopotse Lenake
+ * File:        VisionDream-Colors-iOS.CSS
+ * Version:     4.14.0
+ * Date:        2019-11-27
+ * Description:	VisionDream Colors iOS 4.14.0 by Onkgopotse Lenake and VisionDream contributors.
+ *
+ * © 2019 VisionDream ICT Solutions. All rights reserved.
+ */
+
+.vd-ios-dark-blue {
+  color: #fff;
+  background-color: #5856d6
+}
+
+.vd-ios-deep-blue {
+  color: #fff;
+  background-color: #007AFF
+}
+
+.vd-ios-blue {
+  color: #fff;
+  background-color: #34AADC
+}
+
+.vd-ios-light-blue {
+  color: #fff;
+  background-color: #5AC8FA
+}
+
+.vd-ios-green {
+  color: #000;
+  background-color: #4cd964
+}
+
+.vd-ios-pink {
+  color: #fff;
+  background-color: #ff2d55
+}
+
+.vd-ios-red {
+  color: #fff;
+  background-color: #ff3b30
+}
+
+.vd-ios-orange {
+  color: #fff;
+  background-color: #ff9500
+}
+
+.vd-ios-yellow {
+  color: #000;
+  background-color: #ffcc00
+}
+
+.vd-ios-grey {
+  color: #fff;
+  background-color: #8e8e93
+}
+
+.vd-ios-light-grey {
+  color: #000;
+  background-color: #ceced2
+}
+
+.vd-ios-background {
+  color: #000;
+  background-color: #efeff4
+}

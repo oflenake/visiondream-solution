@@ -1,5 +1,6 @@
 import { MediaMatcher, BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
+import { VDBuildVersionModel } from 'projects/visiondream-site/src/app/shared/models/vd-buildversion-model';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 
@@ -20,6 +21,7 @@ import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 // Icons - Brands
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 export interface SidenavItems {
@@ -35,11 +37,17 @@ export interface SidenavItems {
 export class SideNavComponent implements OnInit, OnDestroy {
 
   // Properties
-  VD_SiteAppName = 'VisionDream';
   @Output() sidenavClose = new EventEmitter();
+  VDBuildVersionModel: VDBuildVersionModel;
 
-  _mobileQuery: MediaQueryList;
-  private _mobileQueryListener: () => void;
+  rippleCentered = false;
+  rippleDisabled = false;
+  rippleUnbounded = false;
+  rippleRadius: number;
+  rippleColor: string;
+
+  mobileQuery: MediaQueryList;
+  private mobileQueryListener: () => void;
 
   // Icons - Side Navigation (includes: vdFaEnvelope, vdFaUser, vdFaSignInAlt)
   vdFaHome = faHome;
@@ -58,6 +66,7 @@ export class SideNavComponent implements OnInit, OnDestroy {
   // Icons - Brands
   vdFaFacebook = faFacebook;
   vdFaTwitter = faTwitter;
+  vdFaLinkedin = faLinkedin;
   vdFaGithub = faGithub;
 
   // Sidenav links
@@ -86,19 +95,19 @@ export class SideNavComponent implements OnInit, OnDestroy {
     }
   ];
 
-  isHandset$: Observable<boolean> = this._breakpointObserver.observe(Breakpoints.Handset)
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
       shareReplay()
     );
 
-  isTablet$: Observable<boolean> = this._breakpointObserver.observe(Breakpoints.Tablet)
+  isTablet$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Tablet)
     .pipe(
       map(result => result.matches),
       shareReplay()
     );
 
-  isWeb$: Observable<boolean> = this._breakpointObserver.observe(Breakpoints.Web)
+  isWeb$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Web)
     .pipe(
       map(result => result.matches),
       shareReplay()
@@ -106,13 +115,15 @@ export class SideNavComponent implements OnInit, OnDestroy {
 
   // Constructor
   constructor(
-    _changeDetectorRef: ChangeDetectorRef,
-    _media: MediaMatcher,
-    private _breakpointObserver: BreakpointObserver)
+    changeDetectorRef: ChangeDetectorRef,
+    media: MediaMatcher,
+    private breakpointObserver: BreakpointObserver)
   {
-    this._mobileQuery = _media.matchMedia('(max-width: 600px)');
-    this._mobileQueryListener = () => _changeDetectorRef.detectChanges();
-    this._mobileQuery.addListener(this._mobileQueryListener);
+    this.VDBuildVersionModel = new VDBuildVersionModel();
+
+    this.mobileQuery = media.matchMedia('(max-width: 600px)');
+    this.mobileQueryListener = () => changeDetectorRef.detectChanges();
+    this.mobileQuery.addListener(this.mobileQueryListener);
   }
 
   // Initialize
@@ -126,7 +137,7 @@ export class SideNavComponent implements OnInit, OnDestroy {
 
   // Housekeeping
   ngOnDestroy(): void {
-    this._mobileQuery.removeListener(this._mobileQueryListener);
+    this.mobileQuery.removeListener(this.mobileQueryListener);
   }
 
 }

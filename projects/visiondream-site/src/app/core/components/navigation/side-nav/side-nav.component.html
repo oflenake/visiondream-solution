@@ -1,5 +1,5 @@
-<mat-nav-list class="vd-sidenav-container">
-  <mat-toolbar color="primary" class="vd-sidenav-toolbar vd-bg-very-light-gray-white">
+<mat-nav-list class="vd-sidenav">
+  <mat-toolbar color="primary" class="vd-sidenav-toolbar vd-bg-body">
     <mat-toolbar-row class="vd-sidenav-toolbar-row">
       <!--<a mat-list-item
          role="button"
@@ -8,7 +8,7 @@
          (click)="onSidenavClose()">
         <span class="vd-sidenav-title">
           <img src="assets/vd/brand/logo/vd-color-trans.png"
-               height="32" alt="{{VD_SiteAppName}}">
+               height="32" alt="{{VDBuildVersionModel.Title}}">
         </span>
       </a>-->
       <a mat-list-item
@@ -23,7 +23,7 @@
           </mat-icon>
         </span>
         <span class="vd-sidenav-item">
-          About {{VD_SiteAppName}}
+          About {{VDBuildVersionModel.Title}}
         </span>
       </a>
     </mat-toolbar-row>
@@ -32,8 +32,7 @@
       <a mat-list-item
          type="button"
          aria-label="Facebook side navigation link item"
-         href="https://web.facebook.com/VisionDreamICT/"
-         target="_blank" rel="noreferrer">
+         href="{{VDBuildVersionModel.VDUrlFacebook}}" target="_blank">
         <span class="vd-sidenav-icon-social">
           <mat-icon aria-hidden="false" aria-label="Facebook side navigation link item icon">
             <fa-icon [icon]="vdFaFacebook" class="vd-icon-20"></fa-icon>
@@ -43,8 +42,7 @@
       <a mat-list-item
          type="button"
          aria-label="Twitter side navigation link item"
-         href="https://twitter.com/VisionDreamICT"
-         target="_blank" rel="noreferrer">
+         href="{{VDBuildVersionModel.VDUrlTwitter}}" target="_blank">
         <span class="vd-sidenav-icon-social">
           <mat-icon aria-hidden="false" aria-label="Twitter side navigation link item icon">
             <fa-icon [icon]="vdFaTwitter" class="vd-icon-20"></fa-icon>
@@ -53,9 +51,18 @@
       </a>
       <a mat-list-item
          type="button"
+         aria-label="LinkedIn side navigation link item"
+         href="{{VDBuildVersionModel.VDUrlLinkedIn}}" target="_blank">
+        <span class="vd-sidenav-icon-social">
+          <mat-icon aria-hidden="false" aria-label="LinkedIn side navigation link item icon">
+            <fa-icon [icon]="vdFaLinkedin" class="vd-icon-20"></fa-icon>
+          </mat-icon>
+        </span>
+      </a>
+      <a mat-list-item
+         type="button"
          aria-label="GitHub side navigation link item"
-         href="https://github.com/visiondream-organization/visiondream-solution"
-         target="_blank" rel="noreferrer">
+         href="{{VDBuildVersionModel.VDUrlGitHub}}" target="_blank">
         <span class="vd-sidenav-icon-social">
           <mat-icon aria-hidden="false" aria-label="GitHub side navigation link item icon">
             <fa-icon [icon]="vdFaGithub" class="vd-icon-20"></fa-icon>

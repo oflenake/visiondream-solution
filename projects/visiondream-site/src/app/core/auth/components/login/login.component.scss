@@ -78,23 +78,23 @@
  * Global Component Styles
  */
 *,
-*::before,
-*::after {
+*:before,
+*:after {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
 
 a {
-  background: transparent !important;
-  color: var(--vd-clr-blue-capri) !important;
+  background: var(--vd-transparent) !important;
+  color: var(--vd-primary) !important;
   text-decoration: none;
   display: inline-block;
 }
   a:hover,
   a:focus {
     background: inherit;
-    color: var(--vd-clr-yellow-pure) !important;
+    color: var(--vd-secondary) !important;
     text-decoration: none;
     display: inline-block;
     outline-width: 0;
@@ -121,27 +121,27 @@ a {
 }
 
 .form-dark .md-form label {
-  color: var(--vd-clr-other-white) !important;
+  color: var(--vd-white) !important;
 }
 
 .form-dark input[type=text]:focus:not([readonly]) {
-  border-bottom: 1px solid var(--vd-clr-blue-capri);
-  -webkit-box-shadow: 0 1px 0 0 var(--vd-clr-blue-capri);
-  box-shadow: 0 1px 0 0 var(--vd-clr-blue-capri);
+  border-bottom: 1px solid var(--vd-primary);
+  -webkit-box-shadow: 0 1px 0 0 var(--vd-primary);
+  box-shadow: 0 1px 0 0 var(--vd-primary);
 }
 
 .form-dark input[type=text]:focus:not([readonly]) + label {
-  color: var(--vd-clr-other-white) !important;
+  color: var(--vd-white) !important;
 }
 
 .form-dark input[type=password]:focus:not([readonly]) {
-  border-bottom: 1px solid var(--vd-clr-blue-capri);
-  -webkit-box-shadow: 0 1px 0 0 var(--vd-clr-blue-capri);
-  box-shadow: 0 1px 0 0 var(--vd-clr-blue-capri);
+  border-bottom: 1px solid var(--vd-primary);
+  -webkit-box-shadow: 0 1px 0 0 var(--vd-primary);
+  box-shadow: 0 1px 0 0 var(--vd-primary);
 }
 
 .form-dark input[type=password]:focus:not([readonly]) + label {
-  color: var(--vd-clr-other-white) !important;
+  color: var(--vd-white) !important;
 }
 
 .form-dark input[type="checkbox"] + label:before {
@@ -152,7 +152,7 @@ a {
   width: 17px;
   height: 17px;
   z-index: 0;
-  border: 1.5px solid var(--vd-clr-other-white) !important;
+  border: 1.5px solid var(--vd-white) !important;
   border-radius: 1px;
   margin-top: 2px;
   -webkit-transition: 0.2s;
@@ -166,7 +166,7 @@ a {
   height: 22px;
   border-style: solid;
   border-width: 2px;
-  border-color: transparent var(--vd-clr-blue-capri) var(--vd-clr-blue-capri) transparent;
+  border-color: transparent var(--vd-primary) var(--vd-primary) transparent;
   -webkit-transform: rotate(40deg);
   -ms-transform: rotate(40deg);
   transform: rotate(40deg);

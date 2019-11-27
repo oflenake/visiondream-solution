@@ -1,0 +1,781 @@
+/*!
+ * Created by:  VisionDream ICT Solutions
+ * Author:      Onkgopotse Lenake
+ * File:        VisionDream-Social.CSS
+ * Version:     4.14.0
+ * Date:        2019-11-27
+ * Description:	VisionDream Social 4.14.0 by Onkgopotse Lenake and VisionDream contributors.
+ *
+ * © 2019 VisionDream ICT Solutions. All rights reserved.
+ */
+
+/*!
+* Global CSS Properties (Variables) Configuration
+* -----------------------------------------------
+**/
+:root {
+  /********************** Vision Yellow Color Config **********************/
+  --pure-yellow: #ffc000;
+  --usc-gold: #ffcc00;
+  --electric-yellow: #ffff00;
+  --bright-orange: #f6c23e;
+  --light-pure-yellow: #ffea00;
+  --very-light-pure-yellow: #eaff00;
+  /********************** Hyphen Gray Color Config **********************/
+  --dark-gray: #999999;
+  --dark-grayish-blue: #858796;
+  --very-dark-grayish-blue: #5a5c69;
+  --light-gray: #ccc;
+  --very-light-gray: #eee;
+  /********************** Dream Blue Color Config **********************/
+  --deep-sky-blue-capri: #00bfff;
+  --deep-sky-blue-websafe: #00ccff;
+  --deep-sky-blue-light: #00d4ff;
+  --deep-sky-blue-dark: #00aaff;
+  --deep-pure-blue: #0000ff;
+  --light-pure-blue: #0080ff;
+  --dark-pure-blue: #0040ff;
+  --dark-moderate-blue: #336699;
+  --blue: #4e73df;
+  /********************** Other Main Color Config **********************/
+  --dark-pure-green: #80ff00;
+  --light-pure-green: #bfff00;
+  --cyan-lime-pure-green: #00ff40;
+  --green: #1cc88a;
+  --light-pure-orange: #ff8000;
+  --dark-pure-orange: #ff4000;
+  --coral-light-orange: #ff7f50;
+  --orange: #fd7e14;
+  --coral-websafe-light-red: #ff6666;
+  --pure-violet: #8000ff;
+  --pure-magenta: #ff00ff;
+  --electric-pure-cyan: #00ffff;
+  --pure-cyan: #00ffc0;
+  --pure-red: #ff0000;
+  --red: #e74a3b;
+  --light: #f8f9fc;
+  --dark: #5a5c69;
+  --pure-white: #ffffff;
+  --white: #fff;
+  --pure-black: #000000;
+  --black: #000;
+  --pink: #e83e8c;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --teal: #20c9a6;
+  --cyan: #36b9cc;
+  --primary: #4e73df;
+  --primary: #00bfff;
+  --secondary: #858796;
+  --success: #1cc88a;
+  --info: #36b9cc;
+  --warning: #f6c23e;
+  --danger: #e74a3b;
+  /********************** Other Custom Properties Config **********************/
+  /*--full-page-height: calc(100vh - 114px);*/
+  --full-page-height: 100%;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+header, footer, main, nav, mat-tab-group, section, section-header {
+  display: block;
+}
+
+body {
+  height: var(--full-page-height);
+  position: relative;
+  box-sizing: border-box;
+  margin: 0;
+  font-family: var(--font-family-monospace);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  color: var(--dark-gray) !important;
+  background-color: var(--white) !important;
+}
+
+.container {
+  width: 100%;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+  .container-section {
+    padding-top: 80px;
+  }
+
+.container-fluid {
+  width: 100%;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+  .container-fluid-section {
+    padding-top: 80px;
+  }
+
+.section-header {
+  padding-top: 85px;
+  padding-bottom: 40px;
+}
+
+.footer-absolute {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.app-welcome {
+  background-color: var(--white) !important;
+}
+
+.img-fluid {
+  max-width: unset !important;
+  width: 100% !important;
+}
+
+.opacity {
+  opacity: 1.0 !important;
+}
+
+/*!
+* Vision-Dream Brand Main Colors - Start
+* --------------------------------------
+**/
+/******************************** Vision Yellow Definition ********************************/
+.bg-primary-vision {
+  background-color: var(--pure-yellow) !important;
+}
+
+.fg-primary-vision {
+  color: var(--pure-yellow) !important;
+}
+
+.bg-secondary-vision {
+  background-color: var(--usc-gold) !important;
+}
+
+.fg-secondary-vision {
+  color: var(--usc-gold) !important;
+}
+
+.bg-ternary-vision {
+  background-color: var(--electric-yellow) !important;
+}
+
+.fg-ternary-vision {
+  color: var(--electric-yellow) !important;
+}
+
+/******************************** Hyphen Gray Definition ********************************/
+.bg-primary-hyphen {
+  background-color: var(--dark-gray) !important;
+}
+
+.fg-primary-hyphen {
+  color: var(--dark-gray) !important;
+}
+
+.bg-secondary-hyphen {
+  background-color: var(--usc-gold) !important;
+}
+
+.fg-secondary-hyphen {
+  color: var(--usc-gold) !important;
+}
+
+.bg-ternary-hyphen {
+  background-color: var(--usc-gold) !important;
+}
+
+.fg-ternary-hyphen {
+  color: var(--usc-gold) !important;
+}
+
+/******************************** Dream Blue Definition ********************************/
+.bg-primary-dream {
+  background-color: var(--deep-sky-blue-capri) !important;
+}
+
+.fg-primary-dream {
+  color: var(--deep-sky-blue-capri) !important;
+}
+
+.bg-secondary-dream {
+  background-color: var(--deep-sky-blue-websafe) !important;
+}
+
+.fg-secondary-dream {
+  color: var(--deep-sky-blue-websafe) !important;
+}
+
+.bg-ternary-dream {
+  background-color: var(--usc-gold) !important;
+}
+
+.fg-ternary-dream {
+  color: var(--usc-gold) !important;
+}
+/*!
+* Vision-Dream Brand Main Colors - Start
+* --------------------------------------
+**/
+/******************************** Other Custom Colors Definition ********************************/
+.bg-deep-sky-blue-light {
+  background-color: var(--deep-sky-blue-light) !important;
+}
+
+.fg-deep-sky-blue-light {
+  color: var(--deep-sky-blue-light) !important;
+}
+
+.bg-deep-sky-blue-dark {
+  background-color: var(--deep-sky-blue-dark) !important;
+}
+
+.fg-deep-sky-blue-dark {
+  color: var(--deep-sky-blue-dark) !important;
+}
+
+.bg-deep-pure-blue {
+  background-color: var(--deep-pure-blue) !important;
+}
+
+.fg-deep-pure-blue {
+  color: var(--deep-pure-blue) !important;
+}
+
+.bg-white {
+  background-color: var(--white) !important;
+}
+
+.fg-white {
+  color: var(--white) !important;
+}
+
+.bg-black {
+  background-color: var(--black) !important;
+}
+
+.fg-black {
+  color: var(--black) !important;
+}
+
+.bg-transparent {
+  background-color: transparent !important;
+}
+
+.fg-transparent {
+  color: transparent !important;
+}
+
+.bg-body {
+  background-color: #FAFAFA !important;
+}
+
+.fg-body {
+  color: #FAFAFA !important;
+}
+
+/******************************** Custom Social Icons/Buttons Definition - Start ********************************/
+#container-social {
+  margin: 20px 10px;
+  text-align: center;
+}
+  .btn-global-social { /* Global social button class */
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #ddd; /* Border for the social buttons */
+    box-shadow: 0 3px 3px #999;
+    padding: 0px;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 2em;
+    border-radius: 27px;
+    -moz-border-radius: 27px;
+    -webkit-border-radius: 27px;
+  }
+    /* Facebook button class*/
+    .btn-facebook {
+      background: #4060A5;
+    }
+
+      .btn-facebook:before { /* use :before to add the relevant icons */
+        font-family: "FontAwesome";
+        content: "\f09a"; /* add facebook icon */
+      }
+
+      .btn-facebook:hover {
+        color: #4060A5;
+        background: #fff;
+        border-color: #4060A5; /* change the border color on mouse hover */
+      }
+
+    /* Twitter button class*/
+    .btn-twitter {
+      background: #00ABE3;
+    }
+
+      .btn-twitter:before {
+        font-family: "FontAwesome";
+        content: "\f099"; /* add twitter icon */
+      }
+
+      .btn-twitter:hover {
+        color: #00ABE3;
+        background: #fff;
+        border-color: #00ABE3;
+      }
+
+    /* Linkedin button class*/
+    .btn-linkedin {
+      background: #0094BC;
+    }
+
+      .btn-linkedin:before {
+        font-family: "FontAwesome";
+        content: "\f0e1"; /* add linkedin icon */
+      }
+
+      .btn-linkedin:hover {
+        color: #0094BC;
+        background: #fff;
+        border-color: #0094BC;
+      }
+
+/******************************** Custom Social Icons/Buttons Definition - End  ********************************/
+
+/******************************** Social Icons href Definition - Start ********************************/
+/* https://www.yellowwebmonkey.com/developer-blog/item/auto-adding-social-media-icons-to-links-using-css-and-font-awesome */
+
+/* Font Awesome Kits */
+/* https://fontawesome.com/kits/4cf3c1ede6/use?welcome=yes */
+
+/* <script src="https://kit.fontawesome.com/4cf3c1ede6.js"></script> */
+
+/* Envato 30 CSS Selectors */
+/* https://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048 */
+
+/* Font Awesome Finder
+  http://waramo.co.jp/fa/
+*/
+
+/* Font Awesome List and Values
+  http://astronautweb.co/snippet/font-awesome/
+*/
+
+/**
+ * Don't forget to include FontAwesome library, version 4.7
+ */
+.social-icons li a:before {
+  font-family: FontAwesome;
+}
+
+/* Default link icon - keep this icon first */
+.social-icons li a[href*="http"]:before,
+.social-icons li a[href*="#"]:before {
+  content: "\f0c1";
+}
+
+/* Amazon */
+.social-icons li a[href*="amazon."]:before {
+  content: "\f270";
+}
+
+/* Behance */
+.social-icons li a[href*="behance.net"]:before,
+.social-icons li a[href*="be.net"]:before {
+  content: "\f1b4";
+}
+
+/* Bitbucket */
+.social-icons li a[href*="bitbucket.org"]:before {
+  content: "\f171";
+}
+
+/* Delicious */
+.social-icons li a[href*="del.icio.us"]:before {
+  content: "\f1a5";
+}
+
+/* Dribbble */
+.social-icons li a[href*="dribbble.com"]:before {
+  content: "\f17d";
+}
+
+/* Digg */
+.social-icons li a[href*="digg.com"]:before {
+  content: "\f1a6";
+}
+
+/* Etsy */
+.social-icons li a[href*="etsy.com"]:before {
+  content: "\f2d7";
+}
+
+/* Facebook */
+.social-icons li a[href*="facebook.com"]:before {
+  content: "\f09a";
+}
+
+/* Flickr */
+.social-icons li a[href*="flickr.com"]:before {
+  content: "\f16e";
+}
+
+/* Foursquare */
+.social-icons li a[href*="foursquare.com"]:before {
+  content: "\f180";
+}
+
+/* Github*/
+.social-icons li a[href*="github.com"]:before {
+  content: "\f09b";
+}
+
+/* Gitlab */
+.social-icons li a[href*="gitlab.com"]:before {
+  content: "\f296";
+}
+
+/* Google+ */
+.social-icons li a[href*="plus.google.com"]:before {
+  content: "\f0d5";
+}
+
+/* IMDb */
+.social-icons li a[href*="imdb.com"]:before {
+  content: "\f2d8";
+}
+
+/* Instagram */
+.social-icons li a[href*="instagram.com"]:before {
+  content: "\f16d";
+}
+
+/* LinkedIn */
+.social-icons li a[href*="linkedin.com"]:before {
+  content: "\f0e1";
+}
+
+/* Medium */
+.social-icons li a[href*="medium.com"]:before {
+  content: "\f23a";
+}
+
+/* Paypal */
+.social-icons li a[href*="paypal.com"]:before {
+  content: "\f1ed";
+}
+
+/* Pinterest */
+.social-icons li a[href*="pinterest.com"]:before {
+  content: "\f231";
+}
+
+/* Quora */
+.social-icons li a[href*="quora.com"]:before {
+  content: "\f2c4";
+}
+
+/* Reddit */
+.social-icons li a[href*="reddit.com"]:before {
+  content: "\f281";
+}
+
+/* Slack */
+.social-icons li a[href*="slack.com"]:before {
+  content: "\f198";
+}
+
+/* Soundcloud */
+.social-icons li a[href*="soundcloud.com"]:before {
+  content: "\f1be";
+}
+
+/* Spotify */
+.social-icons li a[href*="spotify.com"]:before {
+  content: "\f1bc";
+}
+
+/* Snapchat */
+.social-icons li a[href*="snapchat.com"]:before {
+  content: "\f2ac";
+}
+
+/* Stack Overflow */
+.social-icons li a[href*="stackoverflow.com"]:before {
+  content: "\f16c";
+}
+
+/* StumbleUpon */
+.social-icons li a[href*="stumbleupon.com"]:before {
+  content: "\f1a4";
+}
+
+/* ThemeIsle */
+.social-icons li a[href*="themeisle.com"]:before {
+  content: "\f2b2";
+}
+
+/* Tripadvisor */
+.social-icons li a[href*="tripadvisor.com"]:before {
+  content: "\f262";
+}
+
+/* Tumblr */
+.social-icons li a[href*="tumblr.com"]:before {
+  content: "\f173";
+}
+
+/* Twitch */
+.social-icons li a[href*="twitch.tv"]:before {
+  content: "\f1e8";
+}
+
+/* Twitter */
+.social-icons li a[href*="twitter.com"]:before {
+  content: "\f099";
+}
+
+/* Vimeo */
+.social-icons li a[href*="vimeo.com"]:before {
+  content: "\f194";
+}
+
+/* Weibo */
+.social-icons li a[href*="weibo.com"]:before {
+  content: "\f18a";
+}
+
+/* Wikipedia */
+.social-icons li a[href*="wikipedia.org"]:before {
+  content: "\f266";
+}
+
+/* Wordpress */
+.social-icons li a[href*="wordpress.org"]:before,
+.social-icons li a[href*="wordpress.com"]:before {
+  content: "\f19a";
+}
+
+/* Xing */
+.social-icons li a[href*="xing.com"]:before {
+  content: "\f168";
+}
+
+/* Yahoo */
+.social-icons li a[href*="yahoo.com"]:before {
+  content: "\f19e";
+}
+
+/* Youtube */
+.social-icons li a[href*="youtube.com"]:before {
+  content: "\f167";
+}
+
+/******************************** Social Icons href Definition - End ********************************/
+
+/**
+* Global CSS Styles
+* -----------------
+**/
+.border-top {
+  border-top: 2px solid #e3e6f0 !important;
+}
+
+/** Scroll to top icon */
+.scroll-to-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  display: none;
+  width: 2.75rem;
+  height: 2.75rem;
+  text-align: center;
+  color: #fff;
+  background: rgba(90, 92, 105, 0.5);
+  line-height: 46px;
+}
+  .scroll-to-top:hover, .scroll-to-top:focus {
+    color: white;
+  }
+  .scroll-to-top:hover {
+    background: #5a5c69;
+  }
+
+.scroll-to-top i {
+  font-weight: 800;
+}
+
+.rounded-sm {
+  border-radius: 0.2rem !important;
+}
+
+.rounded {
+  border-radius: 0.35rem !important;
+}
+
+.rounded-top {
+  border-top-left-radius: 0.35rem !important;
+  border-top-right-radius: 0.35rem !important;
+}
+
+.rounded-right {
+  border-top-right-radius: 0.35rem !important;
+  border-bottom-right-radius: 0.35rem !important;
+}
+
+.rounded-bottom {
+  border-bottom-right-radius: 0.35rem !important;
+  border-bottom-left-radius: 0.35rem !important;
+}
+
+.rounded-left {
+  border-top-left-radius: 0.35rem !important;
+  border-bottom-left-radius: 0.35rem !important;
+}
+
+.rounded-lg {
+  border-radius: 0.3rem !important;
+}
+
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+.rounded-pill {
+  border-radius: 50rem !important;
+}
+
+.rounded-0 {
+  border-radius: 0 !important;
+}
+
+/** Icon Sizes */
+.fa-icon-size {
+  font-size: 24px;
+  padding: 0 1px;
+}
+
+.mat-icon-size {
+  padding: 0 2px;
+}
+
+[tabindex="-1"]:focus {
+  outline: 0 !important;
+}
+
+hr {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+small {
+  font-size: 80%;
+}
+
+a {
+  color: var(--white) !important;
+  text-decoration: none;
+  background-color: transparent;
+  display: inline-block;
+}
+
+a:hover {
+  color: var(--dark-pure-yellow) !important;
+  text-decoration: none;
+  background-color: inherit;
+  display: inline-block;
+}
+
+a:not([href]):not([tabindex]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:not([href]):not([tabindex]):hover, a:not([href]):not([tabindex]):focus {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:not([href]):not([tabindex]):focus {
+  outline: 0;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+
+svg {
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+caption {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  color: #858796;
+  text-align: left;
+  caption-side: bottom;
+}
+
+th {
+  text-align: inherit;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
