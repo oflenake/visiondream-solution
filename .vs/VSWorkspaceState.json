@@ -1,16 +1,17 @@
 {
   "ExpandedNodes": [
     "",
+    "\\lib",
+    "\\lib\\css",
+    "\\lib\\css\\styles",
+    "\\lib\\css\\styles\\4",
+    "\\lib\\css\\styles\\4\\vd",
     "\\projects",
     "\\projects\\visiondream-site",
     "\\projects\\visiondream-site\\src",
     "\\projects\\visiondream-site\\src\\app",
-    "\\projects\\visiondream-site\\src\\app\\public",
-    "\\projects\\visiondream-site\\src\\app\\public\\pages",
-    "\\projects\\visiondream-site\\src\\app\\public\\pages\\errors",
-    "\\projects\\visiondream-site\\src\\app\\public\\pages\\errors\\not-found",
     "\\projects\\visiondream-site\\src\\app\\shared"
   ],
-  "SelectedNode": "\\projects\\visiondream-site\\src\\app\\shared\\styles\\visiondream-styles.scss",
+  "SelectedNode": "\\angular.json",
   "PreviewInSolutionExplorer": false
 }

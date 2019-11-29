@@ -29,11 +29,13 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "lib/css/themes/4/vendor/ng-mat-indigo-pink.css",
+              "lib/css/themes/4/vd/visiondream-theme.css",
               "lib/css/themes/4/vd/visiondream-theme-blue.css",
               "lib/css/themes/4/vd/visiondream-theme-blue-capri.css",
               "lib/css/themes/4/vd/visiondream-theme-blue-grey.css",
               "lib/css/themes/4/vd/visiondream-theme-indigo.css",
-              "lib/css/themes/4/vd/visiondream-theme-yellow-purei.css",
+              "lib/css/themes/4/vd/visiondream-theme-yellow-pure.css",
               "lib/css/colors/4/vd/visiondream-colors-2019.css",
               "lib/css/colors/4/vd/visiondream-colors-flat.css",
               "lib/css/colors/4/vd/visiondream-colors-ios.css",
@@ -46,7 +48,10 @@
               "lib/css/styles/4/vd/visiondream.css",
               "lib/css/styles/4/vd/visiondream.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "lib/js/colors/1/vd/visiondream-color.js",
+              "lib/js/styles/1/vd/visiondream.js"
+            ]
           },
           "configurations": {
             "production": {

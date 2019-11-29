@@ -29,11 +29,12 @@
 
 :root {
   /********************** Vision yellow theme **********************/
-  --vd-yellow-electric-small: #ffff00;
+  --vd-yellow-electric: #ffff00;
   --vd-yellow-electric-medium: #ffea00;
   --vd-yellow-electric-large: #eaff00;
   --vd-yellow-usc-gold-small: #ffcc00;
   --vd-yellow-usc-gold-medium: #ffc000;
+  --vd-yellow-pure: #ffc000;
   /********************** Dream blue theme **********************/
   --vd-blue-capri-xsmall: #00ccff;
   --vd-blue-capri-small: #00bfff;
@@ -194,10 +195,12 @@
   --visiondream-solid-logo: "\f0c2";
 }
 
-/********************** Global Styles **********************/
+/********************** Global color themes and properties **********************/
+/*@import '~@angular/material/prebuilt-themes/indigo-pink.css';*/
+
 *,
-*::before,
-*::after {
+*:before,
+*:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;

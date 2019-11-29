@@ -77,14 +77,6 @@
 /**
  * Global Component Styles
  */
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-}
-
 a {
   background: var(--vd-transparent) !important;
   color: var(--vd-primary) !important;

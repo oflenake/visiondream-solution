@@ -1,4 +1,4 @@
-/*!
+﻿/*!
  * Created by:  VisionDream ICT Solutions
  * Author:      Onkgopotse Lenake
  * File:        VisionDream.CSS
@@ -8,6 +8,17 @@
  *
  * © 2019 VisionDream ICT Solutions. All rights reserved.
  */
+
+:root {
+  --vd-yellow: #ffeb3b;
+  --vd-yellow-electric: #ffff00;
+  --vd-yellow-usc-gold: #ffcc00;
+  --vd-yellow-pale: #ffffcc;
+  --vd-yellow-pure: #ffc000;
+  --vd-yellow-text: #d2be0e;
+  
+  --vd-blue-capri: #00bfff;
+}
 
 html {
   box-sizing: border-box
@@ -199,6 +210,7 @@ template {
 [hidden] {
   display: none;
 }
+
 /************************** Extract from normalize.css - End **************************/
 
 html,
@@ -1358,6 +1370,16 @@ a {
   padding: 12px 24px !important
 }
 
+.vd-padding-4 {
+  padding-top: 4px !important;
+  padding-bottom: 4px !important
+}
+
+.vd-padding-8 {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important
+}
+
 .vd-padding-16 {
   padding-top: 16px !important;
   padding-bottom: 16px !important
@@ -1422,6 +1444,12 @@ a {
 .vd-hover-blue:hover {
   color: #fff !important;
   background-color: #2196F3 !important
+}
+
+.vd-blue-capri,
+.vd-hover-blue-capri:hover {
+  color: #fff !important;
+  background-color: var(--vd-blue-capri) !important
 }
 
 .vd-light-blue,
@@ -1531,7 +1559,25 @@ a {
 .vd-yellow,
 .vd-hover-yellow:hover {
   color: #000 !important;
-  background-color: #ffeb3b !important
+  background-color: var(--vd-yellow) !important
+}
+
+.vd-yellow-electric,
+.vd-yellow-electric-hover:hover {
+  color: #000 !important;
+  background-color: var(--vd-yellow-electric) !important
+}
+
+.vd-yellow-pure,
+.vd-yellow-pure-hover:hover {
+  color: #000 !important;
+  background-color: var(--vd-yellow-pure) !important
+}
+
+.vd-yellow-usc-gold,
+.vd-yellow-usc-gold-hover:hover {
+  color: #000 !important;
+  background-color: var(--vd-yellow-usc-gold) !important
 }
 
 .vd-white,
@@ -1585,7 +1631,7 @@ a {
 .vd-pale-yellow,
 .vd-hover-pale-yellow:hover {
   color: #000 !important;
-  background-color: #ffffcc !important
+  background-color: var(--vd-yellow-pale) !important
 }
 
 .vd-pale-blue,
@@ -1700,7 +1746,7 @@ a {
 
 .vd-text-yellow,
 .vd-hover-text-yellow:hover {
-  color: #d2be0e !important
+  color: var(--vd-yellow-text) !important
 }
 
 .vd-text-white,
@@ -1840,7 +1886,7 @@ a {
 
 .vd-border-yellow,
 .vd-hover-border-yellow:hover {
-  border-color: #ffeb3b !important
+  border-color: var(--vd-yellow) !important
 }
 
 .vd-border-white,
@@ -1886,7 +1932,7 @@ a {
 
 .vd-border-pale-yellow,
 .vd-hover-border-pale-yellow:hover {
-  border-color: #ffffcc !important
+  border-color: var(--vd-yellow-pale) !important
 }
 
 .vd-border-pale-blue,
